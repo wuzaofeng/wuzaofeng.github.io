@@ -1,0 +1,24 @@
+{
+  "name": "wuzaofeng.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wuzaofeng/wuzaofeng.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wuzaofeng/wuzaofeng.github.io/issues"
+  },
+  "homepage": "https://github.com/wuzaofeng/wuzaofeng.github.io#readme",
+  "devDependencies": {
+    "vuepress": "^1.3.0"
+  }
+}
