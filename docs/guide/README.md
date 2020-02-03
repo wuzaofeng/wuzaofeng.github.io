@@ -1,14 +1,12 @@
 # github.io + VuePress + travis-cl 实现自动化部署静态文档/博客
 
-### 前言
+::: tip 前言
+1. github 为您搭建好的服务器，无需自己搭建服务器
+2. VuePress 界面十分简洁，并且上手快，能快速的构建整个项目架构
+3. travis-cl 可以为您提供自动化部署，只需在本地写好代码，并提交代码，剩下的线上流程全部交与travis实现
+4. 本项目使用yarn安装，因为构建安装速度快些
+:::
 
-> github 为您搭建好的服务器，无需自己搭建服务器
->
-> VuePress 界面十分简洁，并且上手快，能快速的构建整个项目架构
->
-> travis-cl 可以为您提供自动化部署，只需在本地写好代码，并提交代码，剩下的线上流程全部交与travis实现
-
-> 本项目使用yarn安装，因为构建安装速度快些
 
 ### 为什么采用VuePress
 * 内置Markdown 拓展
@@ -41,7 +39,7 @@
     * 创建 docs 文件夹，把所有 markdown 文档存放在这里。
     ```
     mkdir docs
-    echo '# Hello VuePress!' > docs/index.md
+    echo '# Hello VuePress!' > docs/README.md
     ```
 
 3. 写一些文档，查看vuepress文档，做一些简单的配置（详情可看文档）
@@ -93,3 +91,8 @@
 
 ![poject](./2.jpg)
 ![token](./3.jpg)
+
+8. 提交代码之后，查看Travis CI面板，会自动构建
+![ci](./4.jpg)
+
+she ji
