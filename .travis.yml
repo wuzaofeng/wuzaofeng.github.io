@@ -14,4 +14,3 @@ deploy:
   target_branch: master # 默认设置分支 之前默认：gh-pages
   on:
     branch: docs #  发布的时候使用的branch
-#GitLab Pages and G
