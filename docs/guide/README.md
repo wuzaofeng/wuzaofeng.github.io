@@ -8,7 +8,7 @@
 :::
 
 
-### 为什么采用VuePress
+## 为什么采用VuePress
 * 内置Markdown 拓展
 * 在Markdown 中使用vue
 * 多语言配置支持
@@ -94,5 +94,3 @@
 
 8. 提交代码之后，查看Travis CI面板，会自动构建
 ![ci](./4.jpg)
-
-she ji

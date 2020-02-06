@@ -25,4 +25,12 @@ module.exports = [
       title: '高性能javascript',
       path: '/readBook/HighPerformanceJS/'
     }]
+  }, {
+    title: '工作笔记',
+    collapsable: false,
+    sidebarDepth: 3,
+    children: [{
+      title: '微信小程序内嵌webview问题',
+      path: '/working/wechat/webview'
+    }]
   }]

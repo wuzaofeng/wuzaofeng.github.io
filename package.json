@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/wuzaofeng/wuzaofeng.github.io#readme",
   "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.0.0-rc.1",
     "vuepress": "^1.3.0"
   }
 }
