@@ -32,5 +32,8 @@ module.exports = [
     children: [{
       title: '微信小程序内嵌webview问题',
       path: '/working/wechat/webview'
+    }, {
+      title: 'verdaccio 指南',
+      path: '/working/verdaccio'
     }]
   }]
