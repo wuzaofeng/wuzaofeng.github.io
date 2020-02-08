@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>什么是表达式语句？ | 前端知识体库</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="icon" href="/img/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.b71a9117.css" as="style"><link rel="preload" href="/assets/js/app.70448d81.js" as="script"><link rel="preload" href="/assets/js/2.f4fd11d7.js" as="script"><link rel="preload" href="/assets/js/10.ccda9714.js" as="script"><link rel="prefetch" href="/assets/js/11.c6d81bc3.js"><link rel="prefetch" href="/assets/js/12.1e9ca29e.js"><link rel="prefetch" href="/assets/js/13.e99d1864.js"><link rel="prefetch" href="/assets/js/14.64e08a34.js"><link rel="prefetch" href="/assets/js/3.3f1d593e.js"><link rel="prefetch" href="/assets/js/4.a90e2563.js"><link rel="prefetch" href="/assets/js/5.2163a169.js"><link rel="prefetch" href="/assets/js/6.9f592b41.js"><link rel="prefetch" href="/assets/js/7.42691910.js"><link rel="prefetch" href="/assets/js/8.6288acb7.js"><link rel="prefetch" href="/assets/js/9.7cb6c698.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b71a9117.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/logo.jpeg" alt="前端知识体库" class="logo"> <span class="site-name can-hide">前端知识体库</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  目录
+</a></div><div class="nav-item"><a href="https://juejin.im/timeline" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.vuepress.cn/guide" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Vuepress
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/wuzaofeng" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/wuzaofeng" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  疫情实时
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  目录
+</a></div><div class="nav-item"><a href="https://juejin.im/timeline" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.vuepress.cn/guide" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Vuepress
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/wuzaofeng" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/wuzaofeng" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  疫情实时
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/guide/" class="sidebar-link">自动化部署静态文档</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>学习笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learning/html/" class="sidebar-link">html</a></li><li><a href="/learning/css/" class="sidebar-link">CSS</a></li><li><section class="sidebar-group is-sub-group depth-1"><p class="sidebar-heading open"><span>javascript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learning/javascript/expression.html" class="active sidebar-link">什么是表达式语句</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/learning/javascript/expression.html#赋值表达式左边部分" class="sidebar-link">赋值表达式左边部分</a></li><li class="sidebar-sub-header"><a href="/learning/javascript/expression.html#赋值表达式右边部分" class="sidebar-link">赋值表达式右边部分</a></li></ul></li></ul></section></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>读书笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/readBook/HighPerformanceJS/" class="sidebar-link">高性能javascript</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>工作笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/working/wechat/webview.html" class="sidebar-link">微信小程序内嵌webview问题</a></li><li><a href="/working/verdaccio.html" class="sidebar-link">verdaccio 指南</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="什么是表达式语句？"><a href="#什么是表达式语句？" class="header-anchor">#</a> 什么是表达式语句？</h1> <div class="custom-block tip"><p class="custom-block-title">前言</p> <p>它是由运算符连接变量或者直接量构成的
+要么是函数调用，要么是赋值，要么是自增、自减，否则表达式计算的结果没有任何意义</p></div> <h2 id="赋值表达式左边部分"><a href="#赋值表达式左边部分" class="header-anchor">#</a> 赋值表达式左边部分</h2> <h3 id="primaryexpression-主要表达式"><a href="#primaryexpression-主要表达式" class="header-anchor">#</a> PrimaryExpression 主要表达式</h3> <ul><li>包含了各种“直接量”</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&quot;abc&quot;;
+123;
+null;
+true;
+false;
+</code></pre></div><ul><li>定义对象，针对函数、类、数组、正则表达式等特殊对象类型</li></ul> <div class="language- extra-class"><pre class="language-text"><code>({});
+(function(){});
+(class{ });
+[];
+/abc/g;
+</code></pre></div><ul><li>this 或者变量，在语法上，把变量称作“标识符引用”</li></ul> <div class="language- extra-class"><pre class="language-text"><code>this;
+myVar;
+</code></pre></div><h3 id="memberexpression-成员表达式"><a href="#memberexpression-成员表达式" class="header-anchor">#</a> MemberExpression 成员表达式</h3> <p>通常是用于访问对象成员</p> <div class="language- extra-class"><pre class="language-text"><code>a.b;
+a[&quot;b&quot;];
+new.target; // 用于判断函数是否是被 new 调用
+super.b; // 用于访问父类的属性的语法
+</code></pre></div><h3 id="newexpression-new-表达式"><a href="#newexpression-new-表达式" class="header-anchor">#</a> NewExpression NEW 表达式</h3> <div class="language- extra-class"><pre class="language-text"><code>new new Cls(1);
+等价于
+new (new Cls(1));
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>
+class Cls{
+  constructor(n){
+    console.log(&quot;cls&quot;, n);
+    return class {
+      constructor(n) {
+        console.log(&quot;returned&quot;, n);
+      }
+    }
+  }
+}
+
+new (new Cls(1)); 
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>结果输出：
+cls 1
+returned undefined
+</code></pre></div><h3 id="callexpression-函数调用表达式"><a href="#callexpression-函数调用表达式" class="header-anchor">#</a> CallExpression 函数调用表达式</h3> <p>它的基本形式是 Member Expression 后加一个括号里的参数列表</p> <div class="language- extra-class"><pre class="language-text"><code>a.b(c);
+super();
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>a.b(c)(d)(e);
+a.b(c)[3];
+a.b(c).d;
+a.b(c)`xyz`;
+</code></pre></div><h3 id="lefthandsideexpression-左值表达式"><a href="#lefthandsideexpression-左值表达式" class="header-anchor">#</a> LeftHandSideExpression 左值表达式</h3> <div class="language- extra-class"><pre class="language-text"><code>a() = b;
+a().c = b;
+</code></pre></div><h3 id="assignmentexpression-赋值表达式"><a href="#assignmentexpression-赋值表达式" class="header-anchor">#</a> AssignmentExpression 赋值表达式</h3> <div class="language- extra-class"><pre class="language-text"><code>a = b
+
+a = b = c = d
+等价于
+a = (b = (c = d))
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>a += b;
+等价于
+a = a + b;
+
+类似的
+*=、/=、%=、+=、-=、&lt;&lt;=、&gt;&gt;=、&gt;&gt;&gt;=、&amp;=、^=、|=、**=
+</code></pre></div><h3 id="逗号分隔的表达式"><a href="#逗号分隔的表达式" class="header-anchor">#</a> 逗号分隔的表达式</h3> <div class="language- extra-class"><pre class="language-text"><code>a = b, b = 1, null;
+</code></pre></div><h2 id="赋值表达式右边部分"><a href="#赋值表达式右边部分" class="header-anchor">#</a> 赋值表达式右边部分</h2> <h3 id="更新表达式-updateexpression"><a href="#更新表达式-updateexpression" class="header-anchor">#</a> 更新表达式 UpdateExpression</h3> <div class="language- extra-class"><pre class="language-text"><code>-- a;
+++ a;
+a --
+a ++
+</code></pre></div><h3 id="一元运算表达式-unaryexpression"><a href="#一元运算表达式-unaryexpression" class="header-anchor">#</a> 一元运算表达式 UnaryExpression</h3> <div class="language- extra-class"><pre class="language-text"><code>delete a.b;
+void a;
+typeof a;
+- a;
+~ a;
+! a;
+await a;
+</code></pre></div><h3 id="乘方表达式-exponentiationexpression"><a href="#乘方表达式-exponentiationexpression" class="header-anchor">#</a> 乘方表达式 ExponentiationExpression</h3> <div class="language- extra-class"><pre class="language-text"><code>++i ** 30
+2 ** 30 //正确
+-2 ** 30 //报错
+
+4 ** 3 ** 2
+相当于
+4 ** (3 ** 2)
+</code></pre></div><h3 id="乘法表达式-multiplicativeexpression"><a href="#乘法表达式-multiplicativeexpression" class="header-anchor">#</a> 乘法表达式 MultiplicativeExpression</h3> <p>乘法表达式分别表示乘、除和取余</p> <div class="language- extra-class"><pre class="language-text"><code>x * 2;
+*/%
+</code></pre></div><h3 id="加法表达式-additiveexpression"><a href="#加法表达式-additiveexpression" class="header-anchor">#</a> 加法表达式 AdditiveExpression</h3> <p>加法表达式有加号和减号两种运算符</p> <div class="language- extra-class"><pre class="language-text"><code>
++ 
+-
+</code></pre></div><h3 id="移位表达式-shiftexpression"><a href="#移位表达式-shiftexpression" class="header-anchor">#</a> 移位表达式 ShiftExpression</h3> <p>二进制操作整数并不能提高性能, 仅仅是照顾 C 系语言用户的习惯</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;&lt; 向左移位
+&gt;&gt; 向右移位
+&gt;&gt;&gt; 无符号向右移位
+</code></pre></div><h3 id="关系表达式-relationalexpression"><a href="#关系表达式-relationalexpression" class="header-anchor">#</a> 关系表达式 RelationalExpression</h3> <div class="language- extra-class"><pre class="language-text"><code>&lt;=
+&gt;=
+&lt;
+&gt;
+instanceof 
+in
+</code></pre></div><p>需要注意，这里的 &lt;= 和 &gt;= 关系运算，完全是针对数字的，所以 &lt;= 并<strong>不等价于</strong> &lt; 或 ==。例如：</p> <div class="language- extra-class"><pre class="language-text"><code>
+null &lt;= undefined
+//false
+null == undefined
+//true
+</code></pre></div><h3 id="相等表达式-equalityexpression-重点"><a href="#相等表达式-equalityexpression-重点" class="header-anchor">#</a> 相等表达式 EqualityExpression(重点)</h3> <div class="language- extra-class"><pre class="language-text"><code>== // 设计失误
+!=
+===
+!==
+</code></pre></div><h4 id="类型不同的变量比较时-运算只有三条规则："><a href="#类型不同的变量比较时-运算只有三条规则：" class="header-anchor">#</a> 类型不同的变量比较时==运算只有三条规则：</h4> <ul><li>undefined 与 null 相等；</li> <li>字符串和 bool 都转为数字再比较；</li> <li>对象转换成 primitive 类型再比较</li></ul> <p>比如：</p> <div class="language- extra-class"><pre class="language-text"><code>false == '0' // true
+true == 'true' // false
+[] == 0  //true 
+[] == false //true
+new Boolean('false') == false // false
+</code></pre></div><h3 id="位运算表达式"><a href="#位运算表达式" class="header-anchor">#</a> 位运算表达式</h3> <ul><li>按位与表达式 BitwiseANDExpression</li> <li>按位异或表达式 BitwiseANDExpression</li> <li>按位或表达式 BitwiseORExpression。</li></ul> <h3 id="逻辑与表达式和逻辑或表达式"><a href="#逻辑与表达式和逻辑或表达式" class="header-anchor">#</a> 逻辑与表达式和逻辑或表达式</h3> <h3 id="条件表达式-conditionalexpression"><a href="#条件表达式-conditionalexpression" class="header-anchor">#</a> 条件表达式 ConditionalExpression</h3> <h3 id="优先级由高到低："><a href="#优先级由高到低：" class="header-anchor">#</a> 优先级由高到低：</h3> <p>MDN 参考网址 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/learning/css/" class="prev">
+        CSS
+      </a></span> <span class="next"><a href="/readBook/HighPerformanceJS/">
+        高性能javascript
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.70448d81.js" defer></script><script src="/assets/js/2.f4fd11d7.js" defer></script><script src="/assets/js/10.ccda9714.js" defer></script>
+  </body>
+</html>
