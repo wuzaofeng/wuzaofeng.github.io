@@ -5,6 +5,9 @@ module.exports = [{
   text: '掘金',
   link: 'https://juejin.im/timeline'
 }, {
+  text: '极客时间',
+  link: 'https://time.geekbang.org/'
+}, {
   text: 'Vuepress',
   link: 'https://www.vuepress.cn/guide'
 }, {
@@ -12,5 +15,5 @@ module.exports = [{
   link: 'https://github.com/wuzaofeng'
 }, {
   text: '疫情实时',
-  link: 'https://github.com/wuzaofeng'
+  link: 'https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_pc_3'
 }]
