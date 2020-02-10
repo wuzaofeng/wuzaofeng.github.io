@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>耗时一年整理，全网最全的TypeScript踩坑集锦(纯 TS 问题) | 前端知识体库</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="icon" href="/img/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.b71a9117.css" as="style"><link rel="preload" href="/assets/js/app.d853549c.js" as="script"><link rel="preload" href="/assets/js/2.50fe7aab.js" as="script"><link rel="preload" href="/assets/js/4.2ff81985.js" as="script"><link rel="prefetch" href="/assets/js/10.3a9b9855.js"><link rel="prefetch" href="/assets/js/11.71742a1f.js"><link rel="prefetch" href="/assets/js/12.13b2e574.js"><link rel="prefetch" href="/assets/js/13.c86fc201.js"><link rel="prefetch" href="/assets/js/14.0e4b8d61.js"><link rel="prefetch" href="/assets/js/15.1570743b.js"><link rel="prefetch" href="/assets/js/16.3a5845a4.js"><link rel="prefetch" href="/assets/js/3.1e2508cf.js"><link rel="prefetch" href="/assets/js/5.3d2403ab.js"><link rel="prefetch" href="/assets/js/6.28d96f91.js"><link rel="prefetch" href="/assets/js/7.6aa5ca39.js"><link rel="prefetch" href="/assets/js/8.f0cd3121.js"><link rel="prefetch" href="/assets/js/9.62f7aa7d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b71a9117.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/logo.jpeg" alt="前端知识体库" class="logo"> <span class="site-name can-hide">前端知识体库</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  目录
+</a></div><div class="nav-item"><a href="https://juejin.im/timeline" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://time.geekbang.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  极客时间
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.vuepress.cn/guide" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Vuepress
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/wuzaofeng" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_pc_3" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  疫情实时
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  目录
+</a></div><div class="nav-item"><a href="https://juejin.im/timeline" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://time.geekbang.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  极客时间
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.vuepress.cn/guide" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Vuepress
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/wuzaofeng" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_pc_3" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  疫情实时
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/guide/" class="sidebar-link">自动化部署静态文档</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>学习笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learning/html/" class="sidebar-link">html</a></li><li><a href="/learning/css/" class="sidebar-link">CSS</a></li><li><section class="sidebar-group is-sub-group depth-1"><p class="sidebar-heading"><span>javascript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learning/javascript/expression.html" class="sidebar-link">什么是表达式语句</a></li></ul></section></li><li><section class="sidebar-group is-sub-group depth-1"><p class="sidebar-heading open"><span>typescript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learning/typescript/ts-collection-question.html" class="active sidebar-link">【好文】耗时一年整理，全网最全的TypeScript踩坑集锦 (纯 TS 问题)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_1-ts-1-5-版本的改动" class="sidebar-link">1. TS 1.5 版本的改动</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_2-null-和-undefined-是其它类型（包括-void）的子类型，可以赋值给其它类型（如：数字类型），赋值后的类型会变成-null-或-undefined" class="sidebar-link">2. null 和 undefined 是其它类型（包括 void）的子类型，可以赋值给其它类型（如：数字类型），赋值后的类型会变成 null 或 undefined</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_3-never-和-void-的区别" class="sidebar-link">3. never 和 void 的区别</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_4-元祖越界问题" class="sidebar-link">4. 元祖越界问题</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_5-枚举成员的特点" class="sidebar-link">5. 枚举成员的特点</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_6-常量枚举与普通枚举的区别" class="sidebar-link">6. 常量枚举与普通枚举的区别</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_7-枚举的使用场景" class="sidebar-link">7. 枚举的使用场景</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_8-什么是可索引类型接口" class="sidebar-link">8. 什么是可索引类型接口</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_9-什么是函数类型接口" class="sidebar-link">9. 什么是函数类型接口</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_10-什么是类类型接口" class="sidebar-link">10. 什么是类类型接口</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_11-什么是混合类型接口" class="sidebar-link">11. 什么是混合类型接口</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_12-什么是函数重载" class="sidebar-link">12. 什么是函数重载</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_13-什么是访问控制修饰符" class="sidebar-link">13. 什么是访问控制修饰符</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_14-重写-override-vs-重载-overload" class="sidebar-link">14. 重写(override) vs 重载(overload)</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_15-继承-vs-多态" class="sidebar-link">15. 继承 vs 多态</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_16-什么是泛型" class="sidebar-link">16. 什么是泛型</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_17-什么是类型谓词" class="sidebar-link">17. 什么是类型谓词</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_18-可选链运算符的使用" class="sidebar-link">18. 可选链运算符的使用</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_19-非空断言符的使用" class="sidebar-link">19. 非空断言符的使用</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_20-空值合并运算符的使用" class="sidebar-link">20. 空值合并运算符的使用</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_21-typeof-class-和直接用-class-作为类型有什么区别" class="sidebar-link">21. typeof class 和直接用 class 作为类型有什么区别</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_22-ts-中的-never-类型具体有什么用" class="sidebar-link">22. TS 中的 never 类型具体有什么用</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_23-当使用联合类型时，在类型未确定的情况下，默认只会从中获取共有的部分" class="sidebar-link">23. 当使用联合类型时，在类型未确定的情况下，默认只会从中获取共有的部分</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_25-在全局环境中，不能给某些变量声明类型" class="sidebar-link">25. 在全局环境中，不能给某些变量声明类型</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_26-不必要的命名空间：命名空间和模块不要混在一起使用，不要在一个模块中使用命名空间，命名空间要在一个全局的环境中使用" class="sidebar-link">26. 不必要的命名空间：命名空间和模块不要混在一起使用，不要在一个模块中使用命名空间，命名空间要在一个全局的环境中使用</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_27-扩展全局变量的类型" class="sidebar-link">27. 扩展全局变量的类型</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_28-export-xxx-和-import-xxx-require-xxx" class="sidebar-link">28. export = xxx 和 import xxx = require('xxx')</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_29-如何在-node-中使用-ts" class="sidebar-link">29. 如何在 Node 中使用 TS</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_30-使用-as-替代尖括号表示类型断言" class="sidebar-link">30. 使用 as 替代尖括号表示类型断言</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_31-如何对-js-文件进行类型检查" class="sidebar-link">31. 如何对 JS 文件进行类型检查</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_32-不要使用如下类型-number，string，boolean、object，应该使用类型number、string、boolean、object" class="sidebar-link">32. 不要使用如下类型 Number，String，Boolean、Object，应该使用类型number、string、boolean、object</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_33-如何在解构一个函数-function-fn-x-number-…-时，即能给变量声明类型，又能给变量设置默认值" class="sidebar-link">33. 如何在解构一个函数 function fn({ x: number }) { /* … */ } 时，即能给变量声明类型，又能给变量设置默认值</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_34-pick摘取返回的结果是一个对象（或者说新的接口），里面包含摘取到的属性" class="sidebar-link">34. Pick摘取返回的结果是一个对象（或者说新的接口），里面包含摘取到的属性</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_35-无法使用-for-of-遍历-map-数据" class="sidebar-link">35. 无法使用 for of 遍历 map 数据</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_36-有时候我们需要复用一个类型，但是又不需要此类型内的全部属性，因此需要剔除某些属性" class="sidebar-link">36. 有时候我们需要复用一个类型，但是又不需要此类型内的全部属性，因此需要剔除某些属性</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_37-为什么在-exclude-列表里的模块还会被编译器使用" class="sidebar-link">37. 为什么在 exclude 列表里的模块还会被编译器使用</a></li><li class="sidebar-sub-header"><a href="/learning/typescript/ts-collection-question.html#_38-使用-import-xxx-namespace-xxx-创建命名空间别名" class="sidebar-link">38. 使用 import xxx= namespace.xxx 创建命名空间别名</a></li></ul></li><li><a href="/learning/typescript/ts-collection-config.html" class="sidebar-link">【好文】耗时一年整理，全网最全的TypeScript踩坑集锦 (tsconfig.json 常用配置项注释)</a></li><li><a href="/learning/typescript/ts-collection-react.html" class="sidebar-link">【好文】耗时一年整理，全网最全的TypeScript踩坑集锦（React + TS 项目问题）</a></li></ul></section></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>读书笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/readBook/HighPerformanceJS/" class="sidebar-link">高性能javascript</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>工作笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/working/wechat/webview.html" class="sidebar-link">微信小程序内嵌webview问题</a></li><li><a href="/working/verdaccio.html" class="sidebar-link">verdaccio 指南</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="耗时一年整理，全网最全的typescript踩坑集锦-纯-ts-问题"><a href="#耗时一年整理，全网最全的typescript踩坑集锦-纯-ts-问题" class="header-anchor">#</a> 耗时一年整理，全网最全的TypeScript踩坑集锦(纯 TS 问题)</h1> <div class="custom-block tip"><p class="custom-block-title">前言</p> <p>不要畏惧 TS，别看 TS 官方文档内容很多，其实在项目中常用的都是比较基础的东西，像泛型运用、一些高级类型这种用的很少（封装库、工具函数、UI组件时用的比较多）。只要把常用的东西看熟，最多一个小时就能上手 TS</p></div> <h2 id="_1-ts-1-5-版本的改动"><a href="#_1-ts-1-5-版本的改动" class="header-anchor">#</a> 1. TS 1.5 版本的改动</h2> <ul><li><p><strong>TypeScript 1.5 之前的版本</strong>：module 关键字既可以称做“<strong>内部模块</strong>”，也可以称做“<strong>外部模块</strong>”。这让刚刚接触 TypeScript 的开发者会有些困惑。</p></li> <li><p>**TypeScript 1.5 的版本：**术语名已经发生了变化，“内部模块”的概念更接近于大部分人眼中的“<strong>命名空间</strong>”， 所以自此之后称作“命名空间”（也就是说 <strong>module X {…} 相当于现在推荐的写法 namespace X {…}</strong>），而 &quot;外部模块&quot; 对于 JS 来讲就是模块（<strong>ES6 模块系统将每个文件视为一个模块</strong>），所以自此之后简称为“<strong>模块</strong>”</p></li> <li><p><strong>不推荐使用命名空间</strong></p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>之前
+module Math {
+    export function add(x, y) { ... }
+}
+
+之后
+namespace Math {
+    export function add(x, y) { ... }
+}
+</code></pre></div><h2 id="_2-null-和-undefined-是其它类型（包括-void）的子类型，可以赋值给其它类型（如：数字类型），赋值后的类型会变成-null-或-undefined"><a href="#_2-null-和-undefined-是其它类型（包括-void）的子类型，可以赋值给其它类型（如：数字类型），赋值后的类型会变成-null-或-undefined" class="header-anchor">#</a> 2. null 和 undefined 是其它类型（包括 void）的子类型，可以赋值给其它类型（如：数字类型），赋值后的类型会变成 null 或 undefined</h2> <ul><li><p>默认情况下，编译器会提示错误，这是因为 tsconfig.json 里面有一个配置项是默认开启的</p></li> <li><p><strong><code>strictNullChecks</code></strong> 参数用于新的严格空检查模式，<strong>在严格空检查模式下</strong>，null 和 undefined 值都<strong>不属于任何一个类型</strong>，它们只能赋值给自己这种类型或者 any</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>
+// tsconfig.json
+{
+    &quot;strict&quot;: true,                           /* Enable all strict type-checking options. */
+    // 对 null 类型检查，设置为 false 就不会报错了
+    // &quot;strictNullChecks&quot;: true,              /* Enable strict null checks. */
+}
+</code></pre></div><p><img src="data:image/jpeg;base64,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" alt="TS2322"></p> <h2 id="_3-never-和-void-的区别"><a href="#_3-never-和-void-的区别" class="header-anchor">#</a> 3. never 和 void 的区别</h2> <ul><li>void 表示<strong>没有任何类型</strong>（可以被赋值为 null 和 undefined）</li> <li>never 表示<strong>一个不包含值的类型</strong>，即表示永远<strong>不存在的值</strong></li> <li>拥有 <strong>void</strong> 返回值类型的函数能<strong>正常运行</strong>。拥有 <strong>never</strong> 返回值类型的函数<strong>无法正常返回</strong>，<strong>无法终止</strong>，或<strong>会抛出异常</strong></li></ul> <h2 id="_4-元祖越界问题"><a href="#_4-元祖越界问题" class="header-anchor">#</a> 4. 元祖越界问题</h2> <div class="language- extra-class"><pre class="language-text"><code>let aaa: [string, number] = ['aaa', 5];
+// 添加时不会报错
+aaa.push(6);
+
+// 打印整个元祖不会报错
+console.log(aaa); // ['aaa',5,6];
+
+// 打印添加的元素时会报错
+console.log(aaa[2]); // error
+</code></pre></div><h2 id="_5-枚举成员的特点"><a href="#_5-枚举成员的特点" class="header-anchor">#</a> 5. 枚举成员的特点</h2> <ul><li>是<strong>只读属性</strong>，无法修改</li> <li>枚举成员值默认从 <strong>0 开始递增</strong>，可以<strong>自定义</strong>设置初始值</li></ul> <div class="language- extra-class"><pre class="language-text"><code>enum Gender {
+    BOY = 1,
+    GRIL
+}
+console.log(Gender.BOY);// 1
+console.log(Gender);// { '1': 'BOY', '2': 'GRIL', BOY: 1, GRIL: 2 }
+</code></pre></div><ul><li><strong>枚举成员值</strong></li> <li>可以<strong>没有初始值</strong>,</li> <li>可以是一个对<strong>常量成员的引用</strong></li> <li>可以是一个<strong>常量表达式</strong></li> <li>也可以是一个<strong>非常量表达式</strong></li></ul> <div class="language- extra-class"><pre class="language-text"><code>
+enum Char {
+    // const member 常量成员：在编译阶段被计算出结果
+    a, // 没有初始值
+    b = Char.a,// 对常量成员的引用
+    c = 1 + 3, // 常量表达式
+
+    // computed member 计算成员：表达式保留到程序的执行阶段
+    d = Math.random(),// 非常量表达式
+    e = '123'.length, // 紧跟在计算成员后面的枚举成员必须有初始值
+    f = 6,
+    g
+}
+</code></pre></div><h2 id="_6-常量枚举与普通枚举的区别"><a href="#_6-常量枚举与普通枚举的区别" class="header-anchor">#</a> 6. 常量枚举与普通枚举的区别</h2> <ul><li>常量枚举会在<strong>编译阶段</strong>被<strong>删除</strong></li> <li>枚举成员只能是常量成员</li></ul> <div class="language- extra-class"><pre class="language-text"><code>const enum Colors {
+    Red,
+    Yellow,
+    Blue
+}
+// 常量枚举会在编译阶段被删除
+let myColors = [Colors.Red, Colors.Yellow, Colors.Blue];
+
+编译成 JS
+
+&quot;use strict&quot;;
+var myColors = [0 /* Red */, 1 /* Yellow */, 2 /* Blue */];
+
+</code></pre></div><ul><li>常量枚举不能包含计算成员，如果包含了计算成员，则会在编译阶段报错</li></ul> <div class="language- extra-class"><pre class="language-text"><code>// 报错
+const enum Color {Red, Yellow, Blue = &quot;blue&quot;.length};
+console.log(Colors.RED);
+</code></pre></div><h2 id="_7-枚举的使用场景"><a href="#_7-枚举的使用场景" class="header-anchor">#</a> 7. 枚举的使用场景</h2> <h3 id="以下代码存在的问题"><a href="#以下代码存在的问题" class="header-anchor">#</a> 以下代码存在的问题</h3> <ul><li><strong>可读性差</strong>：很难记住数字的含义</li> <li><strong>可维护性差</strong>: 硬编码，后续修改的话牵一发动全身</li></ul> <div class="language- extra-class"><pre class="language-text"><code>function initByRole(role) {
+    if (role === 1 || role == 2) {
+        console.log(&quot;1,2&quot;)
+    } else if (role == 3 || role == 4) {
+        console.log('3,4')
+    } else if (role === 5) {
+        console.log('5')
+    } else {
+        console.log('')
+    }
+}
+</code></pre></div><p>使用枚举后</p> <div class="language- extra-class"><pre class="language-text"><code>enum Role {
+  Reporter,
+  Developer,
+  Maintainer,
+  Owner,
+  Guest
+}
+
+function init(role: number) {
+  switch (role) {
+    case Role.Reporter:
+      console.log(&quot;Reporter:1&quot;);
+      break;
+    case Role.Developer:
+      console.log(&quot;Developer:2&quot;);
+      break;
+    case Role.Maintainer:
+      console.log(&quot;Maintainer:3&quot;);
+      break;
+    case Role.Owner:
+      console.log(&quot;Owner:4&quot;);
+      break;
+    default:
+      console.log(&quot;Guest:5&quot;);
+      break;
+  }
+}
+
+init(Role.Developer);
+</code></pre></div><h2 id="_8-什么是可索引类型接口"><a href="#_8-什么是可索引类型接口" class="header-anchor">#</a> 8. 什么是可索引类型接口</h2> <ul><li><strong>数字索引</strong>——约束<strong>数组</strong></li></ul> <div class="language- extra-class"><pre class="language-text"><code>// index 是随便取的名字，可以任意取名
+// 只要 index 的类型是 number，那么值的类型必须是 string
+interface StringArray {
+  // key 的类型为 number ，一般都代表是数组
+  // 限制 value 的类型为 string
+  [index:number]:string
+}
+let arr:StringArray = ['aaa','bbb'];
+console.log(arr);
+</code></pre></div><ul><li><strong>字符串索引</strong>——约束<strong>对象</strong></li></ul> <div class="language- extra-class"><pre class="language-text"><code>// 只要 index 的类型是 string，那么值的类型必须是 string
+interface StringObject {
+  // key 的类型为 string ，一般都代表是对象
+  // 限制 value 的类型为 string
+  [index:string]:string
+}
+let obj:StringObject = {name:'ccc'};
+
+</code></pre></div><h2 id="_9-什么是函数类型接口"><a href="#_9-什么是函数类型接口" class="header-anchor">#</a> 9. 什么是函数类型接口</h2> <ul><li>对方法<strong>传入的参数</strong>和<strong>返回值</strong>进行<strong>约束</strong></li></ul> <div class="language- extra-class"><pre class="language-text"><code>// 注意区别
+
+// 普通的接口
+interface discount1{
+  getNum : (price:number) =&gt; number
+}
+
+// 函数类型接口
+interface discount2{
+  // 注意:
+  // “:” 前面的是函数的签名，用来约束函数的参数
+  // &quot;:&quot; 后面的用来约束函数的返回值
+  (price:number):number
+}
+let cost:discount2 = function(price:number):number{
+   return price * .8;
+}
+
+// 也可以使用类型别名
+type Add = (x: number, y: number) =&gt; number
+let add: Add = (a: number, b: number) =&gt; a + b
+
+</code></pre></div><h2 id="_10-什么是类类型接口"><a href="#_10-什么是类类型接口" class="header-anchor">#</a> 10. 什么是类类型接口</h2> <ul><li>如果接口用于一个类的话，那么接口会表示“行为的抽象”</li> <li><strong>对类的约束，让类去实现接口，类可以实现多个接口</strong></li> <li><strong>接口只能约束类的公有成员（实例属性/方法），无法约束私有成员、构造函数、静态属性/方法</strong></li></ul> <div class="language- extra-class"><pre class="language-text"><code>// 接口可以在面向对象编程中表示为行为的抽象
+interface Speakable {
+    name: string;
+
+    // &quot;:&quot; 前面的是函数签名，用来约束函数的参数
+    // &quot;:&quot; 后面的用来约束函数的返回值
+    speak(words: string): void
+}
+
+interface Speakable2 {
+    age: number;
+}
+
+class Dog implements Speakable, Speakable2 {
+    name!: string;
+    age = 18;
+
+    speak(words: string) {
+        console.log(words);
+    }
+}
+
+let dog = new Dog();
+dog.speak('汪汪汪');
+</code></pre></div><h2 id="_11-什么是混合类型接口"><a href="#_11-什么是混合类型接口" class="header-anchor">#</a> 11. 什么是混合类型接口</h2> <ul><li>一个对象可以同时做为<strong>函数和对象</strong>使用</li></ul> <div class="language- extra-class"><pre class="language-text"><code>interface Counter {
+    (start: number): string;
+    interval: number;
+    reset(): void;
+}
+
+function getCounter(): Counter {
+    let counter = &lt;Counter&gt;function (start: number) { };
+    counter.interval = 123;
+    counter.reset = function () { };
+    return counter;
+}
+
+let c = getCounter();
+c(10);
+c.reset();
+c.interval = 5.0;
+</code></pre></div><h2 id="_12-什么是函数重载"><a href="#_12-什么是函数重载" class="header-anchor">#</a> 12. 什么是函数重载</h2> <ul><li><p>在 Java 中的函数重载，指的是<strong>两个或者两个以上的同名函数，参数类型不同或者参数个数不同</strong>。函数重载的好处是：不需要为功能相似的函数起不同的名称</p></li> <li><p>在 TypeScript 中，表现为给同一个函数提供多个函数类型定义，<strong>适用于接收不同的参数和返回不同结果的情况</strong></p></li> <li><p>TS 实现函数重载的时候，要求定义一系列的函数声明，在类型最宽泛的版本中实现重载（<strong>前面的是函数声明，目的是约束参数类型和个数，最后的函数实现是重载，表示要遵循前面的函数声明。一般在最后的函数实现时用 any 类型</strong>）</p></li> <li><p>函数重载在实际应用中使用的比较少，<strong>一般会用联合类型或泛型代替</strong></p></li> <li><p>函数重载的声明只用于类型检查阶段，在编译后会被删除</p></li> <li><p>TS 编译器在处理重载的时候，会去查询函数申明列表，从上至下直到匹配成功为止，所以要把最容易匹配的类型写到最前面</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>function attr(val: string): string;
+function attr(val: number): number;
+
+// 前面两行是函数申明，这一行是实现函数重载
+function attr(val: any): any {
+    if (typeof val === 'string') {
+        return val;
+    } else if (typeof val === 'number') {
+        return val;
+    } 
+}
+
+attr('aaa');
+attr(666);
+</code></pre></div><ul><li>上面的写法声明完函数后，必须实现函数重载。也可以只声明函数</li></ul> <div class="language- extra-class"><pre class="language-text"><code>// 后写的接口中的函数声明优先级高
+
+interface Cloner111 {
+    clone(animal: Animal): Animal;
+}
+interface Cloner111 {
+    clone(animal: Sheep): Sheep;
+}
+interface Cloner111 {
+    clone(animal: Dog): Dog;
+    clone(animal: Cat): Cat;
+}
+
+// ==&gt; 同名接口会合并
+// 后写的接口中的函数声明优先级高
+interface Cloner111 {
+    clone(animal: Dog): Dog;
+    clone(animal: Cat): Cat;
+    clone(animal: Sheep): Sheep;
+    clone(animal: Animal): Animal;
+}
+
+
+interface Cloner222 {
+    // 接口内部按书写的顺序来排，先写的优先级高
+    clone(animal: Dog): Dog;
+    clone(animal: Cat): Cat;
+    clone(animal: Sheep): Sheep;
+    clone(animal: Animal): Animal;
+}
+</code></pre></div><h2 id="_13-什么是访问控制修饰符"><a href="#_13-什么是访问控制修饰符" class="header-anchor">#</a> 13. 什么是访问控制修饰符</h2> <ul><li>public 在定义的类中、类的实例、子类、子类实例<strong>都可以访问</strong></li> <li>protected 只能在定义的类和子类中访问，<strong>不允许通过实例</strong>（定义的类的实例和子类实例）访问</li> <li>private 只能在定义的类中访问，类的实例、子类、子类实例<strong>都不可以访问</strong></li></ul> <div class="language- extra-class"><pre class="language-text"><code>class Father {
+    str: string; // 默认就是 public
+    public name: string;   // 在定义的类中、类的实例、子类、子类实例都可以访问
+    protected age: number; // 只能在定义的类和子类中访问，不允许通过实例（定义的类的实例和子类实例）访问
+    private money: number; // 只能在定义的类中访问，类的实例、子类、子类实例都不可以访问
+    constructor(name: string, age: number, money: number) {
+        this.name = name;
+        this.age = age;
+        this.money = money;
+    }
+
+    getName(): string {
+        return this.name;
+    }
+
+    setName(name: string): void {
+        this.name = name;
+    }
+}
+
+const fa = new Father('aaa', 18, 1000);
+console.log(fa.name);// aaa
+console.log(fa.age);// error
+console.log(fa.money);// error
+
+class Child extends Father {
+    constructor(name: string, age: number, money: number) {
+        super(name, age, money);
+    }
+
+    desc() {
+        console.log(`${this.name} ${this.age} ${this.money}`);
+    }
+}
+
+let child = new Child('bbb', 18, 1000);
+console.log(child.name);// bbb
+console.log(child.age);// error
+console.log(child.money);// error
+
+</code></pre></div><h2 id="_14-重写-override-vs-重载-overload"><a href="#_14-重写-override-vs-重载-overload" class="header-anchor">#</a> 14. 重写(override) vs 重载(overload)</h2> <ul><li>重写是指<strong>子类重写</strong>“继承”自<strong>父类中的方法</strong> 。虽然 TS 和JAVA 相似，但是 TS 中的继承本质上还是 JS 的“继承”机制—<strong>原型链</strong>机制</li> <li>重载是指为同一个函数提供<strong>多个类型定义</strong></li></ul> <div class="language- extra-class"><pre class="language-text"><code>// 重写
+class Animal {
+    speak(word: string): string {
+        return '动作叫:' + word;
+    }
+}
+
+class Cat extends Animal {
+    speak(word: string): string {
+        return '猫叫:' + word;
+    }
+}
+
+let cat = new Cat();
+console.log(cat.speak('hello'));
+
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>// 重载
+function double(val: number): number
+function double(val: string): string
+function double(val: any): any {
+    if (typeof val == 'number') {
+        return val * 2;
+    }
+    return val + val;
+}
+
+let r = double(1);
+console.log(r);
+</code></pre></div><h2 id="_15-继承-vs-多态"><a href="#_15-继承-vs-多态" class="header-anchor">#</a> 15. 继承 vs 多态</h2> <ul><li><p><strong>继承</strong>：<strong>子类继承父类</strong>，子类除了拥有父类的所有特性外，还有一些更具体的特性</p></li> <li><p><strong>多态</strong>：由继承而<strong>产生了相关的不同的类</strong>，对同一个方法可以有不同的响应</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>// Cat继承 Animal
+// 由于继承产生Cat, Dog, 叫做多态
+class Animal {
+    speak(word: string): string {
+        return 'Animal: ' + word;
+    }
+}
+
+class Cat extends Animal {
+    speak(word: string): string {
+        return 'Cat:' + word;
+    }
+}
+
+class Dog extends Animal {
+    speak(word: string): string {
+        return 'Dog:' + word;
+    }
+}
+
+let cat = new Cat();
+console.log(cat.speak('hello'));
+let dog = new Dog();
+console.log(dog.speak('hello'));
+</code></pre></div><h2 id="_16-什么是泛型"><a href="#_16-什么是泛型" class="header-anchor">#</a> 16. 什么是泛型</h2> <ul><li><p>泛型是指在定义函数、接口或类的时候，<strong>不预先指定具体的类型</strong>，使用时<strong>再去指定类型的一种特性</strong></p></li> <li><p>可以把泛型理解为代表类型的参数</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>// 我们希望传入的值是什么类型，返回的值就是什么类型
+// 传入的值可以是任意的类型，这时候就可以用到 泛型
+
+// 如果使用 any 的话，就失去了类型检查的意义
+function createArray1(length: any, value: any): Array&lt;any&gt; {
+    let result: any = [];
+    for (let i = 0; i &lt; length; i++) {
+        result[i] = value;
+    }
+    return result;
+}
+
+let result = createArray1(3, 'x');
+console.log(result);
+
+// 最傻的写法：每种类型都得定义一种函数
+function createArray2(length: number, value: string): Array&lt;string&gt; {
+    let result: Array&lt;string&gt; = [];
+    for (let i = 0; i &lt; length; i++) {
+        result[i] = value;
+    }
+    return result;
+}
+
+function createArray3(length: number, value: number): Array&lt;number&gt; {
+    let result: Array&lt;number&gt; = [];
+    for (let i = 0; i &lt; length; i++) {
+        result[i] = value;
+    }
+    return result;
+}
+
+// 或者使用函数重载，写法有点麻烦
+function createArray4(length: number, value: number): Array&lt;number&gt;
+function createArray4(length: number, value: string): Array&lt;string&gt;
+function createArray4(length: number, value: any): Array&lt;any&gt; {
+    let result: Array&lt;number&gt; = [];
+    for (let i = 0; i &lt; length; i++) {
+        result[i] = value;
+    }
+    return result;
+}
+
+createArray4(6, '666');
+</code></pre></div><p><strong>使用泛型</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// 有关联的地方都改成 &lt;T&gt;
+function createArray&lt;T&gt;(length: number, value: T): Array&lt;T&gt; {
+    let result: T[] = [];
+    for (let i = 0; i &lt; length; i++) {
+        result[i] = value;
+    }
+    return result;
+}
+
+// 使用的时候再指定类型
+let result = createArray&lt;string&gt;(3, 'x');
+
+// 也可以不指定类型，TS 会自动类型推导
+let result2 = createArray(3, 'x');
+console.log(result)
+</code></pre></div><h2 id="_17-什么是类型谓词"><a href="#_17-什么是类型谓词" class="header-anchor">#</a> 17. 什么是类型谓词</h2> <ul><li>类型保护函数：<em>要自定义一个类型保护</em>，只需要简单地为<strong>这个类型保护定义一个函数</strong>即可，这个函数的返回值是一个类型谓词</li> <li>类型谓词的语法为 **parameterName is Type **这种形式，其中 parameterName 必须是当前函数签名里的一个参数名</li></ul> <div class="language- extra-class"><pre class="language-text"><code>interface Bird {
+    fly()
+    layEggs()
+}
+interface Fish {
+    swim()
+    layEggs()
+}
+
+function getSmallPet():Fish | Bird{
+    return ;
+}
+let pet = getSmallPet();
+
+pet.layEggs();
+// 当使用联合类型时，如果不用类型断言，默认只会从中获取共有的部分
+(pet as Fish).swim();
+pet.swim();
+
+</code></pre></div><p><img src="/assets/img/2.e2d8c971.jpg" alt="TS2399"></p> <div class="language- extra-class"><pre class="language-text"><code>interface Bird {
+    fly()
+    layEggs()
+}
+interface Fish {
+    swim()
+    layEggs()
+}
+
+function getSmallPet():Fish | Bird{
+    return ;
+}
+let pet = getSmallPet();
+
+// 使用类型谓词 
+function isFish(pet:Fish | Bird):pet is Fish {
+    return (pet as Fish).swim !== undefined;
+}
+
+if(isFish(pet)){
+    pet.swim();
+}else{
+    pet.fly();
+}
+</code></pre></div><p><img src="/assets/img/3.42543986.jpg" alt="TS2399-2"></p> <h2 id="_18-可选链运算符的使用"><a href="#_18-可选链运算符的使用" class="header-anchor">#</a> 18. 可选链运算符的使用</h2> <ul><li><p><strong>可选链</strong>运算符是一种先检查属性是否存在，再尝试访问该属性的运算符，其符号为 ?.</p></li> <li><p>如果运算符左侧的操作数 ?. 计算为 undefined 或 null，则表达式求值为 undefined 。否则，正常触发目标属性访问、方法或函数调用。</p></li> <li><p>可选链运算符处于 <strong>stage3 阶段</strong>，使用 @babel/plugin-proposal-optional-chaining 插件可以提前使用，<strong>TS 3.7版本正式支持使用</strong>，以前的版本会报错</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>a?.b;
+// 相当于 a == null ? undefined : a.b;
+// 如果 a 是 null/undefined，那么返回 undefined，否则返回 a.b 的值.
+
+a?.[x];
+// 相当于 a == null ? undefined : a[x];
+// 如果 a 是 null/undefined，那么返回 undefined，否则返回 a[x] 的值
+
+a?.b();
+// 相当于a == null ? undefined : a.b();
+// 如果 a 是 null/undefined，那么返回 undefined
+// 如果 a.b 不是函数的话，会抛类型错误异常，否则计算 a.b() 的结果
+</code></pre></div><h2 id="_19-非空断言符的使用"><a href="#_19-非空断言符的使用" class="header-anchor">#</a> 19. 非空断言符的使用</h2> <p><strong>TS 3.7版本正式支持使用</strong></p> <div class="language- extra-class"><pre class="language-text"><code>let root: any = document.getElementById('root');
+root.style.color = 'red';
+
+let root2: (HTMLElement | null) = document.getElementById('root');
+// 非空断言操作符--&gt; 这样写只是为了骗过编译器，防止编译的时候报错，打包后的代码可能还是会报错
+root2!.style.color = 'red';
+</code></pre></div><h2 id="_20-空值合并运算符的使用"><a href="#_20-空值合并运算符的使用" class="header-anchor">#</a> 20. 空值合并运算符的使用</h2> <ul><li><p><strong>TS 3.7版本正式支持使用</strong></p></li> <li><p><strong><code>||</code> 运算符的缺点：</strong> 当左侧表达式的结果是数字 0 或空字符串时，会被视为 false。</p></li> <li><p><strong>空值合并运算符：<strong>只有左侧表达式结果为<code>null</code> 或 <code>undefined</code>时，才会返回右侧表达式的结果
+通过这种方式可以</strong>明确地区分</strong><code>undefined、null</code> 与 <code>false</code> 的值</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>const data = {
+    str:'',
+    // num:0,
+    flag:false,
+    // flag: null,
+};
+
+// data.str 为 &quot;&quot; 时
+let str1 = data.str || '空' // '空'
+// data.num 为 0 时
+let num1 =  data.num || 666 // 666
+// data.flag 为 false 时
+let status1 =  data.flag || true  // true
+
+
+// data.str 为 &quot;&quot; 时，可以通过。仅在 str 为 undefined 或者 null 时，不可以通过
+let st2r = data.str ?? '空';
+// data.num 为 0 时，可以通过。仅在 num 为 undefined 或者 null 时，不可以通过
+let num2 = data.num ?? 666;
+// data.flag 为 false 时，可以通过。仅在 flag 为 undefined 或者 null 时，不可以通过
+let status2 = data.flag ?? true;
+
+console.log('str=&gt;', str2);
+console.log('num=&gt;', num2);
+console.log('status=&gt;', status2);
+</code></pre></div><h2 id="_21-typeof-class-和直接用-class-作为类型有什么区别"><a href="#_21-typeof-class-和直接用-class-作为类型有什么区别" class="header-anchor">#</a> 21. typeof class 和直接用 class 作为类型有什么区别</h2> <div class="language- extra-class"><pre class="language-text"><code>class Greeter {
+    static message = 'hello';
+
+    greet(){
+        return Greeter.message;
+    }
+}
+
+// 获取的是实例的类型，该类型可以获取实例对象上的属性/方法
+let greeter1:Greeter = new Greeter(); // 实例
+console.log(greeter1.greet());// 'hello'
+
+
+// 获取的是类的类型，该类型可以获取类上面的静态属性/方法
+let greeterTwo:typeof Greeter = Greeter; // 类
+greeterTwo.message = 'hey';
+
+let greeter2:Greeter = new greeterTwo(); // 实例
+console.log(greeter2.greet());// 'hey'
+
+</code></pre></div><h2 id="_22-ts-中的-never-类型具体有什么用"><a href="#_22-ts-中的-never-类型具体有什么用" class="header-anchor">#</a> 22. TS 中的 never 类型具体有什么用</h2> <p><strong>返回never的函数必须存在无法达到的终点”，既然无法到达终点，返回这个never的类型</strong></p> <div class="language- extra-class"><pre class="language-text"><code>interface Foo {
+  type: 'foo'
+}
+
+interface Bar {
+  type: 'bar'
+}
+
+type All = Foo | Bar
+</code></pre></div><p><strong>在 switch 当中判断 type，TS 是可以收窄类型的 (discriminated union)：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>function handleValue(val: All) {
+  switch (val.type) {
+    case 'foo':
+      // 这里 val 被收窄为 Foo
+      break
+    case 'bar':
+      // val 在这里是 Bar
+      break
+    default:
+      // val 在这里是 never
+      const exhaustiveCheck: never = val
+      break
+  }
+}
+</code></pre></div><h2 id="_23-当使用联合类型时，在类型未确定的情况下，默认只会从中获取共有的部分"><a href="#_23-当使用联合类型时，在类型未确定的情况下，默认只会从中获取共有的部分" class="header-anchor">#</a> 23. 当使用联合类型时，在类型未确定的情况下，默认只会从中获取共有的部分</h2> <p>参考17点
+<strong>使用类型断言</strong></p> <div class="language- extra-class"><pre class="language-text"><code>interface Bird {
+    fly()
+    layEggs()
+}
+interface Fish {
+    swim()
+    layEggs()
+}
+
+function getSmallPet():Fish | Bird{
+    return ;
+}
+
+let pet = getSmallPet();
+pet.layEggs();
+// 当使用联合类型时，在类型未确定的情况下，默认只会从中获取共有的部分
+// 需要使用类型断言
+(pet as Fish).swim();
+pet.swim();
+</code></pre></div><ul><li>可区分的联合类型（借助 never ）</li></ul> <div class="language- extra-class"><pre class="language-text"><code>enum KindType{
+    square = 'square',
+    rectangle = 'rectangle',
+    circle = 'circle',
+}
+
+interface Square {
+    kind: KindType.square;
+    size: number;
+}
+
+interface Rectangle {
+    kind: KindType.rectangle;
+    width: number;
+    height: number;
+}
+
+interface Circle {
+    kind: KindType.circle;
+    radius: number;
+}
+
+type Shape = Square | Rectangle | Circle;
+
+function area1(s: Shape) {
+    // 如果联合类型中的多个类型，拥有共有的属性，那么就可以凭借这个属性来创建不同的类型保护区块
+    // 这里 kind 是共有的属性
+    switch (s.kind) {
+        case KindType.square:
+            return s.size * s.size;
+        case KindType.rectangle:
+            return s.height * s.width;
+        default:
+            return;
+    }
+}
+// 以上代码有隐患，如果后续新增类型时，TS 检查以上代码时，虽然缺失后续新增的类型，但不会报错
+console.log(area1({kind: KindType.circle, radius: 1}));
+
+function area2(s: Shape) {
+    switch (s.kind) {
+        case KindType.square:
+            return s.size * s.size;
+        case KindType.rectangle:
+            return s.height * s.width;
+        case KindType.circle:
+            return Math.PI * s.radius ** 2;
+        default:
+            // 检查 s 是否是 never 类型
+            // 如果是 never 类型，那么上面的分支语句都被覆盖了，就永远都不会走到当前分支
+            // 如果不是 never 类型。就说明前面的分支语句有遗漏，需要补上
+            return ((e: never) =&gt; {
+                throw new Error(e)
+            })(s)
+    }
+}
+
+console.log(area2({kind: KindType.circle, radius: 1}));
+</code></pre></div><h2 id="_25-在全局环境中，不能给某些变量声明类型"><a href="#_25-在全局环境中，不能给某些变量声明类型" class="header-anchor">#</a> 25. 在全局环境中，不能给某些变量声明类型</h2> <div class="language- extra-class"><pre class="language-text"><code>let name: string;
+
+// 加了 export 后就不会报错
+// export {} 
+</code></pre></div><p><img src="data:image/jpeg;base64,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" alt="TS2451"></p> <h2 id="_26-不必要的命名空间：命名空间和模块不要混在一起使用，不要在一个模块中使用命名空间，命名空间要在一个全局的环境中使用"><a href="#_26-不必要的命名空间：命名空间和模块不要混在一起使用，不要在一个模块中使用命名空间，命名空间要在一个全局的环境中使用" class="header-anchor">#</a> 26. 不必要的命名空间：命名空间和模块不要混在一起使用，不要在一个模块中使用命名空间，命名空间要在一个全局的环境中使用</h2> <p>你可能会写出下面这样的代码：<strong>将命名空间导出</strong></p> <ul><li><strong>shapes.ts</strong></li></ul> <div class="language- extra-class"><pre class="language-text"><code>export namespace Shapes {
+    export class Triangle { /* ... */ }
+    export class Square { /* ... */ }
+}
+</code></pre></div><ul><li><strong>shapeConsumer.ts</strong></li></ul> <div class="language- extra-class"><pre class="language-text"><code>import * as shapes from &quot;./shapes&quot;;
+let t = new shapes.Shapes.Triangle();
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">不应该在模块中使用命名空间或者说将命名空间导出</p> <p>使用命名空间是为了提供逻辑分组和避免命名冲突，<strong>模块文件本身已经是一个逻辑分组</strong>，并且它的名字是由导入这个模块的代码指定，<strong>所以没有必要为导出的对象</strong>增加额外的模块层。</p></div> <p><strong>改进方案</strong></p> <ul><li><p>去除命名空间</p> <ul><li>shapes.ts</li></ul> <div class="language- extra-class"><pre class="language-text"><code>export class Triangle { /* ... */ }
+export class Square { /* ... */ }
+</code></pre></div><ul><li>shapeConsumer.ts</li></ul> <div class="language- extra-class"><pre class="language-text"><code>import * as shapes from &quot;./shapes&quot;;
+let t = new shapes.Triangle();
+</code></pre></div></li> <li><p>一个模块就是一个命名空间</p> <ul><li>shapes.ts</li></ul> <div class="language- extra-class"><pre class="language-text"><code>namespace Shapes {
+    export class Triangle { /* ... */ }
+    export class Square { /* ... */ }
+}
+</code></pre></div><ul><li>shapeConsumer.ts</li></ul> <div class="language- extra-class"><pre class="language-text"><code>let t = new Shapes.Triangle();
+</code></pre></div></li></ul> <h2 id="_27-扩展全局变量的类型"><a href="#_27-扩展全局变量的类型" class="header-anchor">#</a> 27. 扩展全局变量的类型</h2> <div class="language- extra-class"><pre class="language-text"><code>interface String {
+    // 这里是扩展，不是覆盖，所以放心使用
+    double(): string;
+}
+
+String.prototype.double = function () {
+    return this + '+' + this;
+};
+console.log('hello'.double());
+
+// 如果加了这个，就会报错
+// export {}
+interface Window {
+    myname: string
+}
+
+// 注意：这里的 window 要小写
+console.log(window);
+
+// 如果加了这个，当前模块就会变成局部的
+// 然后定义的类型 Window 就是局部的变量，不再是一个全局变量
+// 所以上面给 Window 扩展属性/方法就失效了
+export {}
+</code></pre></div><h2 id="_28-export-xxx-和-import-xxx-require-xxx"><a href="#_28-export-xxx-和-import-xxx-require-xxx" class="header-anchor">#</a> 28. export = xxx 和 import xxx = require('xxx')</h2> <ul><li><p>CommonJS 和 AMD 的环境里都有一个 exports 变量，这个变量包含了一个模块的所有导出内容。CommonJS 和 AMD 的 exports 都可以被赋值为一个对象, 这种情况下其作用就类似于 es6 语法里的默认导出，即 export default 语法了。虽然作用相似，但是 export default 语法并不能兼容 CommonJS和 AMD 的 exports</p></li> <li><p>如果一个模块遵循 ES6 模块规范，当默认导出内容时（export default xxx），ES6 模块系统会自动给当前模块的顶层对象加上一个 default 属性，指向导出的内容。当一个 ES6 模块引入该模块时（import moduleName from 'xxx'），ES6 模块系统<strong>默认</strong>会自动去该模块中的顶层对象上查找 <strong>default 属性并将值赋值给 moduleName</strong>。而如果一个非 ES6 规范的模块引入 ES6 模块直接使用时（var moduleName = require('xxx')），就会报错，可以通过 <strong>moduleName.default</strong> 来使用。</p></li> <li><p>为了支持 CommonJS 和 AMD 的 exports，TypeScript 提供了 export = 语法。export = 语法定义一个模块的导出对象。 这里的对象一词指的是类，接口，命名空间，函数或枚举。若使用 export = 导出一个模块，则必须使用 TypeScript 的特定语法 import module = require(&quot;module&quot;) 来导入此模块</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>exports === module.exports // 即：这两个变量共用一个内存地址
+
+// 整体导出
+module.exports = {}
+
+// 导出多个变量
+exports.c = 3;
+exports.d = 4;
+</code></pre></div><ul><li>一个 es6 模块默认导出，被一个 node 模块导入使用</li></ul> <div class="language- extra-class"><pre class="language-text"><code>// 兼容性写法只在 TS 中有效 ！！！！！！
+// 兼容性写法只在 TS 中有效 ！！！！！！
+// 兼容性写法只在 TS 中有效 ！！！！！！
+
+// a.es6.ts
+// 这里只能导出一个
+export = function () {
+    console.log(&quot;I'm default&quot;)
+}
+
+// b.node.ts
+import fn = require('./a.es6.ts');
+fn();
+</code></pre></div><h2 id="_29-如何在-node-中使用-ts"><a href="#_29-如何在-node-中使用-ts" class="header-anchor">#</a> 29. 如何在 Node 中使用 TS</h2> <ul><li>安装<strong>相关声明文件</strong>，如：@types/node；</li> <li>因为 node 模块遵循 CommonJS 规范，一些 node 模块（如：express）的声明文件，用 export = xxx 导出模块声明。TS 进行类型推导时，会无法推断导致报错。所以需要使用 import xxx from &quot;xxx&quot; 或者 import xxx = &quot;xxx&quot;导入 node 模块；</li></ul> <h2 id="_30-使用-as-替代尖括号表示类型断言"><a href="#_30-使用-as-替代尖括号表示类型断言" class="header-anchor">#</a> 30. 使用 as 替代尖括号表示类型断言</h2> <ul><li>在 TS 可以使用尖括号来表示类型断言，但是在结合 JSX 的语法时将带来解析上的困难。因此，<strong>TS 在 .tsx 文件里禁用了使用尖括号的类型断言</strong></li> <li>as 操作符在 .ts 文件和 .tsx 文件里都可用</li></ul> <div class="language- extra-class"><pre class="language-text"><code>interface Person {
+    name: string;
+    age: number
+}
+
+let p1 = {age: 18} as Person;
+console.log(p1.name);
+
+// 这种写法在 .tsx 文件中会报错
+let p2 = &lt;Person&gt;{age: 18};
+console.log(p2.name);
+</code></pre></div><h2 id="_31-如何对-js-文件进行类型检查"><a href="#_31-如何对-js-文件进行类型检查" class="header-anchor">#</a> 31. 如何对 JS 文件进行类型检查</h2> <ul><li><p>在 tsconfig.json 中可以设置 <code>checkJs:true</code>，对 .js 文件进行类型检查和错误提示</p></li> <li><p>通过在 <code>.js</code> 文件顶部添加 // <code>@ts-nocheck</code>注释，让编译器忽略当前文件的类型检查</p></li> <li><p>相反，你可以通过不设置 <code>checkJs:true</code> 并在 <code>.js</code> 文件顶部添加一个 // <code>@ts-check</code> 注释，让编译器检查当前文件</p></li> <li><p>也可以在 <code>tsconfig.json</code> 中配置 <code>include/exclude</code>，选择/排除对某些文件进行类型检查</p></li> <li><p>你还可以使用 // <code>@ts-ignore</code> 来忽略本行的错误</p></li> <li><p>在 <code>.js</code> 文件里，类型可以和在 <code>.ts</code> 文件里一样被推断出来。当类型不能被推断时，可以通过 JSDoc 来指定类型</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>/** @type {number} */
+var x;
+
+x = 0;      // OK
+x = false;  // Error: boolean is not assignable to number
+</code></pre></div><ul><li>TS 中支持的 JSDoc 注解</li></ul> <h2 id="_32-不要使用如下类型-number，string，boolean、object，应该使用类型number、string、boolean、object"><a href="#_32-不要使用如下类型-number，string，boolean、object，应该使用类型number、string、boolean、object" class="header-anchor">#</a> 32. 不要使用如下类型 Number，String，Boolean、Object，应该使用类型number、string、boolean、object</h2> <div class="language- extra-class"><pre class="language-text"><code>/* 错误 */
+function reverse(s: String): String;
+
+/* OK */
+function reverse(s: string): string;
+</code></pre></div><h2 id="_33-如何在解构一个函数-function-fn-x-number-…-时，即能给变量声明类型，又能给变量设置默认值"><a href="#_33-如何在解构一个函数-function-fn-x-number-…-时，即能给变量声明类型，又能给变量设置默认值" class="header-anchor">#</a> 33. 如何在解构一个函数 <code>function fn({ x: number }) { /* … */ }</code> 时，即能给变量声明类型，又能给变量设置默认值</h2> <div class="language- extra-class"><pre class="language-text"><code>// error
+function f({ x: number }) {
+    console.log(x);
+}
+
+// ok
+function f({x}: { x: number } = {x: 0}) {
+    console.log(x);
+}
+</code></pre></div><h2 id="_34-pick摘取返回的结果是一个对象（或者说新的接口），里面包含摘取到的属性"><a href="#_34-pick摘取返回的结果是一个对象（或者说新的接口），里面包含摘取到的属性" class="header-anchor">#</a> 34. <code>Pick</code>摘取返回的结果是一个对象（或者说新的接口），里面包含摘取到的属性</h2> <div class="language- extra-class"><pre class="language-text"><code>interface Test {
+    arr: string[]
+}
+// pick 摘取返回的结果 =&gt; {arr: string[]}
+let aaa: Pick&lt;Test, 'arr'&gt; = {arr: ['1']};
+</code></pre></div><h2 id="_35-无法使用-for-of-遍历-map-数据"><a href="#_35-无法使用-for-of-遍历-map-数据" class="header-anchor">#</a> 35. 无法使用 <code>for</code> of 遍历 <code>map</code> 数据</h2> <div class="language- extra-class"><pre class="language-text"><code>const map = new Map([
+  ['F', 'no'],
+  ['T',  'yes'],
+]);
+for (let key of map.keys()) {
+  console.log(key);
+}
+
+// 用 forEach 也可以遍历
+map.forEach((value,key) =&gt; {
+ console.log(key);
+});
+</code></pre></div><ul><li>设置 <code>target=es5</code> 的时候，会报错误，并且无法执行 <code>for</code> 语句</li></ul> <p>TS2569: Type 'Map' is not an array type or a string type. Use compiler. option '- downlevellteration' to allow iterating of iterators.</p> <ul><li>解决方案
+<strong>配置 dom.iterable 和 downlevelIteration 就可以正常运行</strong></li></ul> <div class="language- extra-class"><pre class="language-text"><code>{
+    tsconfig.json
+    /*当目标是ES5或ES3的时候提供对for-of、扩展运算符和解构赋值中对于迭代器的完整支持*/
+    &quot;downlevelIteration&quot;: true,
+  &quot;lib&quot;: [
+    &quot;dom&quot;,
+    &quot;es5&quot;,
+    &quot;es6&quot;,
+    &quot;es7&quot;,
+    &quot;dom.iterable&quot;
+  ]
+}
+</code></pre></div><p><strong>设置 target=es6 的时候，就能正常执行</strong></p> <ul><li>原因
+注意：如果未指定--lib，则会注入默认的库列表。注入的默认库是
+For --target ES5: DOM,ES5,ScriptHost
+For --target ES6: DOM,ES6,DOM.Iterable,ScriptHost</li></ul> <h2 id="_36-有时候我们需要复用一个类型，但是又不需要此类型内的全部属性，因此需要剔除某些属性"><a href="#_36-有时候我们需要复用一个类型，但是又不需要此类型内的全部属性，因此需要剔除某些属性" class="header-anchor">#</a> 36. 有时候我们需要复用一个类型，但是又不需要此类型内的全部属性，因此需要剔除某些属性</h2> <p>这个方法在 <code>React</code> 中经常用到，当父组件通过 <code>props</code> 向下传递数据的时候，通常需要复用父组件的 <code>props</code> 类型，但是又需要<strong>剔除一些无用的类型</strong></p> <div class="language- extra-class"><pre class="language-text"><code>interface User {
+    username: string
+    id: number
+    token: string
+    avatar: string
+    role: string
+}
+type UserWithoutToken = Omit&lt;User, 'token'&gt;
+</code></pre></div><h2 id="_37-为什么在-exclude-列表里的模块还会被编译器使用"><a href="#_37-为什么在-exclude-列表里的模块还会被编译器使用" class="header-anchor">#</a> 37. 为什么在 exclude 列表里的模块还会被编译器使用</h2> <p>有时候是被 <code>tsconfig.json</code> 自动加入的，如果编译器识别出一个文件是模块导入目标，<strong>它就会加到编译列表里</strong>，<strong>不管它是否被排除了</strong>。因此，要从编译列表中排除一个文件，你需要在排除它的同时，还要排除所有对它进行 <code>import</code> 或使用了 ///指令的文件</p> <h2 id="_38-使用-import-xxx-namespace-xxx-创建命名空间别名"><a href="#_38-使用-import-xxx-namespace-xxx-创建命名空间别名" class="header-anchor">#</a> 38. 使用 import xxx= namespace.xxx 创建命名空间别名</h2> <p>注意，这里并没有使用 <code>require</code> 关键字，而是直接使用导入符号的限定名赋值。 这与使用 <code>var</code> 相似，但它还适用于类型和导入的具有命名空间含义的符号。 重要的是，对于值来讲，<code>import</code> 会生成与原始符号不同的引用，所以改变别名的 <code>var</code> 值并不会影响原始变量的值。</p> <div class="language- extra-class"><pre class="language-text"><code>// a.ts
+namespace Shape {
+    const pi = Math.PI;
+
+    export function cricle(r: number) {
+        return pi * r ** 2
+    }
+}
+
+// b.ts
+// 直接使用
+// console.log(Shape.cricle(2));
+
+// 或者通过以下方式来使用该命名空间中的变量/函数/类
+// import newName = a.b.c.d 用来给常用的、层级较深的对象起一个短的名字
+// 这里的 import 的作用是创建一个别名，为任意标识符创建别名，包括导入的模块中的对象
+// 不要与用来加载模块的 import x from &quot;module-name&quot; 语法弄混了
+import cricle = Shape.cricle;
+console.log(cricle(2));  
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/learning/javascript/expression.html" class="prev">
+        什么是表达式语句
+      </a></span> <span class="next"><a href="/learning/typescript/ts-collection-config.html">
+        【好文】耗时一年整理，全网最全的TypeScript踩坑集锦 (tsconfig.json 常用配置项注释)
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.d853549c.js" defer></script><script src="/assets/js/2.50fe7aab.js" defer></script><script src="/assets/js/4.2ff81985.js" defer></script>
+  </body>
+</html>
