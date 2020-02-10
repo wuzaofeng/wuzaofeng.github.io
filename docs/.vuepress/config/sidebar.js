@@ -20,7 +20,20 @@ module.exports = [
       children: [{
         title: '什么是表达式语句',
         path: '/learning/javascript/expression'
-      }]  
+      }]
+    }, {
+      title: 'typescript',
+      collapsable: false,
+      children: [{
+        title: '【好文】耗时一年整理，全网最全的TypeScript踩坑集锦 (纯 TS 问题)',
+        path: '/learning/typescript/ts-collection-question'
+      }, {
+        title: '【好文】耗时一年整理，全网最全的TypeScript踩坑集锦 (tsconfig.json 常用配置项注释)',
+        path: '/learning/typescript/ts-collection-config'
+      }, {
+        title: '【好文】耗时一年整理，全网最全的TypeScript踩坑集锦（React + TS 项目问题）',
+        path: '/learning/typescript/ts-collection-react'
+      }]
     }]
   }, {
     title: '读书笔记',
