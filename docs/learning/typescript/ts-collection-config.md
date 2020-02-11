@@ -321,3 +321,7 @@ import ReactDOM from 'react-dom';
 
 **设置 "allowJs": false ：在 .ts / .tsx 文件中引入 .js / .jsx 文件时，就不会有相关提示**
 ![q1](./q1.jpg)
+
+:::tip 涉及链接
+[typescript中文版](https://www.tslang.cn/)
+:::

@@ -1072,6 +1072,7 @@ For --target ES5: DOM,ES5,ScriptHost
 For --target ES6: DOM,ES6,DOM.Iterable,ScriptHost
 
 ## 36. 有时候我们需要复用一个类型，但是又不需要此类型内的全部属性，因此需要剔除某些属性
+
 这个方法在 `React` 中经常用到，当父组件通过 `props` 向下传递数据的时候，通常需要复用父组件的 `props` 类型，但是又需要**剔除一些无用的类型**
 
 ```
@@ -1084,10 +1085,13 @@ interface User {
 }
 type UserWithoutToken = Omit<User, 'token'>
 ```
+
 ## 37. 为什么在 exclude 列表里的模块还会被编译器使用
+
 有时候是被 `tsconfig.json` 自动加入的，如果编译器识别出一个文件是模块导入目标，**它就会加到编译列表里**，**不管它是否被排除了**。因此，要从编译列表中排除一个文件，你需要在排除它的同时，还要排除所有对它进行 `import` 或使用了 ///指令的文件
 
 ## 38. 使用 import xxx= namespace.xxx 创建命名空间别名
+
 注意，这里并没有使用 `require` 关键字，而是直接使用导入符号的限定名赋值。 这与使用 `var` 相似，但它还适用于类型和导入的具有命名空间含义的符号。 重要的是，对于值来讲，`import` 会生成与原始符号不同的引用，所以改变别名的 `var` 值并不会影响原始变量的值。
 ```
 // a.ts
@@ -1110,3 +1114,7 @@ namespace Shape {
 import cricle = Shape.cricle;
 console.log(cricle(2));  
 ```
+
+:::tip 涉及链接
+[typescript中文版](https://www.tslang.cn/)
+:::

@@ -34,6 +34,13 @@ module.exports = [
         title: '【好文】耗时一年整理，全网最全的TypeScript踩坑集锦（React + TS 项目问题）',
         path: '/learning/typescript/ts-collection-react'
       }]
+    }, {
+      title: '前端工程化',
+      collapsable: false,
+      children: [{
+        title: '【好文】企业级 Webpack 分享总结',
+        path: '/learning/project/webpack'
+      }]
     }]
   }, {
     title: '读书笔记',

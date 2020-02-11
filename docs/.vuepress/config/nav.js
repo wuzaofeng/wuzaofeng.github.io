@@ -1,6 +1,9 @@
 module.exports = [{
-  text: '目录',
+  text: '每日一鲜',
   link: '/'
+}, {
+  text: '学习博客',
+  link: '/blog'
 }, {
   text: '掘金',
   link: 'https://juejin.im/timeline'

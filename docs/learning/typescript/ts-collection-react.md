@@ -316,3 +316,7 @@ export default HelloHOC(HelloClass);
 
 按住 Ctrl ，然后鼠标移动到事件名上就能获取当前事件处理函数的参数类型
 ![r4](./r4.jpg)
+
+:::tip 涉及链接
+[typescript中文版](https://www.tslang.cn/)
+:::
