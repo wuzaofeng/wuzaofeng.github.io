@@ -52,12 +52,20 @@ module.exports = [
   }, {
     title: '工作笔记',
     collapsable: false,
-    sidebarDepth: 3,
+    sidebarDepth: 2,
     children: [{
       title: '微信小程序内嵌webview问题',
       path: '/working/wechat/webview'
     }, {
       title: 'verdaccio 指南',
       path: '/working/verdaccio'
+    }]
+  }, {
+    title: '面试笔记',
+    collapsable: false,
+    sidebarDepth: 1,
+    children: [{
+      title: '面试题',
+      path: '/job/jobing1'
     }]
   }]
