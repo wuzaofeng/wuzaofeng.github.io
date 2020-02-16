@@ -13,7 +13,11 @@ module.exports = [
       path: '/learning/html/'
     }, {
       title: 'CSS',
-      path: '/learning/css/'
+      collapsable: false,
+      children: [{
+        title: '网厅首页开发问题笔记',
+        path: '/learning/css/home-bug/'
+      }]
     }, {
       title: 'javascript',
       collapsable: false,
