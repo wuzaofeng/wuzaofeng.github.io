@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>【好文】从JavaScript中看设计模式(总结) | 前端知识体库</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="icon" href="/img/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.b71a9117.css" as="style"><link rel="preload" href="/assets/js/app.b02f1766.js" as="script"><link rel="preload" href="/assets/js/2.abdc0e84.js" as="script"><link rel="preload" href="/assets/js/17.913d1d04.js" as="script"><link rel="prefetch" href="/assets/js/10.6b6939c6.js"><link rel="prefetch" href="/assets/js/11.e7341b4f.js"><link rel="prefetch" href="/assets/js/12.f9f2eab3.js"><link rel="prefetch" href="/assets/js/13.64f818e7.js"><link rel="prefetch" href="/assets/js/14.2d644275.js"><link rel="prefetch" href="/assets/js/15.00c0c431.js"><link rel="prefetch" href="/assets/js/16.80dd5a47.js"><link rel="prefetch" href="/assets/js/18.31c09b33.js"><link rel="prefetch" href="/assets/js/19.69fa8185.js"><link rel="prefetch" href="/assets/js/20.4e26171f.js"><link rel="prefetch" href="/assets/js/3.5f4f41d9.js"><link rel="prefetch" href="/assets/js/4.e12cb5a8.js"><link rel="prefetch" href="/assets/js/5.5f72966a.js"><link rel="prefetch" href="/assets/js/6.9be60413.js"><link rel="prefetch" href="/assets/js/7.f60af6cb.js"><link rel="prefetch" href="/assets/js/8.dc35c496.js"><link rel="prefetch" href="/assets/js/9.13b6b58b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b71a9117.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/logo.jpeg" alt="前端知识体库" class="logo"> <span class="site-name can-hide">前端知识体库</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  每日一鲜
+</a></div><div class="nav-item"><a href="/blog.html" class="nav-link">
+  学习博客
+</a></div><div class="nav-item"><a href="https://juejin.im/timeline" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://time.geekbang.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  极客时间
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.vuepress.cn/guide" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Vuepress
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/wuzaofeng" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_pc_3" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  疫情实时
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  每日一鲜
+</a></div><div class="nav-item"><a href="/blog.html" class="nav-link">
+  学习博客
+</a></div><div class="nav-item"><a href="https://juejin.im/timeline" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://time.geekbang.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  极客时间
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.vuepress.cn/guide" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Vuepress
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/wuzaofeng" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_pc_3" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  疫情实时
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/guide/" class="sidebar-link">自动化部署静态文档</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>学习笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learning/html/" class="sidebar-link">html</a></li><li><section class="sidebar-group is-sub-group depth-1"><p class="sidebar-heading"><span>CSS</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learning/css/home-bug/" class="sidebar-link">网厅首页开发问题笔记</a></li></ul></section></li><li><section class="sidebar-group is-sub-group depth-1"><p class="sidebar-heading open"><span>javascript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learning/javascript/expression.html" class="sidebar-link">什么是表达式语句</a></li><li><a href="/learning/javascript/design.html" class="active sidebar-link">【好文】从JavaScript中看设计模式(总结)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/learning/javascript/design.html#行为型模式" class="sidebar-link">行为型模式</a></li><li class="sidebar-sub-header"><a href="/learning/javascript/design.html#创建设计模式" class="sidebar-link">创建设计模式</a></li></ul></li></ul></section></li><li><section class="sidebar-group is-sub-group depth-1"><p class="sidebar-heading"><span>typescript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learning/typescript/ts-collection-question.html" class="sidebar-link">【好文】耗时一年整理，全网最全的TypeScript踩坑集锦 (纯 TS 问题)</a></li><li><a href="/learning/typescript/ts-collection-config.html" class="sidebar-link">【好文】耗时一年整理，全网最全的TypeScript踩坑集锦 (tsconfig.json 常用配置项注释)</a></li><li><a href="/learning/typescript/ts-collection-react.html" class="sidebar-link">【好文】耗时一年整理，全网最全的TypeScript踩坑集锦（React + TS 项目问题）</a></li></ul></section></li><li><section class="sidebar-group is-sub-group depth-1"><p class="sidebar-heading"><span>前端工程化</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learning/project/webpack.html" class="sidebar-link">【好文】企业级 Webpack 分享总结</a></li></ul></section></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>读书笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/readBook/HighPerformanceJS/" class="sidebar-link">高性能javascript</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>工作笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/working/wechat/webview.html" class="sidebar-link">微信小程序内嵌webview问题</a></li><li><a href="/working/verdaccio.html" class="sidebar-link">verdaccio 指南</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>面试笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/job/jobing1.html" class="sidebar-link">面试题</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="【好文】从javascript中看设计模式-总结"><a href="#【好文】从javascript中看设计模式-总结" class="header-anchor">#</a> 【好文】从JavaScript中看设计模式(总结)</h1> <p>::: tips 概念
+设计模式 (Design Pattern) 是一套被反复使用、多数人知晓的、经过分类的、代码设计经验的总结
+:::</p> <p>任何事情都有套路，<code>设计模式</code>就是写代码中常见的套路，有些写法我们日常都在使用，下面我们来介绍一下</p> <p><strong>创建设计模式</strong>：工厂，单例、建造者、原型</p> <p><strong>结构化设计模式</strong>：外观，适配器，代理，装饰器，享元，桥接，组合</p> <p><strong>行为型模式</strong>：策略、模板方法、观察者、迭代器、责任链、命令、备忘录、状态、访问者、终结者、解释器</p> <h2 id="行为型模式"><a href="#行为型模式" class="header-anchor">#</a> 行为型模式</h2> <h3 id="订阅-发布模式-观察者"><a href="#订阅-发布模式-观察者" class="header-anchor">#</a> 订阅/发布模式(观察者)</h3> <p>在这种模式中，并不是一个对象调用另一个对象的方法，而是一个对象<code>订阅</code>另一个对象</p> <p>特定活动并在状态改变后获得通知，订阅者因此也成为观察者，而被观察的对象成为发布者或主题。当发生了一个重要事件的时候<code>发布者</code>会通知（调用）所有<code>订阅者</code>并且可能经常以<code>事件对象</code>的形式传递消息。</p> <p><strong>自己实现一个简单的发布订阅设计模式</strong></p> <div class="language- extra-class"><pre class="language-text"><code>// 订阅/发布者模式
+class EventBus {
+  constructor () {
+    // 存储事件
+    this.tasks = {}
+  }
+
+  // 绑定事件
+  $on(eName, cb) {
+    // 判断传入是否是函数，如果是函数则在task添加属性
+    typeof cb === 'function' ? this.tasks[eName] || (this.tasks[eName] = []) :  this.Error(cb, 'is not a function')
+
+    // 避免重复绑定，如果不存在则将cb函数添加进tasks的属性中
+    this.tasks[eName].some(fn =&gt; fn == cb) ? true : this.tasks[eName].push(cb)
+  }
+
+  // 触发事件
+  $emit(eName, ...arg) {
+    let taskQueue;
+    // 获取事件列
+    this.tasks[eName] &amp;&amp; this.tasks[eName].length &gt; 0 ? (taskQueue = this.tasks[eName]) : this.Error(eName, 'is not defined or is a array of having empty callback')
+    // 遍历task事件，并且执行事件列
+    debugger
+    taskQueue.forEach(fn =&gt; fn(...arg))
+  }
+
+  // 触发一次
+  $once(eName, cb) {
+    let fn = (...arg) =&gt; {
+      // 删除订阅
+      this.$off(eName, fn)
+      cb(...arg)
+    }
+
+    typeof cb === 'function' &amp;&amp; this.$on(eName, fn)
+  }
+
+  // 卸载事件
+  $off(eName, cb) {
+    let taskQueue;
+    this.tasks[eName] &amp;&amp; this.tasks[eName].length &gt; 0
+      ? (taskQueue = this.tasks[eName])
+      : this.Error(eName, &quot;is not exist&quot;);
+    if (typeof cb === &quot;function&quot;) {
+      // 单独删除事件
+      let index = taskQueue.findIndex(v =&gt; (v == cb));
+      index != -1 &amp;&amp;
+        taskQueue.splice(
+          taskQueue.findIndex(v =&gt; (v == cb)),
+          1
+        );
+    }
+    // 删除事件列
+    if (typeof cb === &quot;undefined&quot;) {
+      taskQueue.length = 0;
+    }
+  }
+  // 异常处理
+  Error(node, errorMsg) {
+    throw Error(`${node} ${errorMsg}`);
+  }
+}
+
+// 首先定义一个事件池
+const EventSinks = {
+  add(x, y) {
+    console.log(&quot;总和: &quot; + (x + y));
+  },
+  multip(x, y) {
+    console.log(&quot;乘积: &quot; + x * y);
+  },
+  onceEvent() {
+    console.log(&quot;我执行一次后就自动卸载&quot;);
+  }
+};
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>// 实例化对象
+let bus = new EventBus();
+bus.$on(&quot;operator&quot;, EventSinks.add); // 监听operator事件, 增加一个EventSinks.add
+bus.$on(&quot;operator&quot;, EventSinks.add); // 当事件名和回调函数相同时，跳过，避免重复绑定
+bus.$on(&quot;operator&quot;, EventSinks.multip); // 给operator事件增加一个EventSinks.multip回调函数
+bus.$once(&quot;onceEvent&quot;, EventSinks.onceEvent); // 触发一次后卸载
+console.log(bus.tasks); // { operator: [ [Function: add], [Function: multip] ], onceEvent: [ [Function: fn] ]}
+
+bus.$emit(&quot;operator&quot;, 3, 5); // 总和:8  乘积:15
+bus.$emit(&quot;onceEvent&quot;); // 我就执行一次
+console.log(bus.tasks); // { operator: [ [Function: add], [Function: multip] ], onceEvent: [] }
+bus.$off(&quot;operator&quot;, EventSinks.add); // 卸载掉operator事件中的EventSinks.add函数体
+console.log(bus.tasks); // { operator: [ [Function: multip] ], onceEvent: [] }
+bus.$off(&quot;operator&quot;); // 卸载operator事件的所有回调函数
+console.log(bus.tasks); // { operator: [], onceEvent: [] }
+bus.$emit(&quot;onceEvent&quot;); // onceEvent is not defined or is a array of having empty callback
+
+</code></pre></div><p>::: tips 总结
+EventBus 就是所谓的发布者的构造函数，当中的bus就是发布者的一个实例</p> <p>我们调用$on, $once时，就是自定义订阅事件列</p> <p>但我们调用$emit时，就是通知（发布）（执行）对应事件列</p> <p>那么bus就是发布者</p> <p>这个就是简单观察者模式，更高级的就是订阅发布者模式</p> <p><a href="https://zhuanlan.zhihu.com/p/51357583" target="_blank" rel="noopener noreferrer">观察者模式和订阅发布者模式是一样么？<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>
+:::</p> <h2 id="创建设计模式"><a href="#创建设计模式" class="header-anchor">#</a> 创建设计模式</h2> <h3 id="单例模式"><a href="#单例模式" class="header-anchor">#</a> 单例模式</h3> <p>::: tips 定义
+单例模式的定义：<code>保证一个类仅有一个实例</code>，并提供一个访问它的全局访问点。实现的方法为<code>先判断实例存在与否</code>，如果存在则直接返回，否则就创建实例再返回，这就<code>保证了一个类只实例化一次</code>
+:::</p> <div class="language- extra-class"><pre class="language-text"><code>class Singleton {
+  constructor() {}
+}
+
+Singleton.getInstance = (function() {
+  let instance
+  return function() {
+    // 判断是否有存在的实例，如果没有就创建实例，否则就返回存在的实例
+    if (!instance) {
+      instance = new Singleton()
+    }
+    // 闭包的作用导致instance存在于内存中
+    return instance
+  }
+})()
+
+let s1 = Singleton.getInstance()
+let s2 = Singleton.getInstance()
+console.log(s1 === s2) // true
+
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/learning/javascript/expression.html" class="prev">
+        什么是表达式语句
+      </a></span> <span class="next"><a href="/learning/typescript/ts-collection-question.html">
+        【好文】耗时一年整理，全网最全的TypeScript踩坑集锦 (纯 TS 问题)
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.b02f1766.js" defer></script><script src="/assets/js/2.abdc0e84.js" defer></script><script src="/assets/js/17.913d1d04.js" defer></script>
+  </body>
+</html>
