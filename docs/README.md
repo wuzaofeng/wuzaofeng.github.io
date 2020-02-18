@@ -1,5 +1,10 @@
 # 每日一鲜
 
+## 2020-02-18
+
+* [【好文】前端开发-领域驱动设计] (https://juejin.im/post/5b1c71ad6fb9a01e5918398d?utm_source=wechat)
+* [【好文】从JavaScript中看设计模式(总结)]（https://juejin.im/post/5e4a87776fb9a07ca714ae54）
+
 ## 2020-02-11
 
 * [【好文】企业级 Webpack 分享总结(内附完整ppt)](/learning/project/webpack)
