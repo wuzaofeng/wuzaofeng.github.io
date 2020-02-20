@@ -25,8 +25,17 @@ module.exports = [
         title: '什么是表达式语句',
         path: '/learning/javascript/expression'
       }, {
-        title: '【好文】从JavaScript中看设计模式(总结)',
-        path: '/learning/javascript/design'
+        title: '设计模式(创建设计模式)',
+        path: '/learning/javascript/design/create'
+      }, {
+        title: '设计模式(结构化设计模式)',
+        path: '/learning/javascript/design/struct'
+      }, {
+        title: '设计模式(行为型设计模式)',
+        path: '/learning/javascript/design/behaviour'
+      }, {
+        title: '推荐设计模式书籍',
+        path: '/learning/javascript/design/book'
       }]
     }, {
       title: 'typescript',
