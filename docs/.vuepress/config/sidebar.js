@@ -17,6 +17,9 @@ module.exports = [
       children: [{
         title: '网厅首页开发问题笔记',
         path: '/learning/css/home-bug/'
+      }, {
+        title: 'CSS选择器笔记',
+        path: '/learning/css/select/'
       }]
     }, {
       title: 'javascript',
@@ -83,5 +86,8 @@ module.exports = [
     children: [{
       title: '面试题',
       path: '/job/jobing1'
+    }, {
+      title: 'vue面试题',
+      path: '/job/vue/'
     }]
   }]

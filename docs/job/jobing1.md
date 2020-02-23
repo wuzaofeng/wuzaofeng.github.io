@@ -1,7 +1,9 @@
 # 面试题
 
 ## 面向对象(OO)和面向过程(OP)的区别
-面向对象是什么？将问题才**分成各种对象**， 通过各个对象的属性行为，来解决问题
+
+面向对象是什么？将问题才**分成各种对象**， 通过各个对象的**属性行为**，来解决问题
+
 面向过程是什么？将问题分成**步骤**，一步步实现
 
 面向对象是**宏观**的思考，而面向过程是**细节**的思考
@@ -12,37 +14,45 @@
 
 ## vue和react的优缺点, 以及vue和react选型
 
-:::tip 如何选择vue还是react呢？
+:::tip vue和react的优缺点
 
-1. 从性能上来看，**vue优于react**, 因为vue采用的数据劫持，精确到数据的变化，但react采用的是比较引用的方式，不优化会产生大量的虚拟dom渲染
+1. 从**写法**来看, vue使用的是`webpack+vue-loader`**单文件模版**的形式，而react是采用的是`jsx+inline-style`**js**, 一切都是js
 
-2. 从生态圈来看，react大于生态圈
+2. 从**监听数据变化**来看，**vue优于react**, 因为vue采用的数据劫持，精确到数据的变化，但react采用的是比较引用的方式，不优化会产生大量的虚拟dom渲染
 
-3. 如果希望通过**模版文件**的方式，**简单**，**能用就行**，而且**应用尽可能的小**，可以选择vue
+3. 从**数据驱动**来看, vue从2.0之后是和react一样，是**单向数据流**，vue的语法糖提供了**双向数据绑定**，react需要**自己来实现双向数据绑定**
 
-4. 如果计划构建一个**大型应用程序**， 并且**兼容app和web框架**，最大的生态圈，选择react
+4. 从**diff算法**来看
+
+**vue**将此次生成好的虚拟dom树和上一次的虚拟dom树进行一次比对(diff算法进行比对)，来更新只需要被替换的DOM，而不是全部重绘。在Diff算法中，**只平层的比较前后两棵DOM树**的节点，没有进行**深度**的遍历
+
+**react** DOM结构发生改变-----直接卸载并重新create, DOM结构一样-----不会卸载,但是会update变化的内容
+
+vue会跟踪每一个组件的依赖关系，**不需要重新渲染**整个组件树。而对于React而言,每当应用的状态被改变时,**全部组件都会重新渲染**,所以react中会需要shouldComponentUpdate这个生命周期函数方法来进行控制
+    
+
+5. 从**生态圈**来看，react大于生态圈
+
 :::
 
-从写法上来看
-vue使用的是**单文件模版**的形式，而react是采用的是**js**, 一切都是js
+:::tip vue和react选型
 
-从数据驱动来看
-vue从2.0之后是和react一样，是**单向数据流**，vue的语法糖提供了**双向数据绑定**，react需要**自己来实现双向数据绑定**
+1. 如果希望通过**模版文件**的方式，**简单**，**能用就行**，而且**应用尽可能的小**，可以选择vue
 
-从监听数据变化来看
-vue采用的的是**数据劫持**的方式，能精确知道数据的变化，但react通过**比较引用**的方式，如果不优化可能导致大量的vdom渲染
+2. 如果计划构建一个**大型应用程序**， 并且**兼容app和web框架**，最大的生态圈，选择react
+:::
 
 ### vue2 与 vue3区别
 
-vue2, 数据绑定的时候是通过es5的**Object.defineProperty**， set方法来实现数据劫持，一个弊端就是无法兼听到数组内部的数据变化
+vue2, 数据绑定的时候是通过es5的**Object.defineProperty**， set方法来实现数据劫持，一个弊端就是无法兼听到**数组**内部的数据变化
 是通过**重写数组**常用的方法来实现
 
-vue3，采用的是es6, Proxy来实现数据劫持，可以监听数组变化
+vue3，采用的是es6, **Proxy来实现数据劫持**，可以监听数组变化
 
 [Vue2.x 与Vue3.x 双向数据绑定区别](https://segmentfault.com/a/1190000019101006?utm_source=tag-newest)
 
 ### 为什么react不精确数据变化？
-跟框架设计的原理有关， vue和react的原理区别在于，vue的数据是可变的，而react数据是不可变的，
+跟**框架设计的原理**有关， vue和react的原理区别在于，vue的数据是**可变**的，而react数据是**不可变**的，
 
 [vue和react的区别及各自优点](https://blog.csdn.net/tokki_/article/details/90726563)
 
@@ -52,7 +62,7 @@ vue3，采用的是es6, Proxy来实现数据劫持，可以监听数组变化
 
 ## iview与其他组件的区别以及优势， 如何ui选型
 
-ui选型，需要看打包之后的体积，生态圈是否足够强大，而且是否有专门的团队长期维护
+ui选型，需要看打包之后的体积，**生态圈**是否足够强大，而且是否有专门的**团队长期维护**
 
 选择iview是由于iview的小众组件优于element
 
@@ -64,17 +74,17 @@ iview相对于element更加容易上手，iview类似于react中的antd，table�
 
 ## 如何优化代码
 
-1. 降低代码的解偶性
+1. 降低代码的**解偶性**
 
-2. 提高函数的复用
+2. 提高函数的**复用**
 
-3. 分离文件
+3. **分离文件**
 
 4. 纯函数
 
 5. 添加代码注释
 
-对浏览器请求优化
+**对浏览器请求优化**
 
 1. 添加雪碧图
 
@@ -104,7 +114,7 @@ iview相对于element更加容易上手，iview类似于react中的antd，table�
 
 优势
 
-1. 最大的好处就是前端可以通过js做大量的处理，http请求可以通过nginx转发，减少服务器的压力
+1. 最大的好处就是前端可以通过js做大量的处理，http请求可以通过nginx转发，**减少服务器的压力**
 
 2. 以前是jsp，前端代码和后端代码杂糅在一起，现在两边代码真正的解耦
 
@@ -122,7 +132,7 @@ iview相对于element更加容易上手，iview类似于react中的antd，table�
 
 ## Vue的watch和computed区别
 
-computed 是依赖于别的数据进行变动的，具有缓存
+computed 是依赖于别的数据进行变动的，**具有缓存**
 
 watch **监听**数据的变化
 
@@ -148,7 +158,7 @@ watch **监听**数据的变化
 
 组件是可复用的vue实例，一个组件被创建好之后，就可能被用在各个地方，组件里面的data数据应该被隔离，互不影响
 
-当组件复用一次， 应该创建一个新当data值，当这个组件data改变的时候，其他组件不受影响
+**当组件复用一次**， 应该**创建一个新当data值**，当这个组件data改变的时候，其他组件不受影响
 
 ## vue-cli3优化了什么
 
@@ -160,20 +170,20 @@ watch **监听**数据的变化
 
 1. mode
 
-webpack增加了一个mode配置，只有两种值development | production。对不同的环境他会启用不同的配置。
+webpack增加了一个**mode配置**，只有两种值development | production。对不同的环境他会启用不同的配置。
 
 2. CommonsChunkPlugin
 
-CommonChunksPlugin已经从webpack4中移除。
+**CommonChunksPlugin**已经从webpack4中移除。
 可使用optimization.splitChunks进行模块划分（提取公用代码）。
 但是需要注意一个问题，默认配置只会对异步请求的模块进行提取拆分，如果要对entry进行拆分
 需要设置optimization.splitChunks.chunks = 'all'。
 
-3. webpack4使用MiniCssExtractPlugin取代ExtractTextWebpackPlugin。
+3. webpack4使用**MiniCssExtractPlugin**取代**ExtractTextWebpackPlugin**。
 
 4. 代码分割。
 
-使用动态import，而不是用system.import或者require.ensure
+使用**动态import**，而不是用system.import或者require.ensure
 
 5. vue-loader。
 
@@ -183,7 +193,7 @@ CommonChunksPlugin已经从webpack4中移除。
 
 现在也不需要使用这个plugin了，只需要使用optimization.minimize为true就行，production mode下面自动为true
 
-optimization.minimizer可以配置你自己的压缩程序
+7. optimization.minimizer可以配置你自己的压缩程序
 
 ## 小程序冷启动和热启动
 
