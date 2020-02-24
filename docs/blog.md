@@ -22,3 +22,7 @@
 
 * [**前端收集***](https://github.com/foru17/front-end-collect)
 * [**国外23位知名JavaScript开发者**](https://www.w3ctech.com/topic/107)
+
+# 源码
+
+* [**Vue.js 技术揭秘**](https://ustbhuangyi.github.io/vue-analysis/v2/prepare/)

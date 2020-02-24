@@ -150,9 +150,11 @@ watch **监听**数据的变化
 
 3. vuex（状态管理器）
 
-4. $parent和$children
+4. inject和provide 父孙组件
 
-5. $ref获取组件
+5. $parent和$children
+
+6. $ref获取组件
 
 ## Vue data为什么是函数
 

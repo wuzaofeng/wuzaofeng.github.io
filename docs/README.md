@@ -1,6 +1,11 @@
 # 每日一鲜
 
+## 2020-02-24
+
+* [【好文】爱奇艺号微前端架构实践](https://mp.weixin.qq.com/s/HVwcY8JGyrK8VcN1Ic9sWQ)
+
 ## 2020-02-20
+
 * [【好文】爱奇艺PC Web NodeJS中间层实践](https://mp.weixin.qq.com/s/0VjxGnF8mgOFx_oSiLUz5Q)
 
 ## 2020-02-18
