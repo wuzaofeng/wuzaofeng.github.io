@@ -80,7 +80,7 @@ module.exports = [
       path: '/working/verdaccio'
     }]
   }, {
-    title: '面试笔记',
+    title: '面试笔记',  
     collapsable: false,
     sidebarDepth: 1,
     children: [{
@@ -89,5 +89,11 @@ module.exports = [
     }, {
       title: 'vue面试题',
       path: '/job/vue/'
+    }, {
+      title: '前端面试之道的理解',
+      path: '/job/way'
     }]
+  }, {
+    title: '工具破解链接',
+    path: 'cracked'
   }]

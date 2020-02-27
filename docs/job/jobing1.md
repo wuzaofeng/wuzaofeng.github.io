@@ -239,6 +239,23 @@ webpack增加了一个**mode配置**，只有两种值development | production�
 
 [HTTP与HTTPS的区别](https://www.php.cn/faq/418162.html)
 
+## 工作遇到的问题
+
+1. [小程序的问题，webview](/working/wechat/webview)
+
+2. 跨域项目跳转之后session存储失效的问题
+
+    避免session被别人知道。
+    1. 一次性的标识， 类似于微信授权之后的code
+    2. 如果两个是二级域名的话，可以将session放入主域名中，然后共享两个二级域名
+    3. 保存id
+
+3. 页面复用问题，可以考虑路由不同，组件相同
+
+4. iview动画弹出层关闭的时候连点会请求多次，就算禁用也会触发，因为有个动画效果，使用防抖
+
+5. [前端异常监听](/working/error/)
+
 [2020 前端面试：第一波面试题总结](https://mp.weixin.qq.com/s/HPrVhg1x8oh47QZ5APXTsw)
 
 [2020 前端面试：第二波面试题总结](https://juejin.im/post/5e44f20d6fb9a07cd323ca67#heading-2)

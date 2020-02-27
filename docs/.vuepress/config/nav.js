@@ -2,7 +2,7 @@ module.exports = [{
   text: '每日一鲜',
   link: '/'
 }, {
-  text: '学习博客',
+  text: '博客/会议',
   link: '/blog'
 }, {
   text: '掘金',

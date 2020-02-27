@@ -26,3 +26,7 @@
 # 源码
 
 * [**Vue.js 技术揭秘**](https://ustbhuangyi.github.io/vue-analysis/v2/prepare/)
+
+# 会议
+
+* [**D2 前端技术论坛**](https://www.yuque.com/d2forum)
