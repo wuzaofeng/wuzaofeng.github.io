@@ -40,6 +40,8 @@ vue会跟踪每一个组件的依赖关系，**不需要重新渲染**整个组�
 1. 如果希望通过**模版文件**的方式，**简单**，**能用就行**，而且**应用尽可能的小**，可以选择vue
 
 2. 如果计划构建一个**大型应用程序**， 并且**兼容app和web框架**，最大的生态圈，选择react
+
+3. 人员的规模，熟悉哪个技能，如果学习个新知识，需要花费的成本
 :::
 
 ### vue2 与 vue3区别
@@ -99,8 +101,10 @@ iview相对于element更加容易上手，iview类似于react中的antd，table�
 6. 采用CDN
 
 [优秀前端必知的话题：我们应该做些力所能及的优化](https://juejin.im/post/5bbc1b0c6fb9a05cf230140c)
-[前后端分离的优缺点](https://www.cnblogs.com/wx-yy/p/10264317.html)
+
 [Web 研发模式演变 玉伯](https://github.com/lifesinger/lifesinger.github.com/issues/184)
+
+[前后端分离的优缺点](https://www.cnblogs.com/wx-yy/p/10264317.html)
 
 ## 如何有效的二次封装
 
@@ -129,6 +133,8 @@ iview相对于element更加容易上手，iview类似于react中的antd，table�
 2. 全异步，对 SEO 不利
 
 [为什么要前后端分离？有什么优缺点？(转)](https://www.cnblogs.com/651434092qq/p/11309535.html)
+
+[实践中的前后端分离](https://juejin.im/post/59dad63ff265da065270d49e)
 
 ## Vue的watch和computed区别
 
@@ -243,7 +249,7 @@ webpack增加了一个**mode配置**，只有两种值development | production�
 
 1. [小程序的问题，webview](/working/wechat/webview)
 
-2. 跨域项目跳转之后session存储失效的问题
+2. 跨域项目跳转之后sessionStorage存储失效的问题
 
     避免session被别人知道。
     1. 一次性的标识， 类似于微信授权之后的code
@@ -252,7 +258,11 @@ webpack增加了一个**mode配置**，只有两种值development | production�
 
 3. 页面复用问题，可以考虑路由不同，组件相同
 
-4. iview动画弹出层关闭的时候连点会请求多次，就算禁用也会触发，因为有个动画效果，使用防抖
+4. 私有仓库搭建，本地联调 symlinks 默认是true
+
+5. jq table插件的封装，因为bootstrap2.0版本过低
+
+6. 100vh的问题 苹果手机浏览器显示问题
 
 5. [前端异常监听](/working/error/)
 

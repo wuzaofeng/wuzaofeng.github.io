@@ -14,6 +14,9 @@ module.exports = [{
   text: 'Vuepress',
   link: 'https://www.vuepress.cn/guide'
 }, {
+  text: 'MDN',
+  link: 'https://developer.mozilla.org/zh-CN/docs/Web'
+}, {
   text: 'github',
   link: 'https://github.com/wuzaofeng'
 }, {
