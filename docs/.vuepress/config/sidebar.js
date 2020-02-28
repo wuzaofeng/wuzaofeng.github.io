@@ -87,6 +87,9 @@ module.exports = [
       title: '面试题',
       path: '/job/jobing1'
     }, {
+      title: '面试题2',
+      path: '/job/jobing2'
+    }, {
       title: 'vue面试题',
       path: '/job/vue/'
     }, {
