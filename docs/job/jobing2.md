@@ -60,3 +60,37 @@ flex 根据内容剩余空间占据的大小
 图片多的话，可以考虑用懒加载，下拉加载，分屏加载，缩略图
 
 [web前端优化之图片优化](https://juejin.im/post/59a7725b6fb9a02497170459)
+
+
+## 说一下浏览器的缓存机制
+
+### 强缓存
+
+第一次直接服务器请求，第二次直接拿缓存
+
+强缓存方案
+
+Exprires: 该资源什么时候会过期， 缺点就是需要客户端时间和服务器时间要同步
+
+Cache-control：max-age：表示该资源多少时间后过期（毫秒）
+
+![1.jpg](https://upload-images.jianshu.io/upload_images/6782944-2953183b0a2ab1dc.png?imageMogr2/auto-orient/strip|imageView2/2/w/751/format/webp)
+
+### 协商缓存
+
+第一次请求缓存且**保存缓存标识与时间**，重复请求向服务器发送缓存标识和最后缓存时间，**服务端进行校验**，如果失效则使用缓存
+
+If-None-Match/ETag：缓存标识
+
+Last-modified/If-Modified-Since: 表明请求的资源上次的修改时间
+
+## 现在要你完成一个Dialog组件，说说你设计的思路？它应该有什么功能？
+
+1. 该组件需要提供hook指定渲染位置，默认渲染在body下面。
+2. 然后改组件可以指定外层样式，如宽度等
+3. 组件外层还需要一层mask来遮住底层内容，点击mask可以执行传进来的onCancel函数关闭Dialog。
+4. 另外组件是可控的，需要外层传入visible表示是否可见。
+5. 然后Dialog可能需要自定义头head和底部footer，默认有头部和底部，底部有一个确认按钮和取消按钮，确认按钮会执行外部传进来的onOk事件，然后取消按钮会执行外部传进来的onCancel事件。
+7. 当组件的visible为true时候，设置body的overflow为hidden，隐藏body的滚动条，反之显示滚动条。
+8. 组件高度可能大于页面高度，组件内部需要滚动条。
+9. 只有组件的visible有变化且为true时候，才重渲染组件内的所有内容。

@@ -1,5 +1,11 @@
 # 每日一鲜
 
+## 2020-02-29
+
+* [字节跳动商业变现团队招前端了(附题目+模拟面试，只能帮你到这了～)](https://mp.weixin.qq.com/s/N77kis0fF-C-NsZldr-vAg)
+
+* [大厂前端面试考什么? | 掘金技术征文](https://juejin.im/post/5ab70735f265da237a4cf9b1)
+
 ## 2020-02-28
 * [五种可视化方案分析 webpack 打包性能瓶颈](https://mp.weixin.qq.com/s/sN3qiJT7cfsEbTv3lnDjlw)
 

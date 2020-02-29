@@ -28,6 +28,9 @@ module.exports = [
         title: '什么是表达式语句',
         path: '/learning/javascript/expression'
       }, {
+        title: 'js继承的方法以及优缺点',
+        path: '/learing/javascript/extends'
+      }, {
         title: '设计模式(创建设计模式)',
         path: '/learning/javascript/design/create'
       }, {
@@ -58,7 +61,7 @@ module.exports = [
       collapsable: false,
       children: [{
         title: '【好文】企业级 Webpack 分享总结',
-        path: '/learning/project/webpack'
+        path: '/learning/project/webpack/'
       }]
     }]
   }, {
@@ -78,6 +81,9 @@ module.exports = [
     }, {
       title: 'verdaccio 指南',
       path: '/working/verdaccio'
+    }, {
+      title: 'vue-cli3项目构建优化',
+      path: '/working/webpack/'
     }]
   }, {
     title: '面试笔记',  
