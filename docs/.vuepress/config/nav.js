@@ -20,6 +20,9 @@ module.exports = [{
   text: 'github',
   link: 'https://github.com/wuzaofeng'
 }, {
+  text: '掘金翻译计划',
+  link: 'https://github.com/xitu/gold-miner'
+}, {
   text: '疫情实时',
   link: 'https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_pc_3'
 }]
