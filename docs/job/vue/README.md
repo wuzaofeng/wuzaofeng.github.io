@@ -401,4 +401,187 @@ v-for优先于v-if, 如果连用的话，那么v-for先执行，之后再判断v
 
 * 3.比较都有子节点的情况, 递归比较子节点
 
+## 12.v-for中为什么要使用key
+
+key是**需要唯一标识**，而且是**不可变的**，防止后续修改删除列表的时候造成bug
+vue对通过diff算法，**复用原则**，判断两个dom节点是否一样，如果一样的话会复用原来的dom节点
+key不能是index，不然也会有同样问题。
+
+如果**静态列表的话，就没有删除修改操作**，也就index是唯一标识，就不会有问题
+
+![12.jpg](./12.jpg)
+
 [参考链接](./class.pdf)
+
+## 13. 描述组件渲染和更新过程
+
+组件渲染的时候，通过**render函数**生成虚拟节点，再调用`vue.extends`方法来**构建子组件的构造函数**，并且实例化，最后调用`$mount()`方法挂载在页面上。
+更新的时候，使用的是diff算法比对节点
+
+![13.jpg](./13.jpg)
+
+## 14. 组件中的 data为什么是一个函数?，为什么new Vue的data可以放对象
+
+1. 避免同一组件，创建多次实例，而实例使用的同一个构造函数，实例的数据互相影响，保持数据的独立性
+
+2. 什么时候用new Vue，这个是在main.js，根组件实例的时候就一样，我们写项目的时候就只有一个实例
+
+## 15.vue中事件绑定的原理
+
+1. 原生dom的事件绑定， 原生事件
+2. 组件的自定义事件
+
+## 16.v-model中的实现原理及如何自定义v-model
+
+1. 原生的 v-model ，会根据标签的不同生成不同的事件和属性
+2. 组件的v-model 就是value+input的语法糖
+
+自定义v-model
+```
+Vue.component('el-checkbox',{
+  template:`<input type="checkbox" :checked="check"
+  @change="$emit('change',$event.target.checked)">`,
+  model:{
+    prop:'check', // 更改默认的value的名字
+    event:'change' // 更改默认的input方法名
+  },
+  props: { check: Boolean }
+})
+```
+
+## 17.Vue中v-html会导致哪些问题
+
+1. 可能会导致 xss 攻击
+2. v-html 会替换掉标签内部的子元素
+3. 样式需要通过deep来添加scoped
+
+## 18.Vue父子组件生命周期调用顺序
+
+组件的调用顺序都是先父后子,渲染完成的顺序肯定是先子后父
+
+组件的销毁时是先父后子，销毁完成的顺序是先子后父
+
+**加载渲染过程**
+
+父beforeCreate->父created->父beforeMount->子beforeCreate->子created->子beforeMount- >子mounted->父mounted
+
+**子组件更新过程**
+
+父beforeUpdate->子beforeUpdate->子updated->父updated
+
+**父组件更新过程**
+
+父beforeUpdate->父updated
+
+**销毁过程**
+
+父beforeDestroy->子beforeDestroy->子destroyed->父destroyed
+
+## 19.Vue组件如何通信? 单向数据流
+
+* 父子间通信 父->子通过 `props` 、子-> 父 `$on、$emit` (发布订阅)
+* 获取父子组件实例的方式 `$parent、$children`
+* 在父组件中提供数据子组件进行消费 `Provide、inject` 插件
+* `Ref` 获取实例的方式调用组件的属性或者方法(如果给dom写，获取dom元素，如果给组件写，就获取组件的实例)
+* `Event Bus` 实现跨组件通信 Vue.prototype.$bus = new Vue(公共的实例)
+* `Vuex` 状态管理实现通信 $attrs $listeners
+
+## 20. Vue中相同逻辑如何抽离？
+
+Vue.mixin 用法 给组件每个生命周期，函数等都混入一些公共逻辑
+
+mixin使用的时候，找不到根源，就是看实例的时候就莫名多个数据
+
+## 21.为什么要使用异步组件？
+
+如果组件功能多，打包容量会特别大，需要采用异步组件，主要依赖于import()语法，可以实现文件按需加载
+
+组件的定义，变成函数
+
+## 22.什么是作用域插槽
+
+**插槽**
+
+```
+子组件
+<app><div slot="a">xxxx</div><div slot="b">xxxx</div></app>
+父组件
+slot name="a" slot name="b"
+```
+创建**组件虚拟节点**时候，遇到插槽slot属性，进行分类
+**渲染组件**时，拿对应的slot属性的节点进行替换操作（插槽的作用域为父组件）
+
+替换的过程，将父组件设置插槽的节点，设置到对应子组件的插槽里
+
+作用域插槽（作用域在子组件）
+子组件的数据，提供给父组件调用
+
+初始化的时候不会渲染slot的子节点，用一个函数存起来
+当调用的时候，才执行这个函数
+
+## 23.谈谈你对 keep-alive 的了解？
+
+keep-alive 可以实现组件的缓存作用
+2个属性 include / exclude
+2个生命周期 activated , deactivated
+
+keep-alive是取第一个组件
+
+用了rlu方法，当超出缓存最长个数时，会将最早缓存删掉
+
+## 24. Vue中常见性能优化
+
+1. 编码优化
+
+* 不要将所有的数据都放在data中，可以放在computed， 定时器可以不放data
+* vue 在 v-for 时给每项元素绑定事件需要用**事件代理**
+* SPA 页面采用keep-alive缓存组件
+* 拆分组件( 提高复用性、增加代码的可维护性,减少不必要的渲染)
+* key 保证唯一性
+* 合理使用路由懒加载、异步组件
+* 数据持久化的问题 （防抖、节流）
+* 合理使用v-if和v-show
+* Object.freeze 冻结数据
+* 尽量采用runtime运行时版本
+
+2. Vue 加载性能优化:
+
+* 图片懒加载 (https://github.com/hilongjw/vue-lazyload.git)
+* 第三方模块按需导入 (babel-plugin-component)
+* 滚动到可视区域动态加载 (https://tangbc.github.io/vue-virtual-scroll-list)
+
+3. 用户体验
+
+* app-skeleton 骨架屏
+* app-shell app壳
+* pwa serviceworker
+
+4. SEO 优化：
+* 预渲染插件 prerender-spa-plugin
+* 服务端渲染 ssr
+
+5. 打包优化:
+
+* 使用 cdn 的方式加载第三方模块
+* 多线程打包 happypack
+* splitChunks 抽离公共文件
+* sourceMap 生成
+
+6. 缓存，压缩
+
+* 客户端缓存、服务端缓存
+* 服务端 gzip 压缩
+
+## 25. Vue3.0你知道有哪些改进?
+
+* Vue3 采用了TS来编写
+* 支持 Composition API， 解决代码的条理性，mixins混乱问题，
+* Vue3 中响应式数据原理改成 proxy
+* vdom 的对比算法更新，只更新 vdom 的绑定了动态数据的部分
+
+## 26. 实现hash路由和history路由
+
+* onhashchange #
+* history.pushState h5 api， 页面不存在的问题，所以通过服务端可以解决
+
+(bilibili vue面试题)[https://www.bilibili.com/video/av90955610?from=search&seid=4442674282775134142]
