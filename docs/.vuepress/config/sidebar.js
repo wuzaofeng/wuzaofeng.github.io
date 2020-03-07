@@ -29,7 +29,7 @@ module.exports = [
         path: '/learning/javascript/expression'
       }, {
         title: 'js继承的方法以及优缺点',
-        path: '/learing/javascript/extends'
+        path: '/learning/javascript/extends'
       }, {
         title: '设计模式(创建设计模式)',
         path: '/learning/javascript/design/create'
@@ -100,7 +100,7 @@ module.exports = [
       path: '/job/vue/'
     }, {
       title: '前端面试之道的理解',
-      path: '/job/way'
+      path: '/job/way/'
     }]
   }, {
     title: '工具破解链接',
