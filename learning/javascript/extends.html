@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>javascript 继承 | 前端知识体库</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="icon" href="/img/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.b71a9117.css" as="style"><link rel="preload" href="/assets/js/app.f5a11c24.js" as="script"><link rel="preload" href="/assets/js/2.4fb9d0e8.js" as="script"><link rel="preload" href="/assets/js/27.c3f4e0c5.js" as="script"><link rel="prefetch" href="/assets/js/10.0f4dc288.js"><link rel="prefetch" href="/assets/js/11.a1b62acc.js"><link rel="prefetch" href="/assets/js/12.6917458a.js"><link rel="prefetch" href="/assets/js/13.83bd4d18.js"><link rel="prefetch" href="/assets/js/14.021a508e.js"><link rel="prefetch" href="/assets/js/15.50463b4b.js"><link rel="prefetch" href="/assets/js/16.4338cc41.js"><link rel="prefetch" href="/assets/js/17.a04e1267.js"><link rel="prefetch" href="/assets/js/18.b1ee3110.js"><link rel="prefetch" href="/assets/js/19.106b7f3b.js"><link rel="prefetch" href="/assets/js/20.19b387a4.js"><link rel="prefetch" href="/assets/js/21.f8c63b69.js"><link rel="prefetch" href="/assets/js/22.150dbe09.js"><link rel="prefetch" href="/assets/js/23.17ab0e07.js"><link rel="prefetch" href="/assets/js/24.16d1ccfa.js"><link rel="prefetch" href="/assets/js/25.ced2839d.js"><link rel="prefetch" href="/assets/js/26.34befdd6.js"><link rel="prefetch" href="/assets/js/28.32b627d7.js"><link rel="prefetch" href="/assets/js/29.f067935f.js"><link rel="prefetch" href="/assets/js/3.fd63d036.js"><link rel="prefetch" href="/assets/js/30.04541c24.js"><link rel="prefetch" href="/assets/js/31.6424ce9a.js"><link rel="prefetch" href="/assets/js/32.de6c6cb5.js"><link rel="prefetch" href="/assets/js/4.f7a48870.js"><link rel="prefetch" href="/assets/js/5.7b7243de.js"><link rel="prefetch" href="/assets/js/6.d4fd1e11.js"><link rel="prefetch" href="/assets/js/7.3d2239c4.js"><link rel="prefetch" href="/assets/js/8.5a4a21b4.js"><link rel="prefetch" href="/assets/js/9.e36fdd53.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b71a9117.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/logo.jpeg" alt="前端知识体库" class="logo"> <span class="site-name can-hide">前端知识体库</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  每日一鲜
+</a></div><div class="nav-item"><a href="/blog.html" class="nav-link">
+  博客/会议
+</a></div><div class="nav-item"><a href="https://juejin.im/timeline" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://time.geekbang.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  极客时间
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.vuepress.cn/guide" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Vuepress
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://developer.mozilla.org/zh-CN/docs/Web" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  MDN
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/wuzaofeng" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/xitu/gold-miner" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金翻译计划
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_pc_3" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  疫情实时
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  每日一鲜
+</a></div><div class="nav-item"><a href="/blog.html" class="nav-link">
+  博客/会议
+</a></div><div class="nav-item"><a href="https://juejin.im/timeline" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://time.geekbang.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  极客时间
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.vuepress.cn/guide" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Vuepress
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://developer.mozilla.org/zh-CN/docs/Web" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  MDN
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/wuzaofeng" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/xitu/gold-miner" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金翻译计划
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_pc_3" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  疫情实时
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/guide/" class="sidebar-link">自动化部署静态文档</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>学习笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learning/html/" class="sidebar-link">html</a></li><li><section class="sidebar-group is-sub-group depth-1"><p class="sidebar-heading"><span>CSS</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learning/css/home-bug/" class="sidebar-link">网厅首页开发问题笔记</a></li><li><a href="/learning/css/select/" class="sidebar-link">CSS选择器笔记</a></li></ul></section></li><li><section class="sidebar-group is-sub-group depth-1"><p class="sidebar-heading open"><span>javascript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learning/javascript/expression.html" class="sidebar-link">什么是表达式语句</a></li><li><a href="/learning/javascript/extends.html" class="active sidebar-link">js继承的方法以及优缺点</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/learning/javascript/extends.html#类式继承（原型继承）" class="sidebar-link">类式继承（原型继承）</a></li><li class="sidebar-sub-header"><a href="/learning/javascript/extends.html#构造函数继承" class="sidebar-link">构造函数继承</a></li><li class="sidebar-sub-header"><a href="/learning/javascript/extends.html#组合式继承" class="sidebar-link">组合式继承</a></li><li class="sidebar-sub-header"><a href="/learning/javascript/extends.html#寄生组合式继承" class="sidebar-link">寄生组合式继承</a></li></ul></li><li><a href="/learning/javascript/design/create.html" class="sidebar-link">设计模式(创建设计模式)</a></li><li><a href="/learning/javascript/design/struct.html" class="sidebar-link">设计模式(结构化设计模式)</a></li><li><a href="/learning/javascript/design/behaviour.html" class="sidebar-link">设计模式(行为型设计模式)</a></li><li><a href="/learning/javascript/design/book.html" class="sidebar-link">推荐设计模式书籍</a></li></ul></section></li><li><section class="sidebar-group is-sub-group depth-1"><p class="sidebar-heading"><span>typescript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learning/typescript/ts-collection-question.html" class="sidebar-link">【好文】耗时一年整理，全网最全的TypeScript踩坑集锦 (纯 TS 问题)</a></li><li><a href="/learning/typescript/ts-collection-config.html" class="sidebar-link">【好文】耗时一年整理，全网最全的TypeScript踩坑集锦 (tsconfig.json 常用配置项注释)</a></li><li><a href="/learning/typescript/ts-collection-react.html" class="sidebar-link">【好文】耗时一年整理，全网最全的TypeScript踩坑集锦（React + TS 项目问题）</a></li></ul></section></li><li><section class="sidebar-group is-sub-group depth-1"><p class="sidebar-heading"><span>前端工程化</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learning/project/webpack/" class="sidebar-link">【好文】企业级 Webpack 分享总结</a></li></ul></section></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>读书笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/readBook/HighPerformanceJS/" class="sidebar-link">高性能javascript</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>工作笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/working/wechat/webview.html" class="sidebar-link">微信小程序内嵌webview问题</a></li><li><a href="/working/verdaccio.html" class="sidebar-link">verdaccio 指南</a></li><li><a href="/working/webpack/" class="sidebar-link">vue-cli3项目构建优化</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>面试笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/job/jobing1.html" class="sidebar-link">面试题</a></li><li><a href="/job/jobing2.html" class="sidebar-link">面试题2</a></li><li><a href="/job/vue/" class="sidebar-link">vue面试题</a></li><li><a href="/job/way/" class="sidebar-link">前端面试之道的理解</a></li></ul></section></li><li><a href="/cracked.html" class="sidebar-link">工具破解链接</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="javascript-继承"><a href="#javascript-继承" class="header-anchor">#</a> javascript 继承</h1> <h2 id="类式继承（原型继承）"><a href="#类式继承（原型继承）" class="header-anchor">#</a> 类式继承（原型继承）</h2> <div class="language- extra-class"><pre class="language-text"><code>function A () {}
+function B () {}
+B.prototype = new A()
+</code></pre></div><p><strong>优缺点</strong>
+由于指向A的实例， 那么可以访问父类新增原型方法/属性
+但不能多继承</p> <h2 id="构造函数继承"><a href="#构造函数继承" class="header-anchor">#</a> 构造函数继承</h2> <div class="language- extra-class"><pre class="language-text"><code>function A(){}
+function B(){
+  A.call(this);
+}
+</code></pre></div><p><strong>优缺点</strong>
+可以实现多继承
+但不能访问父类原型方法和属性</p> <h2 id="组合式继承"><a href="#组合式继承" class="header-anchor">#</a> 组合式继承</h2> <div class="language- extra-class"><pre class="language-text"><code>function B(){}
+function A(){}
+B.prototype = new A();
+
+function B(){
+  A.call(this);
+}
+</code></pre></div><p>可以继承实例属性/方法，也可以继承原型属性/方法，
+但是执行了两个A的构造函数</p> <h2 id="寄生组合式继承"><a href="#寄生组合式继承" class="header-anchor">#</a> 寄生组合式继承</h2> <div class="language- extra-class"><pre class="language-text"><code>// 寄生组合式继承的核心方法
+function inherit(child, parent) {
+    // 继承父类的原型
+    const p = Object.create(parent.prototype)
+    // 重写子类的原型
+    child.prototype = p
+    // 重写被污染的子类的constructor
+    p.constructor = child
+}
+
+// GithubUser, 父类
+function GithubUser(username, password) {
+    let _password = password 
+    this.username = username 
+}
+
+GithubUser.prototype.login = function () {
+    console.log(this.username + '要登录Github，密码是' + _password)
+}
+
+// GithubUser, 子类
+function JuejinUser(username, password) {
+    GithubUser.call(this, username, password) // 继承属性
+    this.articles = 3 // 文章数量
+}
+
+// 实现原型上的方法
+inherit(JuejinUser, GithubUser)
+
+// 在原型上添加新方法
+JuejinUser.prototype.readArticle = function () {
+    console.log('Read article')
+}
+
+const juejinUser1 = new JuejinUser('ulivz', 'xxx')
+console.log(juejinUser1)
+
+</code></pre></div><p><a href="https://juejin.im/post/5a96d78ef265da4e9311b4d8#heading-8" target="_blank" rel="noopener noreferrer">深入JavaScript继承原理<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/learning/javascript/expression.html" class="prev">
+        什么是表达式语句
+      </a></span> <span class="next"><a href="/learning/javascript/design/create.html">
+        设计模式(创建设计模式)
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.f5a11c24.js" defer></script><script src="/assets/js/2.4fb9d0e8.js" defer></script><script src="/assets/js/27.c3f4e0c5.js" defer></script>
+  </body>
+</html>
