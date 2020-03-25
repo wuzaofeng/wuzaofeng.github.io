@@ -1,5 +1,19 @@
 # 每日一鲜
 
+## 2020-03-25
+
+* [前端安全系列（一）：如何防止XSS攻击？](https://juejin.im/post/5bad9140e51d450e935c6d64)
+
+* [前端安全系列之二：如何防止CSRF攻击？](https://juejin.im/post/5bc009996fb9a05d0a055192)
+
+* [Vue.js 技术揭秘](https://ustbhuangyi.github.io/vue-analysis/v2/prepare/)
+
+* [各种手写源码实现](https://mp.weixin.qq.com/s/WTSAt2tYSJX0YCg_pojcHg)
+
+* [TypeScript进阶 之 重难点梳理](https://mp.weixin.qq.com/s/_lO3cd0FcF0Dg3TRnHPdwg)
+
+* [（建议精读）HTTP灵魂之问，巩固你的 HTTP 知识体系](https://juejin.im/post/5e76bd516fb9a07cce750746)
+
 ## 2020-03-22
 
 * [【面试题】525- 阿里 P6 的面经](https://mp.weixin.qq.com/s/5awWVNHeZAyMxe5ZnLC73A)

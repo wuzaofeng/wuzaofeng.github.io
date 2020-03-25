@@ -90,11 +90,23 @@ module.exports = [
     collapsable: false,
     sidebarDepth: 1,
     children: [{
-      title: '面试题',
-      path: '/job/jobing1'
+      title: 'HTML面试题',
+      path: '/job/html'
     }, {
-      title: '面试题2',
-      path: '/job/jobing2'
+      title: 'CSS面试题',
+      path: '/job/css'
+    }, {
+      title: 'JS面试题',
+      path: '/job/js'
+    }, {
+      title: '浏览器面试题',
+      path: '/job/browser'
+    }, {
+      title: '原理面试题',
+      path: '/job/description'
+    }, {
+      title: '框架面试题',
+      path: '/job/frame'
     }, {
       title: 'vue面试题',
       path: '/job/vue/'
