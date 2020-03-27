@@ -3,7 +3,10 @@
 ## 2020-03-27
 
 * [深入理解JavaScript中的作用域和上下文](https://www.html.cn/archives/7255)
+
 * [JavaScript 核心概念之作用域和闭包](https://www.html.cn/archives/7262)
+
+* [这一次，彻底弄懂 JavaScript 执行机制](https://juejin.im/post/59e85eebf265da430d571f89)
 
 ## 2020-03-26
 

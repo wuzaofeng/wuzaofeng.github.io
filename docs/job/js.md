@@ -194,13 +194,22 @@ Object.defineProperty(window, 'a', {
 ## 不使用for或者while， 创建一个长度为120的数组，并且每个元素的值等于数组长度减去它的下标
 
 1. from + map
+
+```
 Array.from(new Array(120)).map((item,index)=>(120 - index))
+```
 
 2. from
+
+```
 Array.from(new Array(100), (item, index) => index)
+```
 
 3. reduce
+
+```
 Array.from(new Array(120)).reduce(function (pre, v, i, arr) {
     pre.push(arr.length - i)
     return pre
 }, [])
+```
