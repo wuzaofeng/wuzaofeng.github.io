@@ -2,6 +2,22 @@
 
 * [（建议精读）HTTP灵魂之问，巩固你的 HTTP 知识体系](https://juejin.im/post/5e76bd516fb9a07cce750746)
 
+## 请写出你知道的http状态码以及含义
+200, 状态请求成功
+
+301，永久重定向
+302, 临时重定向
+304，缓存，服务器告诉客户端内容没有改变，直接拿缓存内容
+
+400，参数错误
+401，需要用户验证
+403，禁止访问
+404，没找到该资源
+
+500，服务器错误
+
+* [http](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status)
+
 ## http有什么特点
 
 1. 无状态
@@ -118,4 +134,16 @@ JavaScript 代码不够严谨
 
 [初中级前端面试题](https://juejin.im/post/5d87985d6fb9a06add4e6ac3#heading-81)
 
+## 假如移动端设备的尺寸是640px， 要实现1rem = 16px，需要怎么实现
 
+其实很简单，1rem是指html的font-size为16px
+也就是设备宽度/640， 等于设备的html的font-size/16（640的根元素的值）
+```
+function refreshRem () {
+const width = window.outerWidth
+    const px = width * 16 / 640;
+    console.log(px)
+    document.getElementsByTagName('html')[0].style.fontSize = px + 'px'
+}
+refreshRem()
+```

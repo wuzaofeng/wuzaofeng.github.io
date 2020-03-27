@@ -1,10 +1,18 @@
 # 每日一鲜
 
-## 2020-03-25
+## 2020-03-27
+
+* [深入理解JavaScript中的作用域和上下文](https://www.html.cn/archives/7255)
+* [JavaScript 核心概念之作用域和闭包](https://www.html.cn/archives/7262)
+
+## 2020-03-26
 
 * [前端安全系列（一）：如何防止XSS攻击？](https://juejin.im/post/5bad9140e51d450e935c6d64)
 
 * [前端安全系列之二：如何防止CSRF攻击？](https://juejin.im/post/5bc009996fb9a05d0a055192)
+
+## 2020-03-25
+
 
 * [Vue.js 技术揭秘](https://ustbhuangyi.github.io/vue-analysis/v2/prepare/)
 

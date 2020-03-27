@@ -46,4 +46,125 @@ ie是比较特殊，包括padding和border
 
 [从CSS盒子模型说起](https://juejin.im/post/5965bf105188250da35f11b2#heading-11)
 
+## 请使用css画出一个梯形
 
+```
+// 三角形
+.border {
+    width: 0;
+    height: 0;
+    border-top: 50px solid black;
+    border-right: 50px solid transparent;
+    border-left: 50px solid transparent;
+}
+// 梯形(加个宽度即可)
+.border {
+    width: 20px;
+    height: 0;
+    border-top: 50px solid black;
+    border-right: 50px solid transparent;
+    border-left: 50px solid transparent;
+}
+```
+
+## 请使用css画出一个半圆,扇形，椭圆都是在border-radius做文章
+```
+半圆
+.border {
+    width: 50px;
+    height: 25px;
+    border-radius: 50px 50px 0 0
+}
+
+扇形
+.border {
+    width: 50px;
+    height: 25px;
+    border-radius: 0 50px 0 0 
+}
+
+```
+
+椭圆
+.border {
+    width: 100px;
+    height: 50px;
+    border-radius: 50px /25px
+}
+
+
+[CSS制作的32种图形效果[梯形|三角|椭圆|平行四边形|菱形|四分之一圆|旗帜]](https://blog.csdn.net/dmtnewtons_blog/article/details/41146485)
+
+## 实现一个三栏布局，中间部分要自适应宽度并且优先加载，左边宽100px右边宽为160px
+```
+<div class="wrap">
+    <div class="content">
+    content
+    </div>
+    <div class="left">left</div>
+    <div class="right">right</div>
+</div>
+
+flex
+.wrap {
+    display: flex;
+}
+.content {
+    flex: 1;
+    order: 2;
+}
+.left {
+    width: 100px;
+    order: 1;
+}
+.right {
+    width: 160px;
+    order: 3
+}
+
+float
+.wrap {
+   overflow:hidden;
+}
+.content {
+    display: inline-block;
+    width: 100%;
+    margin-left: -100px;
+    padding-left: 100px;
+    box-sizing: border-box;
+    margin-right: -160px;
+    padding-right: 160px;
+}
+.left {
+    width: 100px;
+    float: left;
+}
+.right {
+    width: 160px;
+    float: right
+}
+
+position
+.wrap {
+   position: relative
+}
+.content {
+    display: inline-block;
+    width: 100%;
+    padding-left: 100px;
+    box-sizing: border-box;
+    padding-right: 160px;
+}
+.left {
+    width: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.right {
+    width: 160px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+```
