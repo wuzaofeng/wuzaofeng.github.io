@@ -26,7 +26,7 @@ module.exports = [
       collapsable: false,
       children: [{
         title: '重学JS',
-        path: '/learning/javascript/deep'
+        path: '/learning/javascript/deep/'
       },{
         title: '什么是表达式语句',
         path: '/learning/javascript/expression'

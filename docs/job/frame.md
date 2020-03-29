@@ -112,3 +112,22 @@ watch **监听**数据的变化
 [从Mixins到HOC再到React Hooks](https://juejin.im/post/5d3184596fb9a07eeb13e12c#heading-17)
 
 [React Hooks 深入不浅出](https://juejin.im/post/5bfe93566fb9a049c30af2db#heading-1)
+
+## Vue 的响应式原理中 Object.defineProperty 有什么缺陷？为什么在 Vue3.0 采用了 Proxy，抛弃了 Object.defineProperty
+
+1. Object.defineProperty无法监控到**数组下标**的变化
+
+2. Object.defineProperty只能劫持**对象的属性**， 如果，属性值是对象，还需要深度遍历， **Proxy可以劫持整个对象，并返回一个新的对象**
+
+3. Proxy不仅可以代理对象，还可以代理数组。还可以代理动态增加的属性
+
+## 在输入框中如何判断输入的是一个正确的网址
+```
+function isUrl(url) {
+       try {
+           new URL(url);
+           return true;
+       }catch(err){
+     return false;
+}}
+```

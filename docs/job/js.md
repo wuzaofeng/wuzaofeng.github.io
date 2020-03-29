@@ -213,3 +213,43 @@ Array.from(new Array(120)).reduce(function (pre, v, i, arr) {
     return pre
 }, [])
 ```
+
+## 输出以下代码执行结果，大致时间就好
+```
+function wait() {
+return new Promise(resolve =>
+ setTimeout(resolve, 10 * 1000)
+)
+}
+
+async function main() {
+console.time();
+await wait();
+await wait();
+await wait();
+console.timeEnd();
+}
+main();
+30多秒，由于await同步执行，等待执行函数到下一步
+```
+```
+function wait() {
+  return new Promise(resolve =>
+    setTimeout(resolve, 10 * 1000)
+  )
+}
+
+async function main() {
+  console.time();
+  let a = wait();
+  let b = wait();
+  let c = wait();
+  await a;
+  await b;
+  await c;
+  console.timeEnd();
+}
+main();
+```
+运行时间是10s多一点
+等待时间最长的就是整体时间

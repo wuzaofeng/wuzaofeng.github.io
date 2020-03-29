@@ -147,3 +147,47 @@ const width = window.outerWidth
 }
 refreshRem()
 ```
+
+## 接口如何防刷
+
+1. 通过**ip限制**请求次数
+
+2. **http请求头校验**（host, user-Agent, Referer）
+
+3. 人机验证，无痕验证，**验证码**
+
+4. **网关控制流量**，对一个时间段出现流量异常，可以拒绝请求
+
+## 为什么for循环嵌套顺序会影响性能
+```
+var t1 = new Date().getTime()
+for (let i = 0; i < 100; i++) {
+  for (let j = 0; j < 1000; j++) {
+    for (let k = 0; k < 10000; k++) {
+    }
+  }
+}
+var t2 = new Date().getTime()
+console.log('first time', t2 - t1)
+
+for (let i = 0; i < 10000; i++) {
+  for (let j = 0; j < 1000; j++) {
+    for (let k = 0; k < 100; k++) {
+
+    }
+  }
+}
+var t3 = new Date().getTime()
+console.log('two time', t3 - t2)
+```
+## 统计 1 ~ n 整数中出现 1 的次数
+<!-- 转成数组遍历 -->
+```
+function findOne(n){
+	let count = 0;
+	for(let i=0;i<=n;i++){
+		count+=String(i).split('').filter(item=>item==='1').length
+	}
+	return count;
+}
+```
