@@ -40,6 +40,14 @@ Function.prototype.apply2 = function (context, arr) {
 
 ## bind 模拟实现
 
+1. 返回一个函数
+
+2. 可以传入参数， 可以在bind时候传入，也可以在返回函数的时候传入，两个参数拼接起来
+
+3. 可以返回函数，用构造函数创建，this指向实例
+
+[JavaScript深入之bind的模拟实现](https://github.com/mqyqingfeng/Blog/issues/12)
+
 ```
 Function.prototype.bind = function (context, ...arr) {
   if (typeof this !== "function") {
