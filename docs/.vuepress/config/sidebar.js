@@ -27,7 +27,10 @@ module.exports = [
       children: [{
         title: '重学JS',
         path: '/learning/javascript/deep/'
-      },{
+      }, {
+        title: '模拟方法',
+        path: '/learning/javascript/function'
+      }, {
         title: '什么是表达式语句',
         path: '/learning/javascript/expression'
       }, {
