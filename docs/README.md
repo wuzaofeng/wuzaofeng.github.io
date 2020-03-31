@@ -1,5 +1,9 @@
 # 每日一鲜
 
+## 2020-03-31
+
+* [面试官问：面试题之 JS 篇](https://mp.weixin.qq.com/s/SPFboznU9WOIP63DYHl4yA)
+
 ## 2020-03-27
 
 * [深入理解JavaScript中的作用域和上下文](https://www.html.cn/archives/7255)
@@ -15,9 +19,6 @@
 * [前端安全系列之二：如何防止CSRF攻击？](https://juejin.im/post/5bc009996fb9a05d0a055192)
 
 ## 2020-03-25
-
-
-* [Vue.js 技术揭秘](https://ustbhuangyi.github.io/vue-analysis/v2/prepare/)
 
 * [各种手写源码实现](https://mp.weixin.qq.com/s/WTSAt2tYSJX0YCg_pojcHg)
 

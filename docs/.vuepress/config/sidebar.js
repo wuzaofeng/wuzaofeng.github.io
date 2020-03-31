@@ -123,4 +123,8 @@ module.exports = [
   }, {
     title: '工具破解链接',
     path: 'cracked'
+  }, {
+    title: 'Vue.js 技术揭秘',
+    path: 'https://ustbhuangyi.github.io/vue-analysis/v2/prepare/'
   }]
+
