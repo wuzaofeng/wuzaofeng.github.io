@@ -70,3 +70,116 @@ Function.prototype.bind = function (context, ...arr) {
   return fBound
 }
 ```
+
+## new 实现
+
+```
+function objectFactory (constructor, ...args) {
+  const obj = Object.create(null)
+  obj._proto = constructor.prototype // 创建对象原型指向构造函数的原型上
+  const result = constructor.apply(obj, [...args]) // 执行构造函数， 改变this
+  return typeof result === 'object' ? result : obj // 如果构造函数返回对象，才返回，如果是基本类型则还是返回创建对象
+}
+```
+
+## 防抖
+
+```
+function debounce (fn, wait) {
+  let timeout result
+  return function (...args) {
+    if (timeout) clearTimeOut(timeout)
+    timeout = setTimeOut(() => {
+      fn.apply(this, args)
+    }, wait)
+  }
+}
+```
+
+```
+function debounce (fn, wait, immediate = false) {
+  let timeout, result
+  const debounced = function (...args) {
+    if (timeout) clearTimeout(timeout)
+    if (immediate) {
+      // 立即执行函数，停止n秒后才能再次触发
+      // 如果已经执行过，就不会再执行
+      const callNow = !timeout
+      timeout = setTimeout(() => {
+        timeout = null
+      }, wait)
+      if (callNow) result = fn.apply(this, args)
+    } else {
+      timeout = setTimeout (() => {
+        fn.apply(this, args)
+      }, wait)
+    }
+    // 由于setTimeOut是延时执行，所以拿不到返回值
+    // 当immediate为true 有返回值，false则为undefined
+    return result
+  }
+
+  // 取消事件
+  debounced.cancel = function() {
+    clearTimeout(timeout)
+    timeout = null
+  }
+  return debounced
+}
+
+```
+
+## 节流
+```
+function throttle(fn, wait) {
+  let timeout
+  return function (...args) {
+    if (!timeout) {
+      timeout = setTimeOut(() => {
+        timeout = null
+        fn.apply(this, args)
+      }, wait)
+    }
+  }
+}
+```
+
+```
+function throttle(func, wait, options) {
+    var timeout, context, args, result;
+    var previous = 0;
+    if (!options) options = {};
+
+    var later = function() {
+        previous = options.leading === false ? 0 : new Date().getTime();
+        timeout = null;
+        func.apply(context, args);
+        if (!timeout) context = args = null;
+    };
+
+    var throttled = function() {
+        var now = new Date().getTime();
+        if (!previous && options.leading === false) previous = now;
+        var remaining = wait - (now - previous);
+        context = this;
+        args = arguments;
+        if (remaining <= 0 || remaining > wait) {
+            if (timeout) {
+                clearTimeout(timeout);
+                timeout = null;
+            }
+            previous = now;
+            func.apply(context, args);
+            if (!timeout) context = args = null;
+        } else if (!timeout && options.trailing !== false) {
+            timeout = setTimeout(later, remaining);
+        }
+    };
+    throttled.cancel = function() {
+      clearTimeout(timeout);
+      previous = 0;
+      timeout = null;
+    }
+    return throttled;
+}
+```

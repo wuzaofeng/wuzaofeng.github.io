@@ -1,5 +1,34 @@
 # 每日一鲜
 
+## 2020-04-08
+
+* [介绍几个JavaScript设计模式及场景应用](https://mp.weixin.qq.com/s/x3OCgS_knmM4D5zNSIVGRg)
+
+## 2020-04-07
+
+* [纠缠不清的富文本编辑器](https://mp.weixin.qq.com/s/KyUX5JvxGXCbK04FI8VMDA)
+
+* [如何快速提升 JSON.stringify() 的性能？](https://mp.weixin.qq.com/s/xtM3_0LmK4sdsWUs7VveKg)
+
+## 2020-04-05
+
+* [2019精选文章目录](https://mp.weixin.qq.com/s/RWXQ9rc4qQkFFBe5Ecs4ig)
+
+## 2020-04-04
+
+* [React高频面试题梳理，看看面试怎么答？](https://mp.weixin.qq.com/s/vJOAiiP0PSMOgPStZw-rQA)
+
+* [写给初中级前端的高级进阶指南（JS、TS、Vue、React、性能、学习规划）](https://mp.weixin.qq.com/s/LYtYJUleLs5FOQqfO7rPkg)
+
+## 2020-04-03
+
+* [如何衡量一个人的 JavaScript 水平？](https://mp.weixin.qq.com/s/xtM3_0LmK4sdsWUs7VveKg)
+
+## 2020-04-01
+
+* [JavaScript深入之创建对象的多种方式以及优缺点](https://github.com/mqyqingfeng/Blog/issues/15)
+* [JavaScript深入之继承的多种方式和优缺点](https://github.com/mqyqingfeng/Blog/issues/16)
+
 ## 2020-03-31
 
 * [面试官问：面试题之 JS 篇](https://mp.weixin.qq.com/s/SPFboznU9WOIP63DYHl4yA)
