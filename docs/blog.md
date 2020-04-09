@@ -9,6 +9,7 @@
 * [**【前端进阶】优质博文 刘小夕**](https://github.com/YvetteLau/Blog)
 * [**前端小智**](https://github.com/qq449245884/xiaozhi)
 * [**冴羽写博客的地方，预计写四个系列：JavaScript深入系列、JavaScript专题系列、ES6系列、React系列**](https://github.com/mqyqingfeng/Blog)
+* [**子弈博客**](https://ziyi2.github.io/awesome/)
 
 # 团队博客/周刊
 
