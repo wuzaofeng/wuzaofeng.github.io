@@ -183,3 +183,68 @@ function throttle(func, wait, options) {
     return throttled;
 }
 ```
+
+## 深/浅拷贝
+```
+slice、concat, JSON.stringify
+
+function shallowCopy (obj) {
+  if (typeof obj !== 'object') return
+  var newObj = obj instanceOf Array ? [] : {}
+  for (var key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      newObj[key] = obj[key]
+    }
+  }
+}
+```
+
+```
+function deepCopy (obj) {
+  if (typeof obj !== 'object') return
+  var newObj = obj instanceOf Array ? [] : {}
+  for (var key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      newObj[key] = typeof obj[key] === 'object' ? deepCopy(obj[key]) : obj[key]
+    }
+  }
+}
+```
+
+## 柯里化
+
+元是指函数传入的参数，一个参数叫做一元
+
+柯里化就是一个n元函数转化成n个一元函数
+
+一个函数转多多个
+
+## 偏函数
+
+局部应用
+
+一个转一个
+
+固定一个函数的一个或者多个参数
+
+一个n 元函数转化成 一个 n - x 元 函数
+
+两者的关系
+
+柯里化 应用在偏函数中
+
+## 惰性函数
+
+原理是重写函数名字
+
+```
+var foo = function() {
+  var t = new Date();
+  foo = function() {
+      return t;
+  };
+  return foo();
+};
+```
+
+## 函数记忆

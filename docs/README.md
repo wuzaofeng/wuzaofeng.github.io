@@ -1,5 +1,15 @@
 # 每日一鲜
 
+## 2020-04-12
+
+* [「自检清单」再来一打Web安全面试题](https://mp.weixin.qq.com/s/VxGx2P7Jay7aWRc5EVmSww)
+
+* [「吐血整理」再来一打Webpack面试题](https://mp.weixin.qq.com/s/Udlv1R7-_IAcfaGcds3mew)
+
+## 2020-04-11
+
+* [若川知乎问答：2年前端经验，做的项目没什么技术含量，怎么办？](https://mp.weixin.qq.com/s/PY02WfJb96xXuF5OR5DDmQ)
+
 ## 2020-04-08
 
 * [介绍几个JavaScript设计模式及场景应用](https://mp.weixin.qq.com/s/x3OCgS_knmM4D5zNSIVGRg)

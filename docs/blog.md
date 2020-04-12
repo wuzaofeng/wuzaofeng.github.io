@@ -31,6 +31,12 @@
 
 * [**Vue.js 技术揭秘**](https://ustbhuangyi.github.io/vue-analysis/v2/prepare/)
 
+* [**React源码深度解析 高级前端工程师必备技能**](https://www.bilibili.com/video/BV1qj411f7yK?from=search&seid=7867455657971641670)
+
+# 文档
+
+* [**ECMAScript 6 入门**](http://es6.ruanyifeng.com/#docs/number)
+
 # 会议
 
 * [**D2 前端技术论坛**](https://www.yuque.com/d2forum)
