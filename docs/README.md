@@ -1,5 +1,40 @@
 # 每日一鲜
 
+## 2020-04-19
+
+* [面试官问: 如何理解Virtual DOM？](https://juejin.im/post/5d5d32e251882545e41e655d)
+
+## 2020-04-18
+
+* [(建议收藏)TCP协议灵魂之问，巩固你的网路底层基础](https://juejin.im/post/5e527c58e51d4526c654bf41)
+
+* [(建议精读）HTTP灵魂之问，巩固你的 HTTP 知识体系](https://juejin.im/post/5e76bd516fb9a07cce750746)
+
+* [(1.6w字)浏览器灵魂之问，请问你能接得住几个？](https://juejin.im/post/5df5bcea6fb9a016091def69)
+
+## 2020-04-17
+
+* [V8 引擎垃圾内存回收原理解析](https://juejin.im/post/5dcb7f706fb9a04aad01615a)
+
+## 2020-04-16
+
+* [关于JS中一些重要的api实现, 巩固你的原生JS功底](https://juejin.im/post/5d635566e51d4561e224a360)
+
+* [(2.4w字,建议收藏)😇原生JS灵魂之问(下), 冲刺🚀进阶最后一公里(附个人成长经验分享)](https://juejin.im/post/5dd8b3a851882572f56b578f)
+
+## 2020-04-15
+
+* [(建议精读)原生JS灵魂之问(中)，检验自己是否真的熟悉JavaScript？](https://juejin.im/post/5dbebbfa51882524c507fddb)
+
+
+## 2020-04-14
+
+* [(建议收藏)原生JS灵魂之问, 请问你能接得住几个？(上)](https://juejin.im/post/5dac5d82e51d45249850cd20)
+
+## 2020-04-13
+
+* [75个JavaScript面试题集锦，内含解答，自测 JS 掌握程度](https://mp.weixin.qq.com/s/Ys2k1THQiYHaTMG5cDRo4A)
+
 ## 2020-04-12
 
 * [「自检清单」再来一打Web安全面试题](https://mp.weixin.qq.com/s/VxGx2P7Jay7aWRc5EVmSww)
@@ -92,6 +127,7 @@
 * [大厂前端面试考什么? | 掘金技术征文](https://juejin.im/post/5ab70735f265da237a4cf9b1)
 
 ## 2020-02-28
+
 * [五种可视化方案分析 webpack 打包性能瓶颈](https://mp.weixin.qq.com/s/sN3qiJT7cfsEbTv3lnDjlw)
 
 ## 2020-02-27

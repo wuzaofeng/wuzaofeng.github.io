@@ -29,7 +29,9 @@
 
 # 源码
 
-* [**Vue.js 技术揭秘**](https://ustbhuangyi.github.io/vue-analysis/v2/prepare/)
+* [**undersercore 源码分析**](https://ustbhuangyi.github.io/vue-analysis/v2/prepare/)
+
+* [**Vue.js 技术揭秘**](https://yoyoyohamapi.gitbooks.io/undersercore-analysis/content/)
 
 * [**React源码深度解析 高级前端工程师必备技能**](https://www.bilibili.com/video/BV1qj411f7yK?from=search&seid=7867455657971641670)
 
