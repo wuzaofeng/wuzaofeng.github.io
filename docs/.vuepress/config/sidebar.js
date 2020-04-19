@@ -106,7 +106,7 @@ module.exports = [
       path: '/job/html'
     }, {
       title: 'CSS面试题',
-      path: '/job/css'
+      path: '/job/css/'
     }, {
       title: 'JS面试题',
       path: '/job/js'
