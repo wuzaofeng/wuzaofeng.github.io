@@ -7,7 +7,7 @@ module.exports = {
 		['link',{rel:'icon',href:'/img/favicon.ico'}]
 	],
   themeConfig: {
-    logo: '/img/logo.jpeg',
+    logo: '/img/logo.jpg',
     nav,
     sidebar,
   },
