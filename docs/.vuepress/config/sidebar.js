@@ -15,9 +15,6 @@ module.exports = [
       title: 'CSS',
       collapsable: false,
       children: [{
-        title: '网厅首页开发问题笔记',
-        path: '/learning/css/home-bug/'
-      }, {
         title: 'CSS选择器笔记',
         path: '/learning/css/select/'
       }]
@@ -90,6 +87,15 @@ module.exports = [
     }, {
       title: 'vue-cli3项目构建优化',
       path: '/working/webpack/'
+    }, {
+      title: '网厅首屏优化',
+      path: '/working/nethall/first-paint'
+    }, {
+      title: '网厅首页开发问题笔记',
+      path: '/working/nethall/home-bug/'
+    }, {
+      title: '验证码封装组件',
+      path: '/working/nethall/validate-code/'
     }]
   }, {
     title: '面试笔记',  
