@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>网厅首屏优化 | 前端知识体库</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.3.0">
+    <link rel="icon" href="/img/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.b71a9117.css" as="style"><link rel="preload" href="/assets/js/app.25a6e2d4.js" as="script"><link rel="preload" href="/assets/js/2.d22b6770.js" as="script"><link rel="preload" href="/assets/js/39.1369fbde.js" as="script"><link rel="prefetch" href="/assets/js/10.8cd865c1.js"><link rel="prefetch" href="/assets/js/11.632af148.js"><link rel="prefetch" href="/assets/js/12.2226d7fc.js"><link rel="prefetch" href="/assets/js/13.15100b3b.js"><link rel="prefetch" href="/assets/js/14.137988c0.js"><link rel="prefetch" href="/assets/js/15.798ca40f.js"><link rel="prefetch" href="/assets/js/16.391117fb.js"><link rel="prefetch" href="/assets/js/17.29df4aab.js"><link rel="prefetch" href="/assets/js/18.7c114653.js"><link rel="prefetch" href="/assets/js/19.782326a2.js"><link rel="prefetch" href="/assets/js/20.b7864faa.js"><link rel="prefetch" href="/assets/js/21.a52542bb.js"><link rel="prefetch" href="/assets/js/22.568f9693.js"><link rel="prefetch" href="/assets/js/23.825f4a32.js"><link rel="prefetch" href="/assets/js/24.011b0590.js"><link rel="prefetch" href="/assets/js/25.92763ee7.js"><link rel="prefetch" href="/assets/js/26.988c6c23.js"><link rel="prefetch" href="/assets/js/27.41deb6c7.js"><link rel="prefetch" href="/assets/js/28.6f8e6c2f.js"><link rel="prefetch" href="/assets/js/29.8c19bcbe.js"><link rel="prefetch" href="/assets/js/3.c0b6da25.js"><link rel="prefetch" href="/assets/js/30.e11c1895.js"><link rel="prefetch" href="/assets/js/31.5603e47c.js"><link rel="prefetch" href="/assets/js/32.ab4b4e78.js"><link rel="prefetch" href="/assets/js/33.30722f9a.js"><link rel="prefetch" href="/assets/js/34.af505171.js"><link rel="prefetch" href="/assets/js/35.12baff37.js"><link rel="prefetch" href="/assets/js/36.c6922760.js"><link rel="prefetch" href="/assets/js/37.a9e3b5dc.js"><link rel="prefetch" href="/assets/js/38.eff09880.js"><link rel="prefetch" href="/assets/js/4.8b7be62d.js"><link rel="prefetch" href="/assets/js/40.e0820188.js"><link rel="prefetch" href="/assets/js/41.9f00a9ac.js"><link rel="prefetch" href="/assets/js/42.aaf57feb.js"><link rel="prefetch" href="/assets/js/5.d7ee25f3.js"><link rel="prefetch" href="/assets/js/6.bdf5319a.js"><link rel="prefetch" href="/assets/js/7.9e023026.js"><link rel="prefetch" href="/assets/js/8.252e4a62.js"><link rel="prefetch" href="/assets/js/9.ca618720.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b71a9117.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/logo.jpeg" alt="前端知识体库" class="logo"> <span class="site-name can-hide">前端知识体库</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  每日一鲜
+</a></div><div class="nav-item"><a href="/blog.html" class="nav-link">
+  博客/会议
+</a></div><div class="nav-item"><a href="https://juejin.im/timeline" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://time.geekbang.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  极客时间
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.vuepress.cn/guide" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Vuepress
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://developer.mozilla.org/zh-CN/docs/Web" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  MDN
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/wuzaofeng" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/xitu/gold-miner" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金翻译计划
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_pc_3" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  疫情实时
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  每日一鲜
+</a></div><div class="nav-item"><a href="/blog.html" class="nav-link">
+  博客/会议
+</a></div><div class="nav-item"><a href="https://juejin.im/timeline" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://time.geekbang.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  极客时间
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.vuepress.cn/guide" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Vuepress
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://developer.mozilla.org/zh-CN/docs/Web" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  MDN
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/wuzaofeng" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/xitu/gold-miner" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金翻译计划
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_pc_3" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  疫情实时
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/guide/" class="sidebar-link">自动化部署静态文档</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>学习笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learning/html/" class="sidebar-link">html</a></li><li><section class="sidebar-group is-sub-group depth-1"><p class="sidebar-heading"><span>CSS</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learning/css/select/" class="sidebar-link">CSS选择器笔记</a></li></ul></section></li><li><section class="sidebar-group is-sub-group depth-1"><p class="sidebar-heading"><span>javascript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learning/javascript/deep/" class="sidebar-link">重学JS</a></li><li><a href="/learning/javascript/function.html" class="sidebar-link">模拟方法</a></li><li><a href="/learning/javascript/expression.html" class="sidebar-link">什么是表达式语句</a></li><li><a href="/learning/javascript/extends.html" class="sidebar-link">js继承的方法以及优缺点</a></li><li><a href="/learning/javascript/design/create.html" class="sidebar-link">设计模式(创建设计模式)</a></li><li><a href="/learning/javascript/design/struct.html" class="sidebar-link">设计模式(结构化设计模式)</a></li><li><a href="/learning/javascript/design/behaviour.html" class="sidebar-link">设计模式(行为型设计模式)</a></li><li><a href="/learning/javascript/design/book.html" class="sidebar-link">推荐设计模式书籍</a></li></ul></section></li><li><section class="sidebar-group is-sub-group depth-1"><p class="sidebar-heading"><span>typescript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learning/typescript/ts-collection-question.html" class="sidebar-link">【好文】耗时一年整理，全网最全的TypeScript踩坑集锦 (纯 TS 问题)</a></li><li><a href="/learning/typescript/ts-collection-config.html" class="sidebar-link">【好文】耗时一年整理，全网最全的TypeScript踩坑集锦 (tsconfig.json 常用配置项注释)</a></li><li><a href="/learning/typescript/ts-collection-react.html" class="sidebar-link">【好文】耗时一年整理，全网最全的TypeScript踩坑集锦（React + TS 项目问题）</a></li></ul></section></li><li><section class="sidebar-group is-sub-group depth-1"><p class="sidebar-heading"><span>前端工程化</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learning/project/webpack/" class="sidebar-link">【好文】企业级 Webpack 分享总结</a></li></ul></section></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>读书笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/readBook/HighPerformanceJS/" class="sidebar-link">高性能javascript</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>工作笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/working/wechat/webview.html" class="sidebar-link">微信小程序内嵌webview问题</a></li><li><a href="/working/verdaccio.html" class="sidebar-link">verdaccio 指南</a></li><li><a href="/working/webpack/" class="sidebar-link">vue-cli3项目构建优化</a></li><li><a href="/working/nethall/first-paint.html" class="active sidebar-link">网厅首屏优化</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/working/nethall/first-paint.html#_1-跳转链接" class="sidebar-link">1. 跳转链接</a></li><li class="sidebar-sub-header"><a href="/working/nethall/first-paint.html#_2-该项目首屏渲染时渲染第三方的链接，比如高德地图，网易七鱼等第三方链接，按需加载链接" class="sidebar-link">2.该项目首屏渲染时渲染第三方的链接，比如高德地图，网易七鱼等第三方链接，按需加载链接</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/working/nethall/first-paint.html#按需加载js" class="sidebar-link">按需加载js</a></li><li class="sidebar-sub-header"><a href="/working/nethall/first-paint.html#高德地图按需加载，并且实现单例模式" class="sidebar-link">高德地图按需加载，并且实现单例模式</a></li><li class="sidebar-sub-header"><a href="/working/nethall/first-paint.html#七鱼" class="sidebar-link">七鱼</a></li></ul></li><li class="sidebar-sub-header"><a href="/working/nethall/first-paint.html#遇到的问题" class="sidebar-link">遇到的问题</a></li></ul></li><li><a href="/working/nethall/home-bug/" class="sidebar-link">网厅首页开发问题笔记</a></li><li><a href="/working/nethall/validate-code/" class="sidebar-link">验证码封装组件</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>面试笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/job/html.html" class="sidebar-link">HTML面试题</a></li><li><a href="/job/css.html" class="sidebar-link">CSS面试题</a></li><li><a href="/job/js.html" class="sidebar-link">JS面试题</a></li><li><a href="/job/browser.html" class="sidebar-link">浏览器面试题</a></li><li><a href="/job/description.html" class="sidebar-link">原理面试题</a></li><li><a href="/job/frame.html" class="sidebar-link">框架面试题</a></li><li><a href="/job/vue/" class="sidebar-link">vue面试题</a></li><li><a href="/job/way/" class="sidebar-link">前端面试之道的理解</a></li></ul></section></li><li><a href="/cracked.html" class="sidebar-link">工具破解链接</a></li><li><a href="https://ustbhuangyi.github.io/vue-analysis/v2/prepare/" target="_blank" rel="noopener noreferrer" class="sidebar-link">Vue.js 技术揭秘<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="网厅首屏优化"><a href="#网厅首屏优化" class="header-anchor">#</a> 网厅首屏优化</h1> <h2 id="_1-跳转链接"><a href="#_1-跳转链接" class="header-anchor">#</a> 1. 跳转链接</h2> <p>不能通过直接改变window.loation.href跳转，需要通过router.push跳转，不然就是重新刷新页面</p> <div class="language- extra-class"><pre class="language-text"><code>// 判断链接是否该项目的路由链接，如果是通过路由跳转，否则通过window.location.href跳转
+
+// 跳转
+export function toSkip (url, _this) {
+  const { origin } = window.location
+  const reg = new RegExp(`^${origin}`)
+  // 判断是否当前域名地址
+  if (reg.test(url)) {
+    const _url = url.replace(reg, '')
+    _this.$router.push(_url)
+  } else {
+    location.href = url
+  }
+</code></pre></div><h2 id="_2-该项目首屏渲染时渲染第三方的链接，比如高德地图，网易七鱼等第三方链接，按需加载链接"><a href="#_2-该项目首屏渲染时渲染第三方的链接，比如高德地图，网易七鱼等第三方链接，按需加载链接" class="header-anchor">#</a> 2.该项目首屏渲染时渲染第三方的链接，比如高德地图，网易七鱼等第三方链接，按需加载链接</h2> <h3 id="按需加载js"><a href="#按需加载js" class="header-anchor">#</a> 按需加载js</h3> <div class="language- extra-class"><pre class="language-text"><code>export function loadScript (url, key = '') {
+  return new Promise((resolve, reject) =&gt; {
+    const script = document.createElement('script')
+    script.charset = 'utf-8'
+    script.src = url
+    document.body.appendChild(script)
+    script.addEventListener('load', function () {
+      resolve(key ? window[key] : '')
+    })
+    script.addEventListener('error', function (...params) {
+      reject(params)
+    })
+  })
+}
+</code></pre></div><h3 id="高德地图按需加载，并且实现单例模式"><a href="#高德地图按需加载，并且实现单例模式" class="header-anchor">#</a> 高德地图按需加载，并且实现单例模式</h3> <div class="language- extra-class"><pre class="language-text"><code>import { loadScript } from '@/utils/utils'
+import config from '@/config'
+
+class Map {
+  constructor (AMap, key, v) {
+    this.instance = null
+    this._key = key
+    this._v = v
+    this.AMap = AMap // window传入的AMap
+    this.map = new AMap.Map('') // 实例化的值
+  }
+
+  getLocation () {
+    const _this = this
+    return new Promise((resolve, reject) =&gt; {
+      // 高德API获取定位
+      _this.map.plugin('AMap.Geolocation', () =&gt; {
+        let geoLocation = new _this.AMap.Geolocation({
+          enableHighAccuracy: true, // 是否使用高精度定位，默认：true
+          timeout: 10000 // 设置定位超时时间，默认：无穷大
+        })
+        geoLocation.getCurrentPosition()
+        _this.AMap.event.addListener(geoLocation, 'complete', (data) =&gt; {
+          resolve(data)
+        })
+        _this.AMap.event.addListener(geoLocation, 'error', (error) =&gt; {
+          reject(error)
+        })
+      })
+    })
+  }
+
+  static async getInstance () {
+    if (!this.instance) {
+      const _v = '1.4.15'
+      const _key = 'cbfc0b347323de3f78edf4145a93df26'
+      if (!window.AMap) {
+        await loadScript(`${config.loadScript.map}?v=${_v}&amp;key=${_key}`, 'AMap')
+      }
+      this.instance = new Map(window.AMap, _key, _v)
+    }
+    return this.instance
+  }
+}
+export default Map
+
+</code></pre></div><h3 id="七鱼"><a href="#七鱼" class="header-anchor">#</a> 七鱼</h3> <div class="language- extra-class"><pre class="language-text"><code>export function loadYSF () {
+  return new Promise(async (resolve, reject) =&gt; {
+    if (!window.ysf) {
+      await loadScript(config.loadScript.qiyukf, 'ysf')
+    }
+    window.ysf('onready', function () {
+      resolve(window.ysf)
+    })
+  })
+}
+</code></pre></div><h2 id="遇到的问题"><a href="#遇到的问题" class="header-anchor">#</a> 遇到的问题</h2> <p>如果是封装在组件里面的，反复使用的npm包，比如exif.min.js，应该通过npm包引入</p> <p>如果页面有引入两个相同的上传组件，那么就会同时加载script标签</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/working/webpack/" class="prev">
+        vue-cli3项目构建优化
+      </a></span> <span class="next"><a href="/working/nethall/home-bug/">
+        网厅首页开发问题笔记
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.25a6e2d4.js" defer></script><script src="/assets/js/2.d22b6770.js" defer></script><script src="/assets/js/39.1369fbde.js" defer></script>
+  </body>
+</html>
