@@ -93,11 +93,15 @@ Promise是es6的规范
 
 ## 循环有几种方式，是否支持中断和默认情况下是否支持async/await
 
-for 支持中断、支持异步事件
-for of 支持中断、支持异步事件
-for in 支持中断、支持异步事件
-forEach 不支持中断、不支持异步事件
-map 不支持中断、不支持异步事件，支持异步处理方法：map 返回promise数组，在使用 Promise.all 一起处理异步事件数组
+for **支持中断、支持异步事件**
+
+for of **支持中断、支持异步事件**
+
+for in **支持中断、支持异步事件**
+
+forEach **不支持中断、不支持异步事件**
+
+map **不支持中断、不支持异步事件**，支持异步处理方法：map 返回promise数组，在使用 Promise.all 一起处理异步事件数组
 ```
 // 使用async await 处理异步操作
 let results = await Promise.all(arr.map(async (item) => {
@@ -107,9 +111,10 @@ let results = await Promise.all(arr.map(async (item) => {
 
 ```
 
-reduce 不支持中断、不支持异步事件，支持异步处理方法：返回值返回 promise 对象
+reduce **不支持中断、不支持异步事件**，支持异步处理方法：返回值返回 promise 对象
 
 ## 请写出下面三次alert的结果
+
 ```
 <script>
 var a = 3

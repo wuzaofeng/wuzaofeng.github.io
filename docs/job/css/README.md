@@ -68,34 +68,37 @@ ie是比较特殊，包括padding和border
 ```
 
 ## 请使用css画出一个半圆,扇形，椭圆都是在border-radius做文章
+
 ```
+
 半圆
 .border {
     width: 50px;
     height: 25px;
-    border-radius: 50px 50px 0 0
+    border-radius: 50px 50px 0 0;
 }
 
 扇形
 .border {
     width: 50px;
     height: 25px;
-    border-radius: 0 50px 0 0 
+    border-radius: 0 50px 0 0;
 }
-
 ```
 
+```
 椭圆
 .border {
     width: 100px;
     height: 50px;
     border-radius: 50px /25px
 }
-
+```
 
 [CSS制作的32种图形效果[梯形|三角|椭圆|平行四边形|菱形|四分之一圆|旗帜]](https://blog.csdn.net/dmtnewtons_blog/article/details/41146485)
 
 ## 实现一个三栏布局，中间部分要自适应宽度并且优先加载，左边宽100px右边宽为160px
+
 ```
 <div class="wrap">
     <div class="content">
@@ -208,7 +211,7 @@ position
 
 ## 圣杯布局
 
-![圣杯布局](./圣杯布局.png)
+![圣杯布局](./1.png)
 
 1. 利用flex布局
 
@@ -284,7 +287,7 @@ float:left, float:right
 
 ## 双飞翼布局
 
-![双飞翼布局](./双飞翼布局.png)
+![双飞翼布局](./2.png)
 
 1. 浮动布局
 ```
