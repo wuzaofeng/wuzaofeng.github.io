@@ -6,6 +6,12 @@
 
 * [为什么你的网页需要 CSP?](https://mp.weixin.qq.com/s/S2NeE_hpOX5cM1Yaxz3YDw)
 
+## 2020-04-26
+
+* [前端部署的发展历程](https://mp.weixin.qq.com/s/K9VWafQkrwnxS6AIxE0RAw)
+
+## 2020-04-25
+
 * [面试官：前端代码线上出错如何解决？使用sentry](https://mp.weixin.qq.com/s/mLrkufiJ-l5C2S_rE7e4LA)
 
 ## 2020-04-24
