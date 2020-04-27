@@ -1,5 +1,33 @@
 # 每日一鲜
 
+## 2020-04-27
+
+* [从 React 历史的长河里聊虚拟 DOM 及其价值](https://mp.weixin.qq.com/s/NODSgV-uwLmgCAMBgmVm7g)
+
+* [为什么你的网页需要 CSP?](https://mp.weixin.qq.com/s/S2NeE_hpOX5cM1Yaxz3YDw)
+
+* [面试官：前端代码线上出错如何解决？使用sentry](https://mp.weixin.qq.com/s/mLrkufiJ-l5C2S_rE7e4LA)
+
+## 2020-04-24
+
+* [移动 web 最佳实践（干货长文，建议收藏）](https://mp.weixin.qq.com/s/W-zvgDHNPOmb8dI8Q1kY3g)
+
+## 2020-04-23
+
+* [最全的资源教程-前端涉及的所有知识体系](https://mp.weixin.qq.com/s/2uoPje78qtaJzrEikbcdfQ)
+
+## 2020-04-22
+
+* [新手学习 react 迷惑的点(完整版)](https://mp.weixin.qq.com/s/L3AAMqbJDOzlA8vj1EHnoQ)
+
+## 2020-04-21
+
+* [Chrome Devtools 高级调试指南，让你的开发速度加倍](https://mp.weixin.qq.com/s/xJJBzpJ94A_Tmo9L7wqstQ)
+
+## 2020-04-20
+
+* [跟大家聊 10 道考察前端算法基础的高频题](https://mp.weixin.qq.com/s/7hLLl7CXpLfzK2hwURv1Ug)
+
 ## 2020-04-19
 
 * [面试官问: 如何理解Virtual DOM？](https://juejin.im/post/5d5d32e251882545e41e655d)
