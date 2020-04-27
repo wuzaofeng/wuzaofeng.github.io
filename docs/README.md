@@ -38,7 +38,7 @@
 
 * [面试官问: 如何理解Virtual DOM？](https://juejin.im/post/5d5d32e251882545e41e655d)
 
-*[带你深度解锁Webpack系列(基础篇)] (https://juejin.im/post/5e5c65fc6fb9a07cd00d8838)
+*[带你深度解锁Webpack系列(基础篇)](https://juejin.im/post/5e5c65fc6fb9a07cd00d8838)
 
 ## 2020-04-18
 
@@ -61,7 +61,6 @@
 ## 2020-04-15
 
 * [(建议精读)原生JS灵魂之问(中)，检验自己是否真的熟悉JavaScript？](https://juejin.im/post/5dbebbfa51882524c507fddb)
-
 
 ## 2020-04-14
 
