@@ -2,6 +2,8 @@
 
 ## 2020-04-28
 
+* [你不知道的浏览器页面渲染机制](https://mp.weixin.qq.com/s/nTJTNd3jr51Jmr1HNTlgbw)
+
 * [学习 React Hooks 可能会遇到的五个灵魂问题](https://mp.weixin.qq.com/s/tdigs_vUvwNLJ_IcvxN36w)
 
 * [如何编写易维护的JavaScript代码](https://mp.weixin.qq.com/s/Hi2uipjaxtcPTKprq1ueSw)
