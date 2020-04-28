@@ -4,6 +4,8 @@
 
 * [学习 React Hooks 可能会遇到的五个灵魂问题](https://mp.weixin.qq.com/s/tdigs_vUvwNLJ_IcvxN36w)
 
+* [如何编写易维护的JavaScript代码](https://mp.weixin.qq.com/s/Hi2uipjaxtcPTKprq1ueSw)
+
 ## 2020-04-27
 
 * [从 React 历史的长河里聊虚拟 DOM 及其价值](https://mp.weixin.qq.com/s/NODSgV-uwLmgCAMBgmVm7g)
