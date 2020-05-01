@@ -1,8 +1,9 @@
-## 浏览器
+# 浏览器
 
 * [（建议精读）HTTP灵魂之问，巩固你的 HTTP 知识体系](https://juejin.im/post/5e76bd516fb9a07cce750746)
 
 ## 请写出你知道的http状态码以及含义
+
 200, 状态请求成功
 
 301，永久重定向
@@ -71,7 +72,6 @@ Cache-control：max-age：表示该资源多少时间后过期（毫秒）
 If-None-Match/ETag：缓存标识
 
 Last-modified/If-Modified-Since: 表明请求的资源上次的修改时间
-
 
 ## web安全信息
 

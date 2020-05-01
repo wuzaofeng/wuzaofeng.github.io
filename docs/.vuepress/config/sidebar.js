@@ -46,7 +46,19 @@ module.exports = [
         title: '推荐设计模式书籍',
         path: '/learning/javascript/design/book'
       }]
-    }, {
+    },
+    {
+      title: 'vue',
+      collapsable: false,
+      children: [{
+        title: 'vue2',
+        path: '/learning/vue2/'
+      }, {
+        title: 'vue3',
+        path: '/learning/vue3'
+      }]
+    },
+    {
       title: 'typescript',
       collapsable: false,
       children: [{

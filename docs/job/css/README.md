@@ -8,8 +8,7 @@
 
 当父元素的display设置成flex的时候，就会成一个弹性容器，那么子元素变成了弹性元素，flex分为主轴和侧轴，默认是主轴
 
-
-**弹性容器**
+### **弹性容器**
 
 * flex-direction(主轴的方向， 默认横向)
 * flex-wrap（是否换行，默认不换行）
@@ -18,7 +17,7 @@
 * align-items（侧轴的对齐方式）
 * align-content (多个主轴线的对齐方式)
 
-**弹性元素**
+### **弹性元素**
 
 * order（顺序排列，数字越小越在前面）（可以负数）
 * flex-grow (放大的比例，默认0)
@@ -48,8 +47,8 @@ ie是比较特殊，包括padding和border
 
 ## 请使用css画出一个梯形
 
-```
-// 三角形
+```css
+/* 三角形 */
 .border {
     width: 0;
     height: 0;
@@ -57,7 +56,7 @@ ie是比较特殊，包括padding和border
     border-right: 50px solid transparent;
     border-left: 50px solid transparent;
 }
-// 梯形(加个宽度即可)
+/* 梯形(加个宽度即可) */
 .border {
     width: 20px;
     height: 0;
@@ -69,16 +68,16 @@ ie是比较特殊，包括padding和border
 
 ## 请使用css画出一个半圆,扇形，椭圆都是在border-radius做文章
 
-```
+```css
 
-半圆
+/* 半圆 */
 .border {
     width: 50px;
     height: 25px;
     border-radius: 50px 50px 0 0;
 }
 
-扇形
+/* 扇形 */
 .border {
     width: 50px;
     height: 25px;
@@ -99,16 +98,16 @@ ie是比较特殊，包括padding和border
 
 ## 实现一个三栏布局，中间部分要自适应宽度并且优先加载，左边宽100px右边宽为160px
 
-```
+```css
 <div class="wrap">
-    <div class="content">
+    <div class="content"></div>
     content
     </div>
     <div class="left">left</div>
     <div class="right">right</div>
 </div>
 
-flex
+/* flex */
 .wrap {
     display: flex;
 }
@@ -125,7 +124,7 @@ flex
     order: 3
 }
 
-float
+/* float */
 .wrap {
    overflow:hidden;
 }
@@ -147,7 +146,7 @@ float
     float: right
 }
 
-position
+/* position */
 .wrap {
    position: relative
 }
@@ -186,7 +185,7 @@ position
 
 不是绝对定位 标准盒模型下是`content`, IE盒模型是`content+padding+border`
 
-```
+```css
 .inner_wrapper{
     background: red;
     position: relative;

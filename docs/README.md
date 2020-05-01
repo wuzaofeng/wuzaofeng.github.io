@@ -1,5 +1,23 @@
 # 每日一鲜
 
+## 2020-04-30
+
+* [抄笔记：移动端必备的H5问题及解决方案](https://mp.weixin.qq.com/s/2k8vTKxdO_-2i03LELvUZg)
+
+* [挑战一轮大厂后的面试总结 (含六个方向) - 面试技巧篇](https://mp.weixin.qq.com/s/UrtKN6Zt9THjB306RsHhiA)
+
+* [前端性能优化之谈谈常见的性能指标及上报策略](https://mp.weixin.qq.com/s/wDKKj5R8SYm-_75Zn1y30A)
+
+## 2020-04-29
+
+* [简析 Node.js 特点与应用场景](https://mp.weixin.qq.com/s/2OtvHZnZNokRhtuE53u9ng)
+
+* [什么是三次握手，这张思维导图让面试官直接给出offer](https://mp.weixin.qq.com/s/gDa0cBRCKv2BAK8LF2FZCA)
+
+* [你连 HTTPS 原理都不懂，还讲“中间人攻击”？](https://mp.weixin.qq.com/s/sHtZhRTNOihmxap5sDD6xQ)
+
+* [两小时入门 Docker（好文推荐）](https://mp.weixin.qq.com/s/I_T9a7MH36JWXfCKKKBoNA)
+
 ## 2020-04-28
 
 * [你不知道的浏览器页面渲染机制](https://mp.weixin.qq.com/s/nTJTNd3jr51Jmr1HNTlgbw)

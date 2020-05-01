@@ -21,7 +21,7 @@
 
 栗子:
 
-```
+```js
 <!-- 插入图片函数 -->
 const imgFunc = (() => {
     const imgNode = document.createElement('img')
@@ -64,13 +64,13 @@ proxyImage.setSrc('./pic.png')()
 
 简单实现:
 
-```
+```js
 import React from 'react'
 const withLog = Component => {
   // 完好无损渲染出来, 只是添加了两个生命周期函数
   class NewComponent extends React.Component{
     // 1
-    componentWillMount(){ 
+    componentWillMount(){
       console.time('ComponentRender')
       console.log('准备完毕了')
     }
@@ -91,6 +91,7 @@ export { withLog }
 class xxx
 
 ```
+
 在redux中可以找出装饰器的方式，其实Vue中的v-input，v-checkbox也可以认为是装饰器模式，对原生input和checkbox做一层装饰
 
 ::: tip 装饰器模式和代理模式区别
@@ -110,7 +111,8 @@ class xxx
 **外观模式的定义：**即在内部让多个方法一起被调用
 
 举个简单的栗子
-```
+
+```js
 // 封装一些事件，让其兼容各个浏览器
 const myEvent = {
   stopBubble(e){
@@ -152,7 +154,7 @@ const myEvent = {
 假设有个内衣工厂，目前的产品有50中男衣和50中女士内衣，为了推销产品，工厂决定生产一些塑料模特来穿上他们的内衣拍成广告照片。
 正常情况下需要50个男模特和50个女模特，然后让他们每人分别穿上一件内衣来拍照
 
-```
+```js
 const Model = function(sex, underwear){
   this.sex = sex
   this.underwear = underwear
@@ -177,7 +179,7 @@ for(let join = 1; join <= 50; join++){
 
 拍照，性别都是内部状态，而需要数量多少个，那就是外部状态
 
-```
+```js
 const Model = function(sex){
   this.sex = sex
 }
@@ -225,4 +227,3 @@ for(let j = 1; j <= 50; j++){
 ::: tip 参考地址
 [设计模式之适配器模式](https://www.cnblogs.com/TomXu/archive/2012/04/11/2435452.html)
 :::
-
