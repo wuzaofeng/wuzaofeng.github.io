@@ -25,6 +25,9 @@ module.exports = [
         title: '重学JS',
         path: '/learning/javascript/deep/'
       }, {
+        title: '重学es6',
+        path: '/learning/javascript/deep/es6'
+      }, {
         title: '模拟方法',
         path: '/learning/javascript/function'
       }, {

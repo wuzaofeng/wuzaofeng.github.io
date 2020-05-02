@@ -1,3 +1,5 @@
+# 重学js
+
 ## 原型以及原型链
 
 ### 原型
@@ -22,7 +24,7 @@
 
 js是**词法作用域**，也就是**静态作用域**
 
-**静态作用域**是，函数作用域在**(函数定义)**的时候就决定了 (该作用域是父级创建的所以作用域链)
+**静态作用域**是，函数作用域在(**函数定义**)的时候就决定了 (该作用域是父级创建的所以作用域链)
 
 **动态作用域**是，函数作用域在**函数调用**的时候才决定的。
 
@@ -32,11 +34,11 @@ js是**词法作用域**，也就是**静态作用域**
 
 一种是函数创建的时候，会有个**静态作用域**，静态作用域是指将父级或父级以上的作用域的所有变量对象，可以理解成一个**父级的作用域链**
 
-第二种，就是函数执行的时候，会创建一个执行上下文，也就是会创建一个作用域，是函数独有的作用域，两者加起来就是该函数整体的作用域
+第二种，就是函数执行的时候，会创建一个**执行上下文**，也就是会创建一个作用域，是**函数独有的作用域**，两者加起来就是**该函数整体的作用域**
 
 ## 执行上下文
 
-js引擎执行代码时会创建执行环境（执行上下文）
+js引擎执行代码时会**创建执行环境**（执行上下文）
 
 * 创建全局函数
 
@@ -46,19 +48,21 @@ js引擎执行代码时会创建执行环境（执行上下文）
 
 ### 生命周期
 
-创建阶段
+#### 创建阶段
+
 在这个阶段中，执行上下文会分别创建变量对象，建立作用域链，以及确定this的指向。
 
-代码执行阶段
+#### 代码执行阶段
+
 创建完成之后，就会开始执行代码，这个时候，会完成变量赋值，函数引用，以及执行其他代码
 
 ### **执行上下文都会包含三个重要属性**
 
-1. 变量对象（variable Object VO）
+1.变量对象（variable Object VO）
 
-2. 作用域链（scoped chain）
+2.作用域链（scoped chain）
 
-3. this
+3.this
 
 #### 变量对象(VO)
 
@@ -80,15 +84,15 @@ js引擎执行代码时会创建执行环境（执行上下文）
 
     * 如果变量名称跟已经声明的形式参数或函数相同，则变量声明**不会干扰**已经存在的这类属性
 
-#####  变量对象（VO）与活动对象（AO）区别
+#### 变量对象（VO）与活动对象（AO）区别
 
-当每次执行上下文之前，会保存上下文定义的属性以及函数声明, 该阶段是不可访问
+当**每次执行上下文之前**，会保存上下文定义的属性以及函数声明, 该阶段是**不可访问**
 
-但执行阶段之后，变量对象（VO）会转成 活动对象（AO）,里面的属性可以访问
+但**执行阶段**之后，变量对象（VO）会转成 活动对象（AO）,里面的属性**可以访问**
 
 本质上都是同一个对象，区别在于运行不同的对象周期
 
-[JavaScript深入之作用域链 ](https://github.com/mqyqingfeng/Blog/issues/6)
+[JavaScript深入之作用域链](https://github.com/mqyqingfeng/Blog/issues/6)
 
 ::: tip 总结
 
@@ -113,13 +117,11 @@ js引擎执行代码时会创建执行环境（执行上下文）
 
 2. 判断 `ref` 是不是一个 `Reference` 类型。
 
-```
 2.1 如果 ref 是 Reference，并且 IsPropertyReference(ref) 是 true, 那么 this 的值为 GetBase(ref)
 
 2.2 如果 ref 是 Reference，并且 base value 值是 Environment Record, 那么this的值为 ImplicitThisValue(ref)
 
 2.3 如果 ref 不是 Reference，那么 this 的值为 undefined
-```
 
 由于不是严格模式，this如果是undefined，会指向全局对象window
 
@@ -137,7 +139,7 @@ this就是最后调用他的函数，
 
 4. 可以通过call， apply, bind改变（显式绑定）
 
-```
+```js
 1. 查看函数在哪被调用。
 2. 左侧有没有对象？如果有，它就是 “this” 的引用。如果没有，继续第 3 步。
 3. 该函数是不是用 “call”、“apply” 或者 “bind” 调用的？如果是，它会显式地指明 “this” 的引用。如果不是，继续第 4 步。
@@ -148,7 +150,7 @@ this就是最后调用他的函数，
 
 ## 闭包
 
-指那些能够访问自由变量的函数
+指那些能够访问**自由变量**的函数
 
 1. 创建它的执行上下文被销毁了，但它仍然存在（比如内部函数从父函数返回过来）
 
@@ -169,62 +171,74 @@ function aaa () {
 
 参数传递都是按值来传递的，但是js中有分``基本类型和引用类型``，所说的值传递是指栈中的值拷贝
 
-基本类型是存储在栈内存中，但引用类型是将地址存在栈内存中，而数据存在堆内存中
+基本类型是存储在栈内存中，但引用类型是将引用地址存在栈内存中，而数据存在堆内存中
 
 ## JavaScript 语言在引擎级别的执行过程
 
 ### 一、环境的准备
 
-1. 作用域 Scope
+1.作用域 `Scope`
 
-作用域本身有两个成员，object 和 parent，作用域中包含对象及属性
+作用域本身有两个成员，`object` 和 `parent`，作用域中包含对象及属性
+
 作用域主要有两项功能
- * 查找名字
- * 如果没有，查找 parent 上一层
 
-2. 环境 Environment
+* 查找名字
+* 如果没有，查找 `parent` 上一层
 
-词法环境规范：环境记录和 outer，环境记录可以映射为作用域中的 object，outer 映射为作用域中的 parent
+2.环境 `Environment`
 
-3. 属性标识符
+词法环境规范：环境记录和 `outer`，环境记录可以映射为作用域中的 `object`，`outer` 映射为作用域中的 `parent`
 
-ES5的重要规范是**属性描述符和属性标识符规范**， 所有的环境记录对外统一用一个有意义的`interface`, 即标识符引用 GetIdentifierReference
+3.属性标识符
+
+ES5的重要规范是**属性描述符和属性标识符规范**， 所有的环境记录对外统一用一个有意义的`interface`, 即标识符引用 `GetIdentifierReference`
 
 标识符引用的所用是代替作用域查找名字的功能，统一格式
 
-### 二. 可执行上下文 Executive Context
+### 二. 可执行上下文 `Executive Context`
 
 执行上下文添加了两个成员，**词法环境**和**变量环境**
 
 理论上**词法环境**和**变量环境**只需要有一个就可以查找名字。但 JavaScript 中变量环境解决 `var` 声明，词法环境解决一般**变量声明**，两种声明在 `JavaScript` 中不兼容
 
-1.代码层面如何 run
+1.代码层面如何 `run`
 
 执行栈（ECS）为空时，会自动去找任务队列中的函数，并且执行，执行栈是先进后出的原则，任务队列是先进先出的原则
 
-一开始，会执行1. 内核引擎所需要执行上下文（newContext for job），之后2. 通过newContext创建` scriptContext`执行上下文(变量环境和词法环境)
+一开始，会执行
 
-ScriptContext 执行上下文具体还可分为四种可执行的上下文，全局初始化、模块初始化环境、实例化函数环境、实例化 Eval 环境等。
+1. 内核引擎所需要执行上下文（`newContext for job`），之后
 
-1. 执行表达式
+2. 通过`newContext`创建`scriptContext`执行上下文(变量环境和词法环境)
+
+`ScriptContext` 执行上下文具体还可分为四种可执行的上下文，**全局初始化**、**模块初始化环境**、**实例化函数环境**、**实例化 Eval 环境**等。
+
+1.执行表达式
+
 执行表达式返回的结果包括原始值，对象，引用规范类型。
 
-2. 执行语句
+2.执行语句
+
 执行语句返回的结果是完整规范类型，表示语句是否被完整执行，是否中断，返
 回值不包含引用。
 
 ## 继承
 
 面向对象三大特性
+
+继承
+
 封装：低耦合高内聚
+
 多态：重载和重写
 
-* 重载：方法名相同，形参的个数或者类型不一样（js不存在真正意义上的重载）（可以通过arguments）实现重载
+* 重载：方法名相同，形参的个数或者类型不一样（js不存在真正意义上的重载）（可以通过`arguments`）实现重载
 * 重写：类的继承中，子类可以重写继承父类的方法
 
 ### 原型链继承
 
-原理：child.prototype = new Parent()
+原理：`child.prototype = new Parent()`
 
 1. 引用类型的属性会被所有实例共享
 
@@ -234,9 +248,9 @@ ScriptContext 执行上下文具体还可分为四种可执行的上下文，全
 
 ### 构造函数继承
 
-原理：Parent.call(this)
+原理：`Parent.call(this)`
 
-**优点**
+#### 优点
 
 1. 避免引用类型属性被所有实例共享
 
@@ -244,9 +258,9 @@ ScriptContext 执行上下文具体还可分为四种可执行的上下文，全
 
 3. 多继承
 
-**缺点**
+#### 缺点
 
-方法都定义在构造器中，每次创建实例，会创建一边方法
+方法都定义在构造器中，每次创建实例，会创建一遍方法
 
 ### 组合(原型链和构造函数)继承
 
@@ -255,7 +269,7 @@ ScriptContext 执行上下文具体还可分为四种可执行的上下文，全
 缺点
 调用两次父构造函数
 
-```
+```js
 function Parent (name) {
     this.name = name;
     this.colors = ['red', 'blue', 'green'];
@@ -293,7 +307,8 @@ console.log(child2.colors); // ["red", "blue", "green"]
 ### 原型式继承
 
 缺点 引用类型属性共享在实例中，和原型链继承一样
-```
+
+```js
 Object.create
 function createObj(o) {
     function F(){}
@@ -305,7 +320,8 @@ function createObj(o) {
 ### 寄生式继承
 
 缺点 跟借用构造函数模式一样，每次创建对象都会创建一遍方法
-```
+
+```js
 function createObj (o) {
     var clone = Object.create(o);
     clone.sayName = function () {
@@ -323,7 +339,7 @@ function createObj (o) {
 
 遍历元素，获取元素，再将剩余的个数随机获取。互换元素
 
-```
+```js
 function shuffle(a) {
     var j, x, i;
     for (i = a.length; i; i--) {
@@ -348,7 +364,7 @@ function shuffle (arr) {
 }
 ```
 
-```
+```js
 function shuffle(a) {
     for (let i = a.length; i; i--) {
         let j = Math.floor(Math.random() * i);
@@ -371,7 +387,7 @@ function shuffle (arr) {
 
 ![插入排序](./insertionsort.gif)
 
-```
+```js
 function insertionSort(arr) {
     for (var i = 1; i < arr.length; i++) {
         var element = arr[i];
@@ -403,7 +419,7 @@ console.log(insertionSort(arr));
 
 ![快速排序](./quicksort.gif)
 
-```
+```js
 var quickSort = function(arr) {
 　　if (arr.length <= 1) { return arr; }
     // 取数组的中间元素作为基准
@@ -423,7 +439,6 @@ var quickSort = function(arr) {
 　　return quickSort(left).concat([pivot], quickSort(right));
 };
 ```
-
 
 [《快速排序（Quicksort）的Javascript实现》](http://www.ruanyifeng.com/blog/2011/04/quicksort_in_javascript.html)
 

@@ -39,9 +39,9 @@ ES6
 
 4. 数字，字符串解构会先传成包装对象
 
-```
+```js
 
-<!-- 错误的写法, 因为Javascript引擎会将{x}理解成一个代码块 -->
+// 错误的写法, 因为Javascript引擎会将{x}理解成一个代码块
 let x;
 {x} = {x: 1};
 // SyntaxError: syntax error
@@ -66,7 +66,7 @@ let x;
 
 ## 字符串的扩展
 
-1. 加强对字符的`Unicode`的支持，
+加强对字符的`Unicode`的支持
 
 ## 原始Symbol，表示独一无二的值
 
@@ -103,10 +103,72 @@ let x;
 
 ### Promise 的局限性
 
-* 错误被吃掉，Promise 内部的错误不会影响到 Promise 外部的代码
+* 错误被吃掉，Promise 内部的错误不会影响到 Promise 外部的代码, p
 
 * resolve, reject只能传递单一值
 
 * 无法取消
 
 * 无法知道pending状态
+
+#### `Promise.all()`
+
+1. 只有都请求成功，那么才返回成功
+
+2. 如果有一个是请求失败，那么就失败,会到catch
+
+注意：如果Promise实例，自己有catch那么会先调用catch，然后如果没有reject, 那么会到Promise.all.then方法
+
+##### 缺点
+
+无法确定所有请求都结束
+
+#### `Promise.race()`
+
+实例中，根据最先返回的值改变状态，最先成功就成功，失败就失败
+
+#### `Promise.any()`（第三阶段的提案）
+
+只要参数实例有一个变成fulfilled状态，包装实例就会变成fulfilled状态；如果所有参数实例都变成rejected状态，包装实例就会变成rejected状态
+
+#### `Promise.allSettled()`
+
+必须等待实例全部返回结果才结束，只要有个成功，就进到then
+
+##### 作用
+
+不关心异步操作的结果，只关心这些操作有没有结束
+
+#### `Promise.try()`
+
+让同步函数同步执行，异步函数异步执行
+
+```js
+const f = () => console.log('now')
+(async () => f())()
+console.log('next')
+
+// async () => f()会吃掉f()抛出的错误
+
+(async () => f())()
+.then(...)
+.catch(...)
+```
+
+## Iterator
+
+Iterator接口的目的，就是为所有数据结构，提供了一种统一的访问机制,即`for...of`循环
+
+### 场合
+
+1.使用`for of`循环数据
+
+数组, 类数组对象, map, set
+
+2.解构赋值
+
+对数组和 Set 结构进行解构赋值时，会默认调用`Symbol.iterator`方法
+
+3.扩展运算符
+
+4.yield*
