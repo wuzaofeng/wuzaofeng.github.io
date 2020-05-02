@@ -1,5 +1,9 @@
 # 每日一鲜
 
+## 2020-5-02
+
+* [面试官：用一句话描述 JS 异常是否能被 try catch 捕获到](https://mp.weixin.qq.com/s/qO9xJSsvxoAlbkV4YCm7ng)
+
 ## 2020-04-30
 
 * [抄笔记：移动端必备的H5问题及解决方案](https://mp.weixin.qq.com/s/2k8vTKxdO_-2i03LELvUZg)
