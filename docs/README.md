@@ -1,6 +1,10 @@
 # 每日一鲜
 
-## 2020-5-02
+## 2020-05-03
+
+* [嗨，送你一张Web性能优化地图](https://juejin.im/entry/5b4da7efe51d45198f5c6234)
+
+## 2020-05-02
 
 * [面试官：用一句话描述 JS 异常是否能被 try catch 捕获到](https://mp.weixin.qq.com/s/qO9xJSsvxoAlbkV4YCm7ng)
 

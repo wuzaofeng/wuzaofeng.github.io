@@ -172,3 +172,137 @@ Iterator接口的目的，就是为所有数据结构，提供了一种统一的
 3.扩展运算符
 
 4.yield*
+
+## generator 函数
+
+调用`generator`函数，返回一个迭代器对象，代表着`generator`函数内部的指针，当迭代器对象调用next时，会返回`value`和`done`，引用到`yield`，如果遇到`return`就直接结束
+
+### 原理
+
+`generator`执行的时候，由于`js`是单线程的，每次只能执行一个函数，当执行`generator`的时候，遇到`yield`时候，上下文退出堆栈，内部状态冻结，第二次执行`g.next()`时，gen上下文重新加入堆栈，变成当前的上下文，重新恢复执行。
+
+### 注意
+
+1.`yield`紧跟着后面表达式，是惰性求值（`Lazy Evaluation`）的，当调用时才会开始计算
+
+2.`yield`如果用在另一个表达式中，必须加上圆括号
+
+```js
+function* demo() {
+  console.log('Hello' + yield 123); // SyntaxError
+
+  console.log('Hello' + (yield 123)); // OK
+}
+```
+
+3.`yield`表达式用作函数参数或放在赋值表达式的右边，可以不加括号
+
+```js
+function* demo() {
+  foo(yield 'a', yield 'b'); // OK
+  let input = yield; // OK
+}
+```
+
+4.`next`可以带一个参数，作为上一个`yield`的返回值, `yield`总是返回undefined
+
+在**第一次**使用next方法时，传递参数是无效的
+
+```js
+function* foo(x) {
+  var y = 2 * (yield (x + 1));
+  var z = yield (y / 3);
+  return (x + y + z);
+}
+
+var a = foo(5);
+a.next() // Object{value:6, done:false}
+a.next() // Object{value:NaN, done:false}
+a.next() // Object{value:NaN, done:true}
+
+var b = foo(5);
+b.next() // { value:6, done:false }
+b.next(12) // { value:8, done:false }
+b.next(13) // { value:42, done:true }
+```
+
+5.可以为对象添加迭代器`generator`
+
+```js
+function* objectEntries(obj) {
+  let propKeys = Reflect.ownKeys(obj);
+
+  for (let propKey of propKeys) {
+    yield [propKey, obj[propKey]];
+  }
+}
+
+let jane = { first: 'Jane', last: 'Doe' };
+
+// 方法一， 通过generator方法，返回迭代器对象
+for (let [key, value] of objectEntries(jane)) {
+  console.log(`${key}: ${value}`);
+}
+
+// 方法二，挂在对象中symbol.iterator属性中
+jane[Symbol.iterator] = objectEntries;
+
+for (let [key, value] of jane) {
+  console.log(`${key}: ${value}`);
+}
+```
+
+6.next()、throw()、return() 的共同点
+
+* `next()`是将`yield`表达式替换成一个值
+
+```js
+const g = function* (x, y) {
+  let result = yield x + y;
+  return result;
+};
+
+const gen = g(1, 2);
+gen.next(); // Object {value: 3, done: false}
+
+gen.next(1); // Object {value: 1, done: true}
+// 相当于将 let result = yield x + y
+// 替换成 let result = 1;
+```
+
+* `throw()`是将`yield`表达式替换成一个`throw`语句
+
+```js
+gen.throw(new Error('出错了')); // Uncaught Error: 出错了
+// 相当于将 let result = yield x + y
+// 替换成 let result = throw(new Error('出错了'));
+```
+
+* `return()`是将`yield`表达式替换成一个`return`语句。
+
+```js
+gen.return(2); // Object {value: 2, done: true}
+// 相当于将 let result = yield x + y
+// 替换成 let result = return 2;
+```
+
+7.yield *
+用于`generator`函数里面嵌套多一个`generator`
+`yield *`后面紧跟着一个迭代器对象
+
+## async
+
+`Generator` 函数的语法糖
+
+### 优点
+
+1.有内置执行器，`generator`需要借助`co`模块
+
+2.更好的语义
+
+3.更广的适应性 `generator`只能`Promise`对象和`Thunk`函数，`async`如果是原始类型，会自动转成立即 resolved 的 `Promise` 对象`
+
+4.返回值是`Promise`
+
+`async`如果内部抛出错误，会直接进入`reject`状态
+
