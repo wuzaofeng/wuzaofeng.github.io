@@ -306,3 +306,85 @@ gen.return(2); // Object {value: 2, done: true}
 
 `async`如果内部抛出错误，会直接进入`reject`状态
 
+## `class`
+
+1.类内部定义的方法是不可枚举的
+
+2.不能直接当作函数执行
+
+3.目前ES6 明确规定，Class 内部只有静态方法，没有静态属性，
+**提案**提供了类的静态属性
+
+```js
+class MyClass {
+  static myStaticProp = 42;
+
+  constructor() {
+    console.log(MyClass.myStaticProp); // 42
+  }
+}
+```
+
+4.为class加了私有属性。方法是在属性名之前，使用`#`表示, 也可以添加私有方法
+
+```js
+class Point {
+  #a;
+  #b;
+  constructor(a, b) {
+    this.#a = a;
+    this.#b = b;
+  }
+  #sum() {
+    return #a + #b;
+  }
+  printSum() {
+    console.log(this.#sum());
+  }
+}
+```
+
+### `new.target`属性
+
+1.一般用在**构造函数**中
+
+2.用于判断是不是通过`new`或者`Reflect.construct()`调用，如果不是，就返回`undefined`，可以判断是不是构造函数调用
+
+### `super`用法
+
+`super`指向父类的原型对象, 但在父类实例中的属性和方法是无法通过`super`获取
+
+1.`super`作为函数调用时，代表父类的构造函数。`ES6` 要求，子类的构造函数必须执行一次`super`函数
+
+2.`super`作为对象时，在普通方法中，指向父类的**原型对象**；在静态方法中，指向**父类**
+
+```js
+class A {
+  p() {
+    return 2;
+  }
+}
+
+class B extends A {
+  constructor() {
+    super(); // 作为函数调用
+    console.log(super.p()); // 作为对象调用
+  }
+}
+
+let b = new B();
+```
+
+注意
+
+在子类普通方法中通过super调用父类的方法时，方法内部的**this指向当前的子类实例**
+
+由于this指向子类实例，所以如果**通过super对某个属性赋值**，这时super就是this，赋值的属性会变成**子类实例的属性**
+
+在子类的静态方法中通过super调用父类的方法时，方法内部的**this指向当前的子类**，而不是子类的实例
+
+### es5和es6的继承区别
+
+es5是先创建子类实例，再执行父类构造函数
+
+es6是先通过`super`调用创建父类实例，然后在创建子类实例
