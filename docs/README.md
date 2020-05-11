@@ -1,5 +1,31 @@
 # 每日一鲜
 
+## 2020-05-12
+
+* [深入探索 Typescript 的高阶用](https://mp.weixin.qq.com/s/lgwS59zY4iFFBbCcyvF3CQ)
+
+* [前端需要了解的9种设计模式](https://mp.weixin.qq.com/s/kAEJfjPu81_LGwGnBKE4ig)
+
+* [一文了解文件上传全过程（1.8w字深度解析，进阶必备）](https://mp.weixin.qq.com/s/sHqN9sf8iOLzKApH0KR9vg)
+
+* [小程序技术要点和性能优化要点【荐藏】](https://mp.weixin.qq.com/s/s5OpbdMgjH-2gyV-b36QQA)
+
+## 2020-05-11
+
+* [Intersection_Observer](https://developer.mozilla.org/zh-CN/docs/Web/API/Intersection_Observer_API)
+
+* [react-intersection-observer 封装库](https://github.com/researchgate/react-intersection-observer)
+
+## 2020-05-10
+
+* [前端工程化的理解](https://www.jianshu.com/p/88ed70476adb)
+
+* [Git命令行备忘录](https://mp.weixin.qq.com/s/BHfnmFi1mB8QRIanUaXyQw)
+
+## 2020-05-09
+
+* [【建议星星】要就来45道Promise面试题一次爽到底(1.1w字用心整理)](https://mp.weixin.qq.com/s/Y-DCZHpEI0g2K8n5vvBcAw)
+
 ## 2020-05-03
 
 * [嗨，送你一张Web性能优化地图](https://juejin.im/entry/5b4da7efe51d45198f5c6234)
