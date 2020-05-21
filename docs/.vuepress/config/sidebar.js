@@ -140,6 +140,9 @@ module.exports = [
     }, {
       title: '前端面试之道的理解',
       path: '/job/way/'
+    }, {
+      title: '工程类面试',
+      path: '/job/project'
     }]
   }, {
     title: '工具破解链接',

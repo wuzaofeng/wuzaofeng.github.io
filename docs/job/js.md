@@ -171,30 +171,106 @@ code
 3. undefined, 302, undefined
 
 ## 设置a的值让条件 a==5&& a==8成立
-```
+
+第一种
+```js
 const a = { value : 2 };
 a.valueOf = function() {
     return this.value += 3;
 };
 console.log(a==5 && a== 8)
+
 ```
+
 1. 判断类型
 2. 判断null undefined
 3. string == number ? string转number
 4. boolean == any ? boolean转number
 5. object == string ? number ? symbol ? object 调用valueOf toString
 
-## a === 5 && a === 8
+第二种
 
-定义一个全局变量value
+## Object.defineProperty
+
+有两种创建方式， 数据描述符和存储描述符
+
+两者共享的属性
+configurable: false **该属性的描述符才能够被改变**, 可删除修改
+enumerable: false 可枚举
+
+可选
+value: undefined
+writable: false 可赋值
+
+存储数据符
+get: undefined
+set: undefined
+
+window.a
+与b = {a: 1}是有区别的
+window.a
+挂在在Array反而和创建object一样
+
+```js
+var a = {b: 1}
+Object.getOwnPropertyDescriptor(a, "b");
+{value: 1, writable: true, enumerable: true, configurable: true}
+
+a = 1
+Object.getOwnPropertyDescriptor(window, "a");
+{value: 1, writable: true, enumerable: true, configurable: false}
 ```
-var value = 2;
-Object.defineProperty(window, 'a', {
-    get: function() {
-        return this.value += 3;
-    }
+
+1. object.defineProperty 有两种，数据描述符和存储描述符
+
+共有参数configurable, enumerable. 数据描述符多了value, writeable, 存储描述符get, set方法。两者不能混用
+
+2.configurable， 是否重复定义，是否delete, enumerable是否遍历， writeable是否重新赋值
+
+3.window.a的configurable默认为false, 但其他定义对象里面属性为true
+
+4.enumerable为false不可遍历
+
+```js
+var o = {};
+Object.defineProperty(o, "a", { value : 1, enumerable: true });
+Object.defineProperty(o, "b", { value : 2, enumerable: false });
+Object.defineProperty(o, "c", { value : 3 }); // enumerable 默认为 false
+o.d = 4; // 如果使用直接赋值的方式创建对象的属性，则 enumerable 为 true
+Object.defineProperty(o, Symbol.for('e'), {
+  value: 5,
+  enumerable: true
 });
+Object.defineProperty(o, Symbol.for('f'), {
+  value: 6,
+  enumerable: false
+});
+
+for (var i in o) {
+  console.log(i);
+}
+// logs 'a' and 'd' (in undefined order)
+
+Object.keys(o); // ['a', 'd']
+
+o.propertyIsEnumerable('a'); // true
+o.propertyIsEnumerable('b'); // false
+o.propertyIsEnumerable('c'); // false
+o.propertyIsEnumerable('d'); // true
+o.propertyIsEnumerable(Symbol.for('e')); // true
+o.propertyIsEnumerable(Symbol.for('f')); // false
+
+var p = { ...o }
+p.a // 1
+p.b // undefined
+p.c // undefined
+p.d // 4
+p[Symbol.for('e')] // 5
+p[Symbol.for('f')] // undefined
+Configurable 属性
 ```
+
+[参考链接](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
 
 ## 不使用for或者while， 创建一个长度为120的数组，并且每个元素的值等于数组长度减去它的下标
 
