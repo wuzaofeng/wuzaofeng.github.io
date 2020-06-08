@@ -386,6 +386,7 @@ function _traverse (val: any, seen: SimpleSet) {
 ![5-3.jpg](./5-3.jpg)
 
 ## 9.v-for与v-if为何不能连用
+
 v-for优先于v-if, 如果连用的话，那么v-for先执行，之后再判断v-if，这样性能这块非常的低
 所以一般用v-if放入外层的template
 
@@ -461,9 +462,15 @@ Vue.component('el-checkbox',{
 
 组件的销毁时是先父后子，销毁完成的顺序是先子后父
 
+**同步**
+
 **加载渲染过程**
 
 父beforeCreate->父created->父beforeMount->子beforeCreate->子created->子beforeMount- >子mounted->父mounted
+
+**异步**
+
+父beforeCreate->父created->父beforeMount->父mounted->子beforeCreate->子created->子beforeMount- >子mounted
 
 **子组件更新过程**
 
