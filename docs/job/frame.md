@@ -65,9 +65,11 @@ iview相对于element更加容易上手，iview类似于react中的antd，table�
 
 ## Vue的watch和computed区别
 
-computed 是依赖于别的数据进行变动的，**具有缓存**
+1. computed 是依赖于别的数据进行变动的，**具有缓存**
 
 watch **监听**数据的变化
+
+2. computed 只支持同步，但watch 能支持同步和异步
 
 **使用场景**
 
