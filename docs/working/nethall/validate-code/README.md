@@ -18,7 +18,7 @@
 
 3. txt 默认文案提示
 
-```
+```js
 // 点击前调用
 beforeFn: {
     type: [Function, null],
@@ -41,7 +41,7 @@ txt: {
 
 ### data设计
 
-```
+```js
 // prop传递的倒计时次数
 data () {
     return {
@@ -54,7 +54,7 @@ data () {
 
 ### 点击触发事件 clickHandle
 
-```
+```js
 async clickHandle () {
   // 如果定时器已经触发，直接返回
   if (this.timer) return
@@ -80,7 +80,7 @@ async clickHandle () {
 
 ### 调用倒计时方法 setTimer
 
-```
+```js
 setTimer () {
   this.timer = setTimeout(() => {
     if (this.time > this.endTime) {
@@ -106,7 +106,7 @@ setTimer () {
 
 ### 组件销毁时清除定时器
 
-```
+```js
   beforeDestroy () {
     this.timer && clearTimeout(this.timer)
   }

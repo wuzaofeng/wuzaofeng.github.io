@@ -153,7 +153,8 @@ JavaScript 代码不够严谨
 
 其实很简单，1rem是指html的font-size为16px
 也就是设备宽度/640， 等于设备的html的font-size/16（640的根元素的值）
-```
+
+```js
 function refreshRem () {
 const width = window.outerWidth
     const px = width * 16 / 640;
@@ -174,7 +175,8 @@ refreshRem()
 4. **网关控制流量**，对一个时间段出现流量异常，可以拒绝请求
 
 ## 为什么for循环嵌套顺序会影响性能
-```
+
+```js
 var t1 = new Date().getTime()
 for (let i = 0; i < 100; i++) {
   for (let j = 0; j < 1000; j++) {
@@ -197,7 +199,7 @@ console.log('two time', t3 - t2)
 ```
 ## 统计 1 ~ n 整数中出现 1 的次数
 <!-- 转成数组遍历 -->
-```
+```js
 function findOne(n){
 	let count = 0;
 	for(let i=0;i<=n;i++){

@@ -12,7 +12,7 @@
 
 4. 返回值
 
-```
+```js
 Function.prototype.call2 = function (context, ...args) {
   var context = context || window
   // this 指的是调用它函数
@@ -27,7 +27,7 @@ Function.prototype.call2 = function (context, ...args) {
 
 实现和call一样。只是传入参数传入是数组的形式
 
-```
+```js
 Function.prototype.apply2 = function (context, arr) {
   var context = context || window
   // this 指的是调用它函数
@@ -48,7 +48,7 @@ Function.prototype.apply2 = function (context, arr) {
 
 [JavaScript深入之bind的模拟实现](https://github.com/mqyqingfeng/Blog/issues/12)
 
-```
+```js
 Function.prototype.bind = function (context, ...arr) {
   if (typeof this !== "function") {
     throw new Error("Function.prototype.bind - what is trying to be bound is not callable");
@@ -73,7 +73,7 @@ Function.prototype.bind = function (context, ...arr) {
 
 ## new 实现
 
-```
+```js
 function objectFactory (constructor, ...args) {
   const obj = Object.create(null)
   obj._proto = constructor.prototype // 创建对象原型指向构造函数的原型上
@@ -84,7 +84,7 @@ function objectFactory (constructor, ...args) {
 
 ## 防抖
 
-```
+```js
 function debounce (fn, wait) {
   let timeout result
   return function (...args) {
@@ -96,7 +96,7 @@ function debounce (fn, wait) {
 }
 ```
 
-```
+```js
 function debounce (fn, wait, immediate = false) {
   let timeout, result
   const debounced = function (...args) {
@@ -130,7 +130,8 @@ function debounce (fn, wait, immediate = false) {
 ```
 
 ## 节流
-```
+
+```js
 function throttle(fn, wait) {
   let timeout
   return function (...args) {
@@ -144,7 +145,7 @@ function throttle(fn, wait) {
 }
 ```
 
-```
+```js
 function throttle(func, wait, options) {
     var timeout, context, args, result;
     var previous = 0;
@@ -185,7 +186,8 @@ function throttle(func, wait, options) {
 ```
 
 ## 深/浅拷贝
-```
+
+```js
 slice、concat, JSON.stringify
 
 function shallowCopy (obj) {
@@ -199,7 +201,7 @@ function shallowCopy (obj) {
 }
 ```
 
-```
+```js
 function deepCopy (obj) {
   if (typeof obj !== 'object') return
   var newObj = obj instanceOf Array ? [] : {}
@@ -237,7 +239,7 @@ function deepCopy (obj) {
 
 原理是重写函数名字
 
-```
+```js
 var foo = function() {
   var t = new Date();
   foo = function() {
@@ -246,5 +248,3 @@ var foo = function() {
   return foo();
 };
 ```
-
-## 函数记忆

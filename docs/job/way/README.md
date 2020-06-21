@@ -37,17 +37,19 @@ bind会生成新的函数
 4. foo()
 
 注意，如果**箭头函数this被绑定**，就不会再被任何方式所改变
-```
+
+```js
 const obj = {
     a: () => {
         console.log(this)
     }
 }
 ```
-```
+
+```js
 obj.a() // window
 obj.a.bind(obj)
-obj.a.call(obj) // window 
+obj.a.call(obj) // window
 ```
 
 ### == 和 ===比较
@@ -58,7 +60,7 @@ obj.a.call(obj) // window
 4. 一方存在是`boolean`，`boolean`转`number`
 5. 一方是`object`, 另一方是`string`、`number` 或者 `symbol`, object转基本类型
 
-```
+```js
 [] == ![] // true
 
 [] == false
@@ -71,6 +73,7 @@ obj.a.call(obj) // window
 ```
 
 ### 深拷贝
+
 JSON.parse(JSON.stringify(object))
 
 **缺点**

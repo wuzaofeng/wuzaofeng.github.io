@@ -85,8 +85,8 @@ ie是比较特殊，包括padding和border
 }
 ```
 
-```
-椭圆
+```css
+/* 椭圆 */
 .border {
     width: 100px;
     height: 50px;
@@ -98,7 +98,7 @@ ie是比较特殊，包括padding和border
 
 ## 实现一个三栏布局，中间部分要自适应宽度并且优先加载，左边宽100px右边宽为160px
 
-```css
+```html
 <div class="wrap">
     <div class="content"></div>
     content
@@ -106,7 +106,9 @@ ie是比较特殊，包括padding和border
     <div class="left">left</div>
     <div class="right">right</div>
 </div>
+```
 
+```css
 /* flex */
 .wrap {
     display: flex;
@@ -230,7 +232,7 @@ float:left, float:right
 
 5. grid布局
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -248,7 +250,7 @@ float:left, float:right
         grid-row:1;
         grid-column:1/5;
     }
-        
+
     #left{
         grid-row:2;
         grid-column:1/2;
@@ -276,9 +278,9 @@ float:left, float:right
     <div id="header">header</div>
     <div id="left">left</div>
     <div id="middle">middle</div>
-    <div id="right">right</div>     
+    <div id="right">right</div>
     <div id="footer">footer</footer></div>
-       
+
 </body>
 
 </html>
@@ -289,7 +291,8 @@ float:left, float:right
 ![双飞翼布局](./2.png)
 
 1. 浮动布局
-```
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -345,7 +348,7 @@ float:left, float:right
 </html>
 ```
 
-2. 绝对定位
+2.绝对定位
 
 ## 什么是BFC？什么条件下会触发？渲染规则？应用场景有哪些？
 
@@ -362,7 +365,7 @@ float:left, float:right
 * **overflow 值不为 visible** 的块元素 -弹性元素（display为 flex 或 inline-flex元素的直接子元素
 * **网格元素**（display为 grid 或 inline-grid 元素的直接子元素
 
-3. BFC渲染规则
+3.BFC渲染规则
 
 BFC是一个**独立的容器**，外面的元素不会影响里面的元素
 

@@ -36,18 +36,23 @@ module.exports = [
       }, {
         title: 'js继承的方法以及优缺点',
         path: '/learning/javascript/extends'
-      }, {
+      }]
+    },
+    {
+      title: '设计模式',
+      collapsable: false,
+      children: [{
         title: '设计模式(创建设计模式)',
-        path: '/learning/javascript/design/create'
+        path: '/learning/design/create'
       }, {
         title: '设计模式(结构化设计模式)',
-        path: '/learning/javascript/design/struct'
+        path: '/learning/design/struct'
       }, {
         title: '设计模式(行为型设计模式)',
-        path: '/learning/javascript/design/behaviour'
+        path: '/learning/design/behaviour'
       }, {
         title: '推荐设计模式书籍',
-        path: '/learning/javascript/design/book'
+        path: '/learning/design/book'
       }]
     },
     {

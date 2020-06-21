@@ -15,7 +15,7 @@ MVVM: 传统的前端会通过操作dom，将数据渲染在页面上， 但MVVM
 vue是通过`Object.defineProperty`，数据劫持来实现响应式数据的。当vue初始化数据的时候，会将data里面的数据通过setter, getter, 来劫持数据，
 当对应属性，进行依赖收集到当前组件的watcher(渲染类型watcher), 当数据发生变化的时候，会通过watcher通知相关依赖进行更新。
 
-```
+```js
 // core/observer/index  defineReactive方法中
 Object.defineProperty(obj, key, {
     enumerable: true,
@@ -60,7 +60,7 @@ Object.defineProperty(obj, key, {
 
 ![3.jpg](./3.jpg)
 
-```
+```js
 // core/observer/array
 const arrayProto = Array.prototype
 export const arrayMethods = Object.create(arrayProto)
@@ -109,7 +109,7 @@ methodsToPatch.forEach(function (method) { // 重写原型方法
 
 ![4.jpg](./4.jpg)
 
-```
+```js
 // core/observer/watcher
   update () {
     /* istanbul ignore else */
@@ -157,7 +157,7 @@ export function queueWatcher (watcher: Watcher) {
 nextTick主要采用的是宏任务和微任务，通过定义一个异步方法，当多次调用nextTick的时候，会将回调函数通过数组的形式插入到队列中
 ![5.jpg](./5.jpg)
 
-```
+```js
 // core/util/next-ticks
 // 定义个异步方法
 let timerFunc
@@ -233,7 +233,7 @@ Computed也是一个watcher，但他具有缓存，只有依赖的属性发生�
 
 ![6.jpg](./6.jpg)
 
-```
+```js
 // core/instance/state
 function initComputed (vm: Component, computed: Object) {
   // $flow-disable-line
@@ -296,8 +296,8 @@ function createComputedGetter (key) {
 
 当用户指定了 watch 中的deep属性为 true 时，如果当前监控的值是对象类型。会对对象中的每一项进行求值，此时会将当前 watcher 存入到对应属性的依赖中，这样数组中对象发生变化时也会通知数据更新
 
-```
-core/observer/watcher
+```js
+// core/observer/watcher
 
 get () {
     pushTarget(this)
@@ -509,12 +509,13 @@ mixin使用的时候，找不到根源，就是看实例的时候就莫名多个
 
 **插槽**
 
-```
-子组件
+```js
+// 子组件
 <app><div slot="a">xxxx</div><div slot="b">xxxx</div></app>
-父组件
+// 父组件
 slot name="a" slot name="b"
 ```
+
 创建**组件虚拟节点**时候，遇到插槽slot属性，进行分类
 **渲染组件**时，拿对应的slot属性的节点进行替换操作（插槽的作用域为父组件）
 

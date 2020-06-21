@@ -18,7 +18,7 @@
 单例模式的定义：`保证一个类仅有一个实例`，并提供一个访问它的全局访问点。实现的方法为`先判断实例存在与否`，如果存在则直接返回，否则就创建实例再返回，这就`保证了一个类只实例化一次`
 :::
 
-```
+```js
 class Singleton {
   constructor() {}
 }
@@ -47,7 +47,7 @@ console.log(s1 === s2) // true
 
 常见的栗子，我们的弹窗message，对外部提供API，都是调用API，然后新建一个弹窗或者message的实例，就是典型的工程模式
 
-```
+```js
 class Man {
   constructor(name) {
     this.name = name
@@ -63,7 +63,7 @@ p.say() // 我的名字 JavaScript
 当然工厂模式并不仅仅是用来 new 出实例
 可以想象一个场景。假设有一份很复杂的代码需要用户去调用，但是用户并**不关心**这些复杂的代码，**只需要你提供给我一个接口去调用**，用户只负责传递需要的参数，至于这些参数怎么使用，**内部有什么逻辑是不关心**的，只需要你最后返回我一个实例。这个构造过程就是工厂
 
-```
+```js
 const Notification = function(options) {
   if (Vue.prototype.$isServer) return;
   options = options || {};
@@ -102,9 +102,10 @@ const Notification = function(options) {
 跟外观模式有点相似，都是无需在乎内部代码，但工厂模式一个是创建对象的设计模式（函数形式），外观另一个是对象包含各个函数
 
 ## 建造者模式Builder
+
 建造者模式的定义：和工厂者模式相比，参与了**更多创建过程或者更加复杂**
 
-```
+```js
 const Person = function(name, work){
   // 创建应聘者缓存对象
   let _person = new Human()
@@ -123,10 +124,12 @@ console.log(p)
 ```
 
 ## 原型模式
+
 原型模式是**创建一个共享的原型**，通过拷贝这个原型来创建新的类，用于创建重复的对象，带来性能上的提升
 
-### 方法一：使用 Object.create(prototype, optionalDescriptorObjects) 
-```
+### 方法一：使用 Object.create(prototype, optionalDescriptorObjects)
+
+```js
 var vehiclePrototype = {
     model:"保时捷",
     getModel: function () {
@@ -144,7 +147,8 @@ vehicle.getModel();
 ```
 
 ### 方法二：使用 prototype
-```
+
+```js
 var vehiclePrototype = {
     init: function (carModel) {
         this.model = carModel || "保时捷";
@@ -157,7 +161,7 @@ var vehiclePrototype = {
 
 function vehicle(model) {
     function F() { };
-    F.prototype = vehiclePrototype;    
+    F.prototype = vehiclePrototype;
     var f = new F();
     f.init(model);
     return f;

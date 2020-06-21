@@ -2,9 +2,9 @@
 
 ## 1. 跳转链接
 
-不能通过直接改变window.loation.href跳转，需要通过router.push跳转，不然就是重新刷新页面
+不能通过直接改变`window.loation.href`跳转，需要通过`router.push`跳转，不然就是重新刷新页面
 
-```
+```js
 // 判断链接是否该项目的路由链接，如果是通过路由跳转，否则通过window.location.href跳转
 
 // 跳转
@@ -24,7 +24,7 @@ export function toSkip (url, _this) {
 
 ### 按需加载js
 
-```
+```js
 export function loadScript (url, key = '') {
   return new Promise((resolve, reject) => {
     const script = document.createElement('script')
@@ -43,7 +43,7 @@ export function loadScript (url, key = '') {
 
 ### 高德地图按需加载，并且实现单例模式
 
-```
+```js
 import { loadScript } from '@/utils/utils'
 import config from '@/config'
 
@@ -94,7 +94,7 @@ export default Map
 
 ### 七鱼
 
-```
+```js
 export function loadYSF () {
   return new Promise(async (resolve, reject) => {
     if (!window.ysf) {
@@ -109,7 +109,6 @@ export function loadYSF () {
 
 ## 遇到的问题
 
-如果是封装在组件里面的，反复使用的npm包，比如exif.min.js，应该通过npm包引入
+如果是封装在组件里面的，反复使用的npm包，比如`exif.min.js`，应该通过`npm`包引入
 
-如果页面有引入两个相同的上传组件，那么就会同时加载script标签
-
+如果页面有引入两个相同的上传组件，那么就会同时加载`script`标签

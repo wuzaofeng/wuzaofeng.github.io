@@ -1,11 +1,12 @@
 # css选择器
 
 ## 分类
+
 * 类型选择器：根据一个元素的标签名来选中元素 `div`
 
 * 全体选择器：与类型选择器类似，选择任意元素
 
-```
+```css
 @namespace svg url(http://www.w3.org/2000/svg);
 @namespace html url(http://www.w3.org/1999/xhtml);
 svg|a {
@@ -26,11 +27,9 @@ html|a {
 
 * 伪类选择器一系列由 CSS 规定好的选择器，它们以冒号开头，伪类有普通型和函数型。
 
-    - 树结构关系伪类选择器 `:root, :empty, :nth-child, :nth-last-child`
-
-    - 链接与行为伪类选择器 `:link :hover :active :focus`
-
-    - 逻辑伪类选择器 `:not`
+- 树结构关系伪类选择器 `:root, :empty, :nth-child, :nth-last-child`
+- 链接与行为伪类选择器 `:link :hover :active :focus`
+- 逻辑伪类选择器 `:not`
 
 ## 组合
 
@@ -43,7 +42,6 @@ html|a {
 * `+`: 下一个节点，直接后继节点即 nextSlibling。例如 “.a+.b ”表示选中所有具有 class 为 a 的`下一个` class 为 b 的节点
 
 * `||`：选中符合条件的单元格， （用的少）
-
 
 **伪元素**
 
@@ -58,15 +56,15 @@ html|a {
 **::first-line 和 ::first-letter 是比较类似的伪元素**，其中一个表示元素的第**一行**，一个表示元素的**第一个字母**
 
 特殊：
-```
+
+```css
 <div>
   <p id="a">First paragraph</p>
   <p>Second paragraph</p>
 </div>
 ```
 
-```
-
+```css
 div>p#a {
     color:green;
 }
@@ -78,4 +76,4 @@ div::first-line {
 
 这段代码最终结果第一行是蓝色，因为 p 是块级元素，所以**伪元素出现在块级元素之内**，所以内层的 color 覆盖了外层的 color 属性。**跟优先级没有关系**
 
-[1.png](./1.png)
+![1.png](./1.png)

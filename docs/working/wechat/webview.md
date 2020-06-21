@@ -8,31 +8,43 @@
 
 ## 业务域名
 
-#### 涉及到的第三方链接
+### 涉及到的第三方链接
 
 * 阿里云图片地址（该项目用到的是阿里云的oss）(图片显示)
 
+```js
 https://xyzq-static.oss-cn-shenzhen.aliyuncs.com
+```
 
 * 七鱼地址（引用在本地）(在线客服)
 
+```js
 /static/js/qiyunkf.js
+```
 
 * 高德地图地址(仅用于通用业务获取定位)
 
-//webapi.amap.com/maps?v=1.4.15&key=cbfc0b347323de3f78edf4145a93df26
+```js
+webapi.amap.com/maps?v=1.4.15&key=cbfc0b347323de3f78edf4145a93df26
+```
 
 * 微信公众号文章地址(查看微信公众号文章（入金-办理香港银行卡指南))
 
+```js
 https://mp.weixin.qq.com/mp/homepage?__biz=Mzg3MDIzNjE4Mg==&hid=2&sn=ff409e4abd09e7a510b2fe995ddea933
+```
 
 * 获取客户端的ip(获取客户端的ip)
 
-//pv.sohu.com/cityjson?ie=utf-8
+```js
+http://pv.sohu.com/cityjson?ie=utf-8
+```
 
 * 无痕验证地址(无痕验证)
 
+```js
 g.alicdn.com/sd/nvc/1.1.112/guide.js?2019062501
+```
 
 ### 小程序内嵌webview分为两种
 
@@ -102,7 +114,7 @@ g.alicdn.com/sd/nvc/1.1.112/guide.js?2019062501
 
 #### 相关代码
 
-```
+```js
 export function checkIsMiniProgram () {
   return window.sessionStorage.getItem('platformType') && window.sessionStorage.getItem('platformType') === 'miniProgram'
 }
@@ -150,8 +162,8 @@ export function navigateTo (params, wxParams = {}) {
 
 * 小程序代码，创建webview页面，来接收地址
 
-```
-webview.js
+```js
+// webview.js
 Page({
   data: {
     url: ''
@@ -205,5 +217,5 @@ Page({
 
 进去消息，自动回复，需要服务器支持
 
-2. 做个指引，让客户手动关联公众号
+做个指引，让客户手动关联公众号
 ![4](./4.jpg)

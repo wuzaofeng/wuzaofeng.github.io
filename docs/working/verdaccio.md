@@ -29,7 +29,7 @@ github: https://github.com/verdaccio/verdaccio
 
 2. 在docker build的过程中，使用node-pty编写**运行npm login的prompt的脚本**，可实现**自动登录**
 
-```
+```js
 const pty = require('node-pty')
 const ptyProcess = pty.spawn('npm', ['login'])
 

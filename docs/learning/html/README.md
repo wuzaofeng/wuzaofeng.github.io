@@ -5,9 +5,11 @@
 ### 具有 http-equiv 属性的 meta
 
 * content-type 指定请求头
-```
+
+```html
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 ```
+
 * content-language 指定内容的语言
 * default-style 指定默认样式表
 * refresh 刷新
@@ -26,9 +28,7 @@
 * maximum-scale：**最大缩放比例**。
 * user-scalable：**是否允许用户缩放**。
 
- 
-
-```
+```html
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 // 默认使用最新浏览器
 <meta http-equiv="Cache-Control" content="no-siteapp">

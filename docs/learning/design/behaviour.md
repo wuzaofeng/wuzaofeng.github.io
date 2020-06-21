@@ -18,9 +18,9 @@
 
 特定活动并在状态改变后获得通知，订阅者因此也成为观察者，而被观察的对象成为发布者或主题。当发生了一个重要事件的时候`发布者`会通知（调用）所有`订阅者`并且可能经常以`事件对象`的形式传递消息。
 
-**自己实现一个简单的发布订阅设计模式**
+### 自己实现一个简单的发布订阅设计模式
 
-```
+```js
 // 订阅/发布者模式
 class EventBus {
   constructor () {
@@ -98,7 +98,7 @@ const EventSinks = {
 };
 ```
 
-```
+```js
 // 实例化对象
 let bus = new EventBus();
 bus.$on("operator", EventSinks.add); // 监听operator事件, 增加一个EventSinks.add
@@ -154,7 +154,7 @@ EventBus 就是所谓的发布者的构造函数，当中的bus就是发布者�
 
 一个基于策略模式的程序至少由两部分组成。第一部分是一组`策略类`（可变），策略类封装了具体的算法，并负责具体的计算过程。第二部分是`环境类Context`（不变），`Context`接受客户的请求，随后将请求委托给某一个`策略类`。要做到这一点，说明Context中要维持对某个策略对象的引用
 
-```
+```js
 // 普通写法
 const form = document.querySelector("#form");
 form.onsubmit = () => {
@@ -169,7 +169,7 @@ form.onsubmit = () => {
 }
 ```
 
-```
+```js
 // 创建校验器
 const checker = {
   isEmpty(v, errorMsg){
@@ -229,14 +229,15 @@ form.onsubmit = () => {
 当创建校验器后，校验规则清晰明了，可以动态增改，便于维护
 所谓的校验器就是策略类，而提供外部的validatorFunc方法则是环境类
 
-
 ## 迭代器模式
+
 **迭代器模式定义**：指提供一种方法顺序访问一个聚合对象中的各个元素，而又不需要暴露该对象的内部表示。
 
 迭代器模式可以**把迭代的过程**从业务逻辑中分离出来，在使用迭代器模式之后，即使不关心对象的内部构造，也可以按顺序访问其中的每个元素
 
-比如常用的：every、map、filter、forEach等等
-```
+比如常用的：`every`、`map`、`filter`、`forEach`等等
+
+```js
 const each = function(arr, callback){
   if(!Array.isArray(arr)){
     throw Error(`${arr} is not a Array`)
@@ -248,8 +249,8 @@ const each = function(arr, callback){
 each([1,2,4], function(i, n){
   console.log([i, n])
 })
-<!-- [0, 1] -->
-<!-- [1, 2] -->
-<!-- [2, 4] -->
+// [0, 1]
+// [1, 2]
+// [2, 4]
 ```
 

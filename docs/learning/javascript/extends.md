@@ -2,29 +2,32 @@
 
 ## 类式继承（原型继承）
 
-```
+```js
 function A () {}
 function B () {}
 B.prototype = new A()
 ```
+
 **优缺点**
 由于指向A的实例， 那么可以访问父类新增原型方法/属性
 但不能多继承
 
 ## 构造函数继承
-```
+
+```js
 function A(){}
 function B(){
   A.call(this);
 }
 ```
+
 **优缺点**
 可以实现多继承
 但不能访问父类原型方法和属性
 
 ## 组合式继承
 
-```
+```js
 function B(){}
 function A(){}
 B.prototype = new A();
@@ -38,7 +41,8 @@ function B(){
 但是执行了两个A的构造函数
 
 ## 寄生组合式继承
-```
+
+```js
 // 寄生组合式继承的核心方法
 function inherit(child, parent) {
     // 继承父类的原型
@@ -51,8 +55,8 @@ function inherit(child, parent) {
 
 // GithubUser, 父类
 function GithubUser(username, password) {
-    let _password = password 
-    this.username = username 
+    let _password = password
+    this.username = username
 }
 
 GithubUser.prototype.login = function () {

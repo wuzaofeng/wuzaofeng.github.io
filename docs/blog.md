@@ -1,4 +1,4 @@
-# 个人博客
+## 个人博客
 
 * [**山月的全栈进阶之路**](https://q.shanyue.tech/)
 * [**若川的前端视野**](https://www.lxchuan12.cn/)
@@ -12,7 +12,7 @@
 * [**子弈博客**](https://ziyi2.github.io/awesome/)
 * [**政采云**](https://weekly.zoo.team/)
 
-# 团队博客/周刊
+## 团队博客/周刊
 
 * [**Taobao FED | 淘宝前端团队**](https://fed.taobao.org/)
 * [**Web前端 腾讯AlloyTeam Blog**](http://www.alloyteam.com/)
@@ -23,12 +23,12 @@
 * [**醉牛前端**](http://f2er.club/)
 * [**大搜车前端团队博客**](https://blog.souche.com/)
 
-# 其他
+## 其他
 
 * [**前端收集***](https://github.com/foru17/front-end-collect)
 * [**国外23位知名JavaScript开发者**](https://www.w3ctech.com/topic/107)
 
-# 源码
+## 源码
 
 * [**undersercore 源码分析**](https://ustbhuangyi.github.io/vue-analysis/v2/prepare/)
 
@@ -36,10 +36,10 @@
 
 * [**React源码深度解析 高级前端工程师必备技能**](https://www.bilibili.com/video/BV1qj411f7yK?from=search&seid=7867455657971641670)
 
-# 文档
+## 文档
 
 * [**ECMAScript 6 入门**](http://es6.ruanyifeng.com/#docs/number)
 
-# 会议
+## 会议
 
 * [**D2 前端技术论坛**](https://www.yuque.com/d2forum)
