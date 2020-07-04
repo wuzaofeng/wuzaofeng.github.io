@@ -176,18 +176,18 @@ webpack本质上是一种事件流的机制，它的工作流程就是将**各�
 
 Tapable 简化后的模型，就是我们熟悉的发布订阅者模式
 
-```
+```js
 
 class SyncHook{
    constructor(){
       this.hooks = {}
    }
-   
+
    tap(name,fn){
     if(!this.hooks[name])this.hooks[name] = []
      this.hooks[name].push(fn)
    }
- 
+
    call(name){
      this.hooks[name].forEach(hook=>hook(...arguments))
    }

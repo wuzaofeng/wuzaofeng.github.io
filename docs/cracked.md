@@ -6,6 +6,7 @@
 [charles破解工具](https://www.zzzmode.com/mytools/charles/)
 
 # Adobe破解
+
 Adobe 2020软件安装包稳定版（win、Mac)
 链接: https://pan.baidu.com/s/1402LUpxFIopd4xsIHRRrbA 提取码: iigx
 链接:https://pan.baidu.com/s/1jLoZUpqHLlWzgk6r_pSUzA  密码:qxlj
