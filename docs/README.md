@@ -1,5 +1,53 @@
 # 每日一鲜
 
+## 2020-07-14
+
+* [45个值得收藏的 CSS 形状](https://mp.weixin.qq.com/s/He4-zPKXYuA9freF0B6OZA)
+
+* [5分钟教你写好JavaScript函数](https://mp.weixin.qq.com/s/6Oxgg-d_kwAXECS2AouhQA)
+
+* [不可错过的豆瓣高分前端好书！](https://mp.weixin.qq.com/s/6LNDhAMN7gNQ2J-bw1SVyw)
+
+## 2020-07-13
+
+* [恐怖如斯的 4W 字 JavaScript 面试知识点](https://mp.weixin.qq.com/s/w-8btfvytWUjcZSiwe_neQ)
+
+## 2020-07-12
+
+* [『1W7字中高级前端面试必知必会』终极版](https://mp.weixin.qq.com/s/xVVP_Uk8rLBhHJaMqMMJoA)
+
+## 2020-07-11
+
+* [「面试」你不知道的 React 和 Vue 的 20 个区别](https://mp.weixin.qq.com/s/BOh1mg4SHC5YTTa8Kt7kYA)
+
+## 2020-07-10
+
+* [「牛客网」45道JS能力测评经典题总结](https://juejin.im/post/5f032fe3f265da22c75734b8)
+
+## 2020-07-09
+
+* [写给初中级前端的高级进阶指南（万字长文，建议收藏）](https://mp.weixin.qq.com/s/vaVd_laecfCVth0s6SCOfQ)
+
+## 2020-07-08
+
+* [整理几个超实用的前端提效 shell 命令](https://mp.weixin.qq.com/s/5d8HOQ5Jot_ES_6wHa-LsA)
+
+## 2020-07-07
+
+* [消息未读之点不完的小红点设计思路（Node+Websocket）](https://mp.weixin.qq.com/s/XUnuOqmwVAJ3gPHbG3EVKA)
+
+## 2020-07-06
+
+* [Vue 开发必须知道的 36 个技巧](https://mp.weixin.qq.com/s/dr4c0HWmHsGrrw91l_mk-Q)
+
+## 2020-07-05
+
+* [前端登录，这一篇就够了](https://mp.weixin.qq.com/s/b6Sm9RxWU4VNj9CauDi5xA)
+
+## 2020-07-04
+
+* [简析 Node.js 特点与应用场景(让你更了解它)](https://mp.weixin.qq.com/s/aDcNIPN83mde0oUDFii3OA)
+
 ## 2020-07-03
 
 * [Node进阶——之事无巨细手写Koa源码](https://mp.weixin.qq.com/s/GyOHpz5bjM7kEmuNALGBeg)

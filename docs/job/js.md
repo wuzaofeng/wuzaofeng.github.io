@@ -25,14 +25,16 @@
 1.给一个事件绑定多个监听器
 2.可以控制触发的阶段（选择冒泡或者捕获）
 
-```
+```js
 target.addEventListener(type, listener, options);
 target.addEventListener(type, listener, useCapture);
 ```
+
 第三个参数可以传入两种形式，boolean和对象
 
 boolean(useCapture) 默认是false 冒泡阶段
 options 有三个属性
+
 * capture 默认false,冒泡阶段
 * once 默认false 是否只调用一次
 * passive 默认true listener不会调用preventDefault()（阻止默认行为）
@@ -56,11 +58,23 @@ class创建本质上还是基于原型链， 更加符合面向对象的思维
 https://segmentfault.com/a/1190000018513150
 https://www.cnblogs.com/dolphinX/p/3280876.html
 
-## 箭头函数有没有 arguments 对象?
+## 箭头函数有没有 arguments 对象
 
 浏览器中执行没有arguments
 
 nodejs中执行是有arguments
+
+## 箭头函数和普通函数的区别
+
+1. 语法更加简洁，清晰
+
+2. 箭头函数与普通函数不同，不会有自己的this, **继承this指向外面一层作用域**
+
+3. .call()/.apply()/.bind()无法改变箭头函数中this的指向
+
+4. 没有自己的arguments
+
+5. 箭头函数没有原型prototype
 
 ## js 精度丢失问题
 
@@ -79,6 +93,7 @@ nodejs中执行是有arguments
 其他进制转成10进制：Number.parseInt("1101110",[2,8,10,16])
 
 ## 讲一讲 Promise
+
 Promise是es6的规范
 
 1.Promise有三个状态值，不可逆的，等待态（pedding）, 执行态(resolve), 拒绝态(reject)
@@ -102,11 +117,12 @@ for in **支持中断、支持异步事件**
 forEach **不支持中断、不支持异步事件**
 
 map **不支持中断、不支持异步事件**，支持异步处理方法：map 返回promise数组，在使用 Promise.all 一起处理异步事件数组
-```
+
+```js
 // 使用async await 处理异步操作
 let results = await Promise.all(arr.map(async (item) => {
-	// 等待异步操作完成，返回执行结果
-	return await asyncWorker(item);
+// 等待异步操作完成，返回执行结果
+return await asyncWorker(item);
 }));
 
 ```
@@ -115,7 +131,7 @@ reduce **不支持中断、不支持异步事件**，支持异步处理方法：
 
 ## 请写出下面三次alert的结果
 
-```
+```js
 <script>
 var a = 3
 function change1 (a) {
@@ -141,14 +157,15 @@ alert(user.age)
 </script>
 ```
 
-结果 
+结果
+
 1. 3 // 原始类型的值赋值，函数中获取的是参数
 2. 40 // 引用类型的地址传入
 3. 40 // 函数中的引用类型的重新赋值
 
 ## 右侧写出浏览器console执行完左侧代码以后的alert()内容， 提示接下来三行代码都会弹出三次弹窗
 
-```
+```js
 function test(a, b) {
     alert(b) 
     return {
@@ -173,6 +190,7 @@ code
 ## 设置a的值让条件 a==5&& a==8成立
 
 第一种
+
 ```js
 const a = { value : 2 };
 a.valueOf = function() {
@@ -276,19 +294,19 @@ Configurable 属性
 
 1. from + map
 
-```
+```js
 Array.from(new Array(120)).map((item,index)=>(120 - index))
 ```
 
-2. from
+2.from
 
-```
+```js
 Array.from(new Array(100), (item, index) => index)
 ```
 
-3. reduce
+3.reduce
 
-```
+```js
 Array.from(new Array(120)).reduce(function (pre, v, i, arr) {
     pre.push(arr.length - i)
     return pre
@@ -296,7 +314,8 @@ Array.from(new Array(120)).reduce(function (pre, v, i, arr) {
 ```
 
 ## 输出以下代码执行结果，大致时间就好
-```
+
+```js
 function wait() {
 return new Promise(resolve =>
  setTimeout(resolve, 10 * 1000)
@@ -313,7 +332,8 @@ console.timeEnd();
 main();
 30多秒，由于await同步执行，等待执行函数到下一步
 ```
-```
+
+```js
 function wait() {
   return new Promise(resolve =>
     setTimeout(resolve, 10 * 1000)
@@ -332,17 +352,42 @@ async function main() {
 }
 main();
 ```
+
 运行时间是10s多一点
 等待时间最长的就是整体时间
 
-## 箭头函数和普通函数的区别
+## map比set区别
 
-1. 语法更加简洁，清晰
+set对象类似数组, Map 对象是键值对集合，和 JSON 对象类似，但是 key 不仅可以是字符串还可以是对象
 
-2. 箭头函数与普通函数不同，不会有自己的this, **继承this指向外面一层作用域**
+```js
+// set
+const arr = [1, 2, 3, 4, 5, 5, 4, 3, 2, 1];
+const set = new Set();
+arr.forEach(item => set.add(item));
+console.log(set);  // 1, 2, 3, 4, 5
+// 数组快速去重
+console.log([...new Set(arr)]);  //[1, 2, 3, 4, 5]
 
-3. .call()/.apply()/.bind()无法改变箭头函数中this的指向
+// map
+var map = new Map();
+var obj = { name: '小缘', age: 14 };
+map.set(obj, '小缘喵');
+map.get(obj); // 小缘喵
+map.has(obj); // true
+map.delete(obj) ;// true
+map.has(obj); // false
+```
 
-4. 没有自己的arguments
+## 数据结构，链表和数组区别
 
-5. 箭头函数没有原型prototype
+添加修改删除数组会影响前后值的变化
+
+链表是存储在内存中
+
+## 浏览器的内核
+
+1.Trident内核 (IE)
+2.Gecko内核 (Firefox)
+3.WebKit内核 (Safari内核，Chrome内核原型)
+4.Blink内核 (Opera)

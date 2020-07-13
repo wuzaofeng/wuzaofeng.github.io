@@ -10,22 +10,21 @@
 
 ### **弹性容器**
 
-* flex-direction(主轴的方向， 默认横向)
-* flex-wrap（是否换行，默认不换行）
-* flex-flow（direction和wrap的间写）(direction, wrap)
-* justify-content(主轴对齐的方式)
-* align-items（侧轴的对齐方式）
-* align-content (多个主轴线的对齐方式)
+- flex-direction(主轴的方向， 默认横向)
+- flex-wrap（是否换行，默认不换行）
+- flex-flow（direction和wrap的间写）(direction, wrap)
+- justify-content(主轴对齐的方式)
+- align-items（侧轴的对齐方式）
+- align-content (多个主轴线的对齐方式)
 
 ### **弹性元素**
 
-* order（顺序排列，数字越小越在前面）（可以负数）
-* flex-grow (放大的比例，默认0)
-* flex-shrink (缩小的比例， 默认1)
-* flex-basis(占据主轴的空间大小，默认auto)
-* flex (none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'>)(简写)
-
-* align-self（允许单个元素与其他不对齐）
+- order（顺序排列，数字越小越在前面）（可以负数
+- flex-grow (放大的比例，默认0)
+- flex-shrink (缩小的比例， 默认1)
+- flex-basis(占据主轴的空间大小，默认auto)
+- flex (none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'>)(简写)
+- align-self（允许单个元素与其他不对齐）
 
 flex 根据内容剩余空间占据的大小
 
@@ -352,7 +351,7 @@ float:left, float:right
 
 ## 什么是BFC？什么条件下会触发？渲染规则？应用场景有哪些？
 
-1. 什么是BFC
+1. 什么是BFC (块级格式化上下文）
 浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table-cells, 和 table-captions），以及overflow值不为"visiable"的块级盒子，都会为他们的内容创建新的BFC（Block Fromatting Context， 即块级格式上下文）
 
 2. 触发条件
@@ -372,3 +371,39 @@ BFC是一个**独立的容器**，外面的元素不会影响里面的元素
 BFC垂直方向**边距重叠**
 
 BFC的区域**不会与浮动元素的box重叠**
+
+## reflow(回流)和 repaint(重绘)
+
+回流必定会重绘
+
+重绘，改变背景颜色，字体颜色
+
+导致回流
+
+1：改变窗口大小
+
+2：改变文字大小
+
+3：内容的改变，如用户在输入框中敲字
+
+4：激活伪类，如:hover
+
+5：操作class属性
+
+6：脚本操作DOM
+
+7：计算offsetWidth和offsetHeight
+
+8：设置style属性
+
+减少回流
+
+1：不要通过父级来改变子元素样式，最好直接改变子元素样式，改变子元素样式尽可能不要影响父元素和兄弟元素的大小和尺寸
+
+2：尽量通过class来设计元素样式，切忌用style
+
+3: 实现元素的动画，对于经常要进行回流的组件，要抽离出来，它的position属性应当设为fixed或absolute
+
+4：权衡速度的平滑。比如实现一个动画，以1个像素为单位移动这样最平滑，但reflow就会过于频繁，CPU很快就会被完全占用。如果以3个像素为单位移动就会好很多。
+
+5: 尽量不要过多的频繁的去增加，修改，删除元素，因为这可能会频繁的导致页面reflow，可以先把该dom节点抽离到内存中进行复杂的操作然后再display到页面上
