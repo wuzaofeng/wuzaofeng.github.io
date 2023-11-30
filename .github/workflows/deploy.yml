@@ -1,0 +1,34 @@
+name: wuzaofeng docs
+on:
+  push:
+    branches:
+      - docs # 指定要触发的分支，与Travis CI中的"on"字段对应  
+
+jobs:  
+  build-and-deploy:  
+    runs-on: ubuntu-latest # 使用GitHub Actions默认的虚拟机环境  
+  
+    steps:  
+    - name: Checkout repository  
+      uses: actions/checkout@docs # 检出代码仓库  
+  
+    - name: Set up Node.js  
+      uses: actions/setup-node@master # 设置Node.js环境  
+      with:  
+        node-version: lts/* # 使用Node.js长期支持版本  
+  
+    - name: Install dependencies  
+      run: yarn install # 安装依赖项，与Travis CI中的"install"字段对应  
+  
+    - name: Build project  
+      run: yarn build # 构建项目，与Travis CI中的"script"字段对应 
+
+  
+    - name: Deploy to GitHub Pages  
+      uses: JamesIves/github-pages-deploy-action@4.1.5 # 使用GitHub Pages部署Action  
+      with:  
+        branch: master # 指定部署的目标分支，与Travis CI中的"target_branch"字段对应  
+        folder: docs/.vuepress/dist # 指定要部署的文件夹，与Travis CI中的"local_dir"字段对应  
+        cleanup: false # 不清理目标分支上的旧文件，与Travis CI中的"cleanup"字段对应  
+        keep-history: true # 保留目标分支的历史记录，与Travis CI中的"keep_history"字段对应  
+        token: ${{ secrets.GITHUB_TOKEN }} # 使用GitHub令牌进行身份验证，与Travis CI中的"token"字段对应
