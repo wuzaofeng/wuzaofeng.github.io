@@ -1,5 +1,5 @@
 module.exports = [{
-  text: '每日一鲜',
+  text: '补充知识库',
   link: '/'
 }, {
   text: '博客/会议',
