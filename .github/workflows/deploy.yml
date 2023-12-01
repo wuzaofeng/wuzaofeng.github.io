@@ -15,7 +15,7 @@ jobs:
     - name: Set up Node.js  
       uses: actions/setup-node@master # 设置Node.js环境  
       with:  
-        node-version: lts/* # 使用Node.js长期支持版本  
+        node-version: 16.15.0 # 使用Node.js长期支持版本  
   
     - name: Install dependencies  
       run: yarn install # 安装依赖项，与Travis CI中的"install"字段对应  
