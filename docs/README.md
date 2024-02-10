@@ -25,7 +25,6 @@
 * [3.40秒到231.84毫秒，我用Performance面板分析性能瓶颈全流程](https://mp.weixin.qq.com/s/RV2XSEb_m8YziZ1HsgF0uw)
 * [推荐一个页面引导库 driver.js](https://mp.weixin.qq.com/s/x-b9klAZLdGdH3kxm9vFIQ)
 * [MySQL 正式引入 JavaScript 支持！](https://mp.weixin.qq.com/s/pd-rtOFdWkGGqosGtIcZoQ)
-* [MySQL 正式引入 JavaScript 支持！](https://mp.weixin.qq.com/s/pd-rtOFdWkGGqosGtIcZoQ)
 * [大厂为啥都要用Node去写中间层(BFF)呢？](https://mp.weixin.qq.com/s/AdgW31xn-r_ljvF7CCyt2g)
 * [Docker 项目如何使用 Dockerfile 构建镜像？](https://mp.weixin.qq.com/s/T3U1Zdv5xuGoRRzje_in1Q)
 * [前端 JS 安全对抗原理与实践](https://mp.weixin.qq.com/s/FSlc676u8d61rRn3jSGY_w)
