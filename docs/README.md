@@ -1,5 +1,66 @@
 # 补充知识库
 
+## 2024-02-08
+* [Three.js 实现年会3D抽奖页面](https://mp.weixin.qq.com/s/dsUKV4sAlfH9q4IzxmbTCQ)
+* [尤雨溪说：Vue3 中应该使用 Ref 而不是 Reactive！](https://mp.weixin.qq.com/s/RZcWaP1F-kFaZGQKM5DCbw)
+
+## 2024-01-28
+* [【总结】1941- 上传、下载终极解决方案：切片！！！](https://mp.weixin.qq.com/s/vQbNHG4BivPz0MXmi47Kng)
+* [相见恨晚的前端开发利器](https://mp.weixin.qq.com/s/GpAYd4zhPNrgCWXyxk1r8g)
+* [SpringBoot中使用注解来实现 Redis 分布式锁](https://mp.weixin.qq.com/s/mLRVf0StAfT204wHrFRL5A)
+* [4款亲测好用的开发画图工具](https://mp.weixin.qq.com/s/xJMMhzuXY5fifgwORukTPw)
+* [Node 中文周刊 #120 - 在 Node 中处理环境变量](https://mp.weixin.qq.com/s/Q_AgvfJutRdPWKzfuLDA_g)
+* [十分钟，带你深入了解 axios 源码实现](https://mp.weixin.qq.com/s/6q7IfWOZ97SagyZf5H0GcA)
+* [【第3177期】vivo智能活动中台：悟空系统建设之路](https://mp.weixin.qq.com/s/O6N6wcwixWaw6oBLWtmI9w)
+* [前端架构思考，Vue or React？领域设计、文件结构、数据管理、主题替换](https://mp.weixin.qq.com/s/ashNirp2_EhMXsquekSOfA)
+* [如何优雅的实现前端国际化？](https://mp.weixin.qq.com/s/IszDWbUgd5crwK0h5Mi3lg)
+* [大厂程序员都在用什么绘图工具？](https://mp.weixin.qq.com/s/1A1qRrhl31u2swfEigTp6g)
+* [如何优雅的实现前端国际化？](https://mp.weixin.qq.com/s/66gHWNE4xsYhTNCfib8Npg)
+
+## 2024-01-18
+* [开发过程中，因为国际化太麻烦，搞了这款 vscode 国际化插件](https://mp.weixin.qq.com/s/tWJrO3yBSmFQLqbHAQs7ZQ)
+* [【Web技术】1928- 实用技能！使用Canvas封装图片压缩功能](https://mp.weixin.qq.com/s/WMIQuoW41XUCzXcTD8LaPg)
+* [字节三面：说说一条查询SQL是如何执行的](https://mp.weixin.qq.com/s/gZ3V7U7MtCJ4UGuTxLEOsA)
+* [开源啦！！！SpringBoot+Vue3 自研工作流引擎管理系统，有点颜值！](https://mp.weixin.qq.com/s/TTJHNV--2Qn0fV4YAUPV8w)
+* [3.40秒到231.84毫秒，我用Performance面板分析性能瓶颈全流程](https://mp.weixin.qq.com/s/RV2XSEb_m8YziZ1HsgF0uw)
+* [推荐一个页面引导库 driver.js](https://mp.weixin.qq.com/s/x-b9klAZLdGdH3kxm9vFIQ)
+* [MySQL 正式引入 JavaScript 支持！](https://mp.weixin.qq.com/s/pd-rtOFdWkGGqosGtIcZoQ)
+* [MySQL 正式引入 JavaScript 支持！](https://mp.weixin.qq.com/s/pd-rtOFdWkGGqosGtIcZoQ)
+* [大厂为啥都要用Node去写中间层(BFF)呢？](https://mp.weixin.qq.com/s/AdgW31xn-r_ljvF7CCyt2g)
+* [Docker 项目如何使用 Dockerfile 构建镜像？](https://mp.weixin.qq.com/s/T3U1Zdv5xuGoRRzje_in1Q)
+* [前端 JS 安全对抗原理与实践](https://mp.weixin.qq.com/s/FSlc676u8d61rRn3jSGY_w)
+* [一些你可能不知道的奇葩调试技巧](https://mp.weixin.qq.com/s/lNoGmoOKVpiDUNOqgA5kRg)
+* [用微前端 qiankun 接入十几个子应用后，我遇到了这些问题](https://mp.weixin.qq.com/s/WLRsl40wDNOG4Ug99px_eg)
+* [TypeScript 中的 extends 怎么那么骚啊？](https://mp.weixin.qq.com/s/0GkkCSMvyg5Hr-JHEdmk4w)
+* [WebSocket 从入门到入土](https://mp.weixin.qq.com/s/B1YaeuCXrCrq_hJaGSqmgQ)
+* [【第3167期】Web 第三方嵌入的最佳实践](https://mp.weixin.qq.com/s/KaGxV9ggdZlql5_WPmfiKw)
+* [【第3165期】谈谈如何设计一个插件（Plugin）体系](https://mp.weixin.qq.com/s/cVh8NabfN5b5nJqP8I7-aQ)
+* [你想要的【微前端】都在这里了！](https://mp.weixin.qq.com/s/_Rqr4dXIBDeENLzBVqdcZg)
+* [这些年背过的面试题——架构设计篇](https://mp.weixin.qq.com/s/w7xUHPCZZuCX_Is1eT5uZQ)
+* [1230天，百度再见！！！](https://mp.weixin.qq.com/s/eiAtw4RbbXJ_NvomfntlmQ)
+* [企业级 npm 私有仓库部署方案](https://mp.weixin.qq.com/s/jDCrjjtQb_aIYGjhagBAAA)
+* [如何设计一个 交友 系统](https://mp.weixin.qq.com/s/PscHSB30uU_8yFoQ0N0Z4A)
+* [【面试】1908- 面试官：跨页面通信的方式有哪些？](https://mp.weixin.qq.com/s/NlNtJyDzEMW_S662S5vhVg)
+* [新年新工具：2024年开发者必试的17款Chrome效率提升插件](https://mp.weixin.qq.com/s/vPXCOr6H1jyUfdcSf3WvtQ)
+* [卡顿减少 95%，记一次 React 性能优化实践](https://mp.weixin.qq.com/s/2qrXHayjEzuM7vLCAGE_JQ)
+* [万字解析 - React Fiber架构](https://mp.weixin.qq.com/s/95tc0HB3_jnv9J_7ILsULQ)
+
+## 2024-01-08
+* [React、Vue3中父组件如何调用子组件内部的方法](https://mp.weixin.qq.com/s/Xuap4npl5U3uZ8jP91jreA)
+* [大厂程序员都在用什么绘图工具？](https://mp.weixin.qq.com/s/dp4k4ga1FsxMtpRWnJxq9Q)
+* [2023 年 CSS 新特性大盘点](https://mp.weixin.qq.com/s/A-Gn_6jdK-I731tfcYuqDQ)
+* [当前端遇见了强制横屏签字的需求...](https://mp.weixin.qq.com/s/DwU-JcmBEuQjxeUWNAgzYQ)
+* [Vue 微前端开发的七大神器（译）](https://mp.weixin.qq.com/s/JUPxD3pSZt7Kl4UFJ68CPQ)
+* [分析diff算法与虚拟dom（理解现代前端框架思想）](https://mp.weixin.qq.com/s/eHaQr8ZsSvwbIwGv-IJqVg)
+* [如何优雅做好项目管理？](https://mp.weixin.qq.com/s/POtPQSCN5dIWvHB-5WuQUg)
+* [【第3136期】微前端时代：打造高效、灵活的前端开发体系](https://mp.weixin.qq.com/s/YQNAtSABhplRfPXUueNdrw)
+* [必学的封装Vue3组件的小技巧：插槽转发](https://mp.weixin.qq.com/s/lDMvaYIWxLbxt7Zwc-JKpg)
+* [Vue3 + Three.js + antvG2 实战智慧城市](https://mp.weixin.qq.com/s/a0Ei_fv1fHjKrA1eWfapvA)
+* [前端数据结构与算法入门](https://mp.weixin.qq.com/s/yKVXFF9V4S_gGGrHenBvCg)
+* [两行CSS让长列表性能渲染提升7倍！](https://mp.weixin.qq.com/s/zcipIsZvw3XEQLAyi4Kifg)
+* [向上管理：让你主动汇报就这么难？](https://mp.weixin.qq.com/s/FMiDF7kKSoPPH5WUy4Vxow)
+
+
 ## 2023-12-30
 * [requestAnimationFrame和requestIdleCallback是宏任务还是微任务](https://mp.weixin.qq.com/s/grYOnnj9T0l4anQgBXk3bA)
 * [浏览器跨 Tab 窗口通信原理及应用实践](https://mp.weixin.qq.com/s/JorEDkbIrTZZXG76P9VDkA)
